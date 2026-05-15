@@ -227,22 +227,22 @@ function App() {
   return (
     <main className="app-shell">
       <section className="timer-card">
-        <section className="timer-wrap">
+        <section className={`timer-panel ${hasExpired ? 'timer-panel--expired' : ''}`}>
           <button
-            className={`timer-face timer-button ${hasExpired ? 'timer-face--expired' : ''}`}
+            className="timer-main-button"
             type="button"
             onClick={restartTimer}
             aria-label="Újradobás időzítő indítása"
           >
             <span className="timer-label">{hasExpired ? 'Túlcsúszás' : 'Hátralévő idő'}</span>
             <strong className="timer-value">{displayLabel}</strong>
-            <span className="cast-count-badge">Dobás {castCount}</span>
           </button>
           {!isSettingLocked ? (
             <button className="cast-minus-button" type="button" onClick={decrementCastCount} aria-label="Dobás számláló csökkentése">
               −
             </button>
           ) : null}
+          <span className="cast-count-badge">Dobás {castCount}</span>
         </section>
 
         <section className="fish-counter" aria-label="Hal számláló">
