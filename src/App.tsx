@@ -4,6 +4,17 @@ const MIN_SECONDS = 5;
 const MAX_SECONDS = 60 * 60;
 const DEFAULT_SECONDS = 5 * 60;
 
+type WakeLockSentinelLike = {
+  release: () => Promise<void>;
+  addEventListener: (type: 'release', listener: () => void) => void;
+};
+
+type NavigatorWithWakeLock = Navigator & {
+  wakeLock?: {
+    request: (type: 'screen') => Promise<WakeLockSentinelLike>;
+  };
+};
+
 function clampSeconds(value: number) {
   return Math.min(MAX_SECONDS, Math.max(MIN_SECONDS, Math.round(value)));
 }
@@ -26,6 +37,7 @@ function App() {
   const tickTimerRef = useRef<number | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const alarmPlayedRef = useRef(false);
+  const wakeLockRef = useRef<WakeLockSentinelLike | null>(null);
 
   const displayLabel = useMemo(() => formatClock(displaySeconds), [displaySeconds]);
 
@@ -34,6 +46,8 @@ function App() {
       if (tickTimerRef.current !== null) {
         window.clearInterval(tickTimerRef.current);
       }
+
+      releaseWakeLock();
     };
   }, []);
 
@@ -44,8 +58,11 @@ function App() {
         tickTimerRef.current = null;
       }
 
+      releaseWakeLock();
       return;
     }
+
+    requestWakeLock();
 
     const updateDisplay = () => {
       if (deadlineRef.current === null) {
@@ -72,13 +89,58 @@ function App() {
   }, [hasExpired, isRunning]);
 
   useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && isRunning) {
+        requestWakeLock();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [isRunning]);
+
+  useEffect(() => {
     if (!hasExpired || alarmPlayedRef.current) {
       return;
     }
 
     alarmPlayedRef.current = true;
-    playBeep();
+    playAlarm();
   }, [hasExpired]);
+
+  const requestWakeLock = async () => {
+    try {
+      const wakeLock = (navigator as NavigatorWithWakeLock).wakeLock;
+
+      if (!wakeLock || wakeLockRef.current) {
+        return;
+      }
+
+      wakeLockRef.current = await wakeLock.request('screen');
+      wakeLockRef.current.addEventListener('release', () => {
+        wakeLockRef.current = null;
+      });
+    } catch {
+      wakeLockRef.current = null;
+    }
+  };
+
+  const releaseWakeLock = async () => {
+    if (!wakeLockRef.current) {
+      return;
+    }
+
+    try {
+      await wakeLockRef.current.release();
+    } catch {
+      // Ha a rendszer már elengedte, nincs több dolgunk vele.
+    } finally {
+      wakeLockRef.current = null;
+    }
+  };
 
   const ensureAudioContext = async () => {
     if (!audioContextRef.current) {
@@ -90,6 +152,17 @@ function App() {
     }
 
     return audioContextRef.current;
+  };
+
+  const vibrateAlarm = () => {
+    if ('vibrate' in navigator) {
+      navigator.vibrate([260, 120, 260, 120, 520]);
+    }
+  };
+
+  const playAlarm = () => {
+    vibrateAlarm();
+    playBeep();
   };
 
   const playBeep = async () => {
@@ -115,6 +188,7 @@ function App() {
 
   const restartTimer = async () => {
     await ensureAudioContext();
+    await requestWakeLock();
     alarmPlayedRef.current = false;
     deadlineRef.current = Date.now() + configuredSeconds * 1000;
     setDisplaySeconds(configuredSeconds);
