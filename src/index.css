@@ -155,12 +155,12 @@ button {
   height: 100%;
   min-height: 17rem;
   border-radius: 1.75rem;
-  border: 2px solid rgba(231, 255, 240, 0.86);
+  border: 2px solid rgba(255, 247, 220, 0.72);
   box-shadow:
     0 0.65rem 1.4rem rgba(0, 0, 0, 0.42),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.16);
-  background: linear-gradient(180deg, #20a45b 0%, #087238 100%);
-  color: #ffffff;
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, #101816 0%, #070d0b 100%);
+  color: #fff7dc;
   line-height: 1;
   text-shadow: 0 0.16rem 0 rgba(0, 0, 0, 0.32);
   transition: transform 120ms ease, box-shadow 120ms ease;
@@ -178,7 +178,7 @@ button {
   font-size: clamp(1.3rem, 6vw, 2rem);
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  opacity: 0.86;
+  color: rgba(255, 247, 220, 0.82);
 }
 
 .fish-count-value {
@@ -186,6 +186,7 @@ button {
   margin-top: 0.4rem;
   font-size: clamp(7rem, 38vw, 12rem);
   line-height: 0.9;
+  color: #fff7dc;
 }
 
 .fish-minus-button {
