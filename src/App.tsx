@@ -122,15 +122,6 @@ function App() {
     setIsRunning(true);
   };
 
-  const handlePrimaryAction = async () => {
-    if (isRunning && !hasExpired) {
-      setIsRunning(false);
-      return;
-    }
-
-    await restartTimer();
-  };
-
   const updateConfiguredTime = (nextValue: number) => {
     const safeValue = clampSeconds(nextValue);
     setConfiguredSeconds(safeValue);
@@ -140,7 +131,7 @@ function App() {
     }
   };
 
-  const primaryLabel = hasExpired ? 'Újradobás' : isRunning ? 'Szünet' : 'Indítás';
+  const primaryLabel = isRunning ? 'Újradobás' : 'Indítás';
 
   return (
     <main className="app-shell">
@@ -150,7 +141,7 @@ function App() {
           <strong className="timer-value">{displayLabel}</strong>
         </div>
 
-        <button className="primary-action" type="button" onClick={handlePrimaryAction}>
+        <button className="primary-action" type="button" onClick={restartTimer}>
           {primaryLabel}
         </button>
 
