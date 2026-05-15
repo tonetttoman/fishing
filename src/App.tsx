@@ -26,10 +26,15 @@ function formatClock(totalSeconds: number) {
   return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
-function formatDateTime(date: Date) {
+function formatDate(date: Date) {
   return new Intl.DateTimeFormat('hu-HU', {
     month: '2-digit',
     day: '2-digit',
+  }).format(date);
+}
+
+function formatTime(date: Date) {
+  return new Intl.DateTimeFormat('hu-HU', {
     hour: '2-digit',
     minute: '2-digit',
   }).format(date);
@@ -53,7 +58,8 @@ function App() {
   const wakeLockRef = useRef<WakeLockSentinelLike | null>(null);
 
   const displayLabel = useMemo(() => formatClock(displaySeconds), [displaySeconds]);
-  const dateTimeLabel = useMemo(() => formatDateTime(currentDate), [currentDate]);
+  const dateLabel = useMemo(() => formatDate(currentDate), [currentDate]);
+  const timeLabel = useMemo(() => formatTime(currentDate), [currentDate]);
 
   useEffect(() => {
     clockTimerRef.current = window.setInterval(() => {
@@ -248,14 +254,14 @@ function App() {
     <main className="app-shell">
       <section className="timer-card">
         <section className={`timer-panel ${hasExpired ? 'timer-panel--expired' : ''}`}>
-          <div className="date-time-display">{dateTimeLabel}</div>
+          <div className="date-display">{dateLabel}</div>
+          <div className="time-display">{timeLabel}</div>
           <button
             className="timer-main-button"
             type="button"
             onClick={restartTimer}
             aria-label="Újradobás időzítő indítása"
           >
-            <span className="timer-label">{hasExpired ? 'Túlcsúszás' : 'Hátralévő idő'}</span>
             <strong className="timer-value">{displayLabel}</strong>
           </button>
           {!isSettingLocked ? (
@@ -263,12 +269,11 @@ function App() {
               −
             </button>
           ) : null}
-          <span className="cast-count-badge">Dobás {castCount}</span>
+          <span className="cast-count-badge">{castCount}</span>
         </section>
 
         <section className="fish-counter" aria-label="Hal számláló">
           <button className="fish-count-button" type="button" onClick={incrementFishCount}>
-            <span className="fish-count-label">Hal</span>
             <strong className="fish-count-value">{fishCount}</strong>
           </button>
           {!isSettingLocked ? (
@@ -280,10 +285,7 @@ function App() {
 
         <section className={`setting-panel ${isSettingLocked ? 'setting-panel--locked' : ''}`} aria-label="Idő beállítása">
           <div className="setting-header">
-            <div>
-              <p className="setting-label">Beállított idő</p>
-              <strong className="setting-value">{formatClock(configuredSeconds)}</strong>
-            </div>
+            <strong className="setting-value">{formatClock(configuredSeconds)}</strong>
             <div className="setting-actions">
               <button
                 className="lock-button"
@@ -291,7 +293,7 @@ function App() {
                 onClick={() => setIsSettingLocked((current) => !current)}
                 aria-pressed={isSettingLocked}
               >
-                {isSettingLocked ? 'Zárva' : 'Nyitva'}
+                {isSettingLocked ? '🔒' : '🔓'}
               </button>
             </div>
           </div>
@@ -310,7 +312,7 @@ function App() {
 
           {!isSettingLocked ? (
             <button className="cast-reset-button" type="button" onClick={resetCastCount}>
-              Dobás 0
+              0
             </button>
           ) : null}
         </section>
