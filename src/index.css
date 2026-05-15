@@ -74,6 +74,7 @@ button {
 
 .timer-button {
   width: 100%;
+  position: relative;
   display: block;
   cursor: pointer;
 }
@@ -103,6 +104,19 @@ button {
   line-height: 0.95;
   letter-spacing: 0.04em;
   text-shadow: 0 0.18rem 0 rgba(0, 0, 0, 0.34);
+}
+
+.cast-count-badge {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 247, 220, 0.34);
+  background: rgba(7, 13, 11, 0.58);
+  color: rgba(255, 247, 220, 0.9);
+  padding: 0.22rem 0.55rem;
+  font-size: 0.78rem;
+  line-height: 1;
 }
 
 .fish-counter {
@@ -204,15 +218,29 @@ button {
   color: rgba(255, 247, 220, 0.72);
 }
 
-.lock-button {
+.setting-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lock-button,
+.cast-reset-button {
   min-width: 5rem;
   min-height: 1.65rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 247, 220, 0.48);
-  background: linear-gradient(180deg, #1f8d55 0%, #126537 100%);
   color: #ffffff;
   font-size: 0.78rem;
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+.lock-button {
+  background: linear-gradient(180deg, #1f8d55 0%, #126537 100%);
+}
+
+.cast-reset-button {
+  background: rgba(7, 13, 11, 0.74);
 }
 
 .setting-panel--locked .lock-button {
