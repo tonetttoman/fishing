@@ -112,35 +112,36 @@ button {
 
 .cast-count-badge {
   position: absolute;
-  right: 0.75rem;
-  bottom: 0.65rem;
+  right: 0.7rem;
+  bottom: 0.7rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 247, 220, 0.34);
-  background: rgba(7, 13, 11, 0.58);
-  color: rgba(255, 247, 220, 0.9);
-  padding: 0.22rem 0.55rem;
-  font-size: 0.78rem;
+  border: 2px solid rgba(255, 247, 220, 0.54);
+  background: rgba(7, 13, 11, 0.72);
+  color: rgba(255, 247, 220, 0.96);
+  padding: 0.34rem 0.72rem;
+  font-size: 1rem;
   line-height: 1;
+  box-shadow: 0 0.25rem 0.65rem rgba(0, 0, 0, 0.28);
 }
 
 .cast-minus-button {
   position: absolute;
-  left: 0.75rem;
-  bottom: 0.65rem;
+  left: 0.7rem;
+  bottom: 0.7rem;
   z-index: 3;
-  width: 2.7rem;
-  height: 2.7rem;
+  width: 3.1rem;
+  height: 3.1rem;
   border-radius: 50%;
-  border: 1px solid rgba(255, 247, 220, 0.62);
-  background: rgba(7, 13, 11, 0.74);
+  border: 2px solid rgba(255, 247, 220, 0.72);
+  background: rgba(7, 13, 11, 0.72);
   color: #fff7dc;
-  font-size: 1.8rem;
+  font-size: 2rem;
   line-height: 1;
-  box-shadow: 0 0.22rem 0.55rem rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0.25rem 0.65rem rgba(0, 0, 0, 0.35);
 }
 
 .cast-minus-button:active {
-  transform: translateY(0.1rem) scale(0.96);
+  transform: translateY(0.12rem) scale(0.96);
 }
 
 .fish-counter {
