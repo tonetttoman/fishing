@@ -12,8 +12,7 @@ function formatClock(totalSeconds: number) {
   const absolute = Math.abs(totalSeconds);
   const minutes = Math.floor(absolute / 60);
   const seconds = absolute % 60;
-  const prefix = totalSeconds < 0 ? '+' : '';
-  return `${prefix}${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
 function App() {
