@@ -49,13 +49,12 @@ button {
   width: min(100%, 27rem);
   min-height: calc(100svh - 1.1rem);
   display: grid;
-  grid-template-rows: auto minmax(22rem, 1fr) auto;
+  grid-template-rows: auto minmax(17rem, 0.8fr) auto;
   gap: 0.7rem;
   padding: max(0.55rem, env(safe-area-inset-top)) 0 max(0.55rem, env(safe-area-inset-bottom));
 }
 
 .setting-label,
-.setting-hint,
 .timer-label {
   margin: 0;
 }
@@ -65,7 +64,7 @@ button {
   color: #f8f1c4;
   border-radius: 1.65rem;
   border: 4px solid #f8f1c4;
-  padding: 0.9rem 0.75rem 1rem;
+  padding: 1rem 0.75rem 1.15rem;
   text-align: center;
   box-shadow: 0 0.55rem 0 rgba(17, 17, 17, 0.2);
 }
@@ -78,7 +77,7 @@ button {
 
 .timer-label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
@@ -86,7 +85,7 @@ button {
 .timer-value {
   display: block;
   margin-top: 0.25rem;
-  font-size: clamp(4.2rem, 24vw, 7.4rem);
+  font-size: clamp(5rem, 27vw, 8.6rem);
   line-height: 0.95;
   letter-spacing: 0.04em;
 }
@@ -94,15 +93,20 @@ button {
 .primary-action {
   width: 100%;
   height: 100%;
-  min-height: 22rem;
+  min-height: 17rem;
   border-radius: 1.75rem;
   border: 5px solid #1d1d1d;
   box-shadow: 0 0.45rem 0 #1d1d1d;
   background: #0b7a28;
   color: #ffffff;
-  font-size: clamp(3rem, 15vw, 5.1rem);
+  font-size: clamp(2.6rem, 13vw, 4.6rem);
   line-height: 1;
-  transition: transform 120ms ease, box-shadow 120ms ease;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.primary-action--expired {
+  background: #8d1a12;
+  color: #fff7eb;
 }
 
 .primary-action:active {
@@ -118,11 +122,15 @@ button {
   box-shadow: 0 0.3rem 0 #1d1d1d;
 }
 
+.setting-panel--locked {
+  background: rgba(225, 218, 184, 0.92);
+}
+
 .setting-header {
   display: flex;
   justify-content: space-between;
-  align-items: end;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.65rem;
   margin-bottom: 0.05rem;
 }
 
@@ -132,9 +140,20 @@ button {
   margin-top: 0;
 }
 
-.setting-hint {
-  text-align: right;
-  font-size: 0.78rem;
+.lock-button {
+  min-width: 6.5rem;
+  min-height: 2.4rem;
+  border-radius: 0.8rem;
+  border: 3px solid #1d1d1d;
+  background: #111111;
+  color: #fff7bf;
+  font-size: 1rem;
+  box-shadow: 0 0.18rem 0 #1d1d1d;
+}
+
+.setting-panel--locked .lock-button {
+  background: #8d1a12;
+  color: #fff7eb;
 }
 
 .time-slider {
@@ -142,6 +161,10 @@ button {
   height: 2.1rem;
   margin: 0;
   accent-color: #111111;
+}
+
+.time-slider:disabled {
+  opacity: 0.35;
 }
 
 @media (min-width: 640px) {
