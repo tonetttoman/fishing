@@ -227,19 +227,23 @@ function App() {
   return (
     <main className="app-shell">
       <section className="timer-card">
-        <button
-          className={`timer-face timer-button ${hasExpired ? 'timer-face--expired' : ''}`}
-          type="button"
-          onClick={restartTimer}
-          aria-label="Újradobás időzítő indítása"
-        >
-          <span className="timer-label">{hasExpired ? 'Túlcsúszás' : 'Hátralévő idő'}</span>
-          <strong className="timer-value">{displayLabel}</strong>
-          <span className="cast-count-badge">Dobás {castCount}</span>
-        </button>
-        <button className="cast-minus-button" type="button" onClick={decrementCastCount} aria-label="Dobás számláló csökkentése">
-          −
-        </button>
+        <section className="timer-wrap">
+          <button
+            className={`timer-face timer-button ${hasExpired ? 'timer-face--expired' : ''}`}
+            type="button"
+            onClick={restartTimer}
+            aria-label="Újradobás időzítő indítása"
+          >
+            <span className="timer-label">{hasExpired ? 'Túlcsúszás' : 'Hátralévő idő'}</span>
+            <strong className="timer-value">{displayLabel}</strong>
+            <span className="cast-count-badge">Dobás {castCount}</span>
+          </button>
+          {!isSettingLocked ? (
+            <button className="cast-minus-button" type="button" onClick={decrementCastCount} aria-label="Dobás számláló csökkentése">
+              −
+            </button>
+          ) : null}
+        </section>
 
         <section className="fish-counter" aria-label="Hal számláló">
           <button className="fish-count-button" type="button" onClick={incrementFishCount}>
