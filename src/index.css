@@ -72,6 +72,16 @@ button {
     inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
+.timer-button {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.timer-button:active {
+  transform: translateY(0.12rem) scale(0.998);
+}
+
 .timer-face--expired {
   background: linear-gradient(180deg, #b42318 0%, #76160f 100%);
   color: #fff7eb;
@@ -95,7 +105,12 @@ button {
   text-shadow: 0 0.18rem 0 rgba(0, 0, 0, 0.34);
 }
 
-.primary-action {
+.fish-counter {
+  position: relative;
+  min-height: 17rem;
+}
+
+.fish-count-button {
   width: 100%;
   height: 100%;
   min-height: 17rem;
@@ -106,23 +121,51 @@ button {
     inset 0 0 0 1px rgba(255, 255, 255, 0.16);
   background: linear-gradient(180deg, #20a45b 0%, #087238 100%);
   color: #ffffff;
-  font-size: clamp(2.6rem, 13vw, 4.6rem);
   line-height: 1;
   text-shadow: 0 0.16rem 0 rgba(0, 0, 0, 0.32);
-  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+  transition: transform 120ms ease, box-shadow 120ms ease;
 }
 
-.primary-action--expired {
-  background: linear-gradient(180deg, #d73525 0%, #951b12 100%);
-  color: #fff7eb;
-  border-color: rgba(255, 235, 228, 0.9);
-}
-
-.primary-action:active {
+.fish-count-button:active {
   transform: translateY(0.22rem) scale(0.995);
   box-shadow:
     0 0.32rem 0.75rem rgba(0, 0, 0, 0.48),
     inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.fish-count-label {
+  display: block;
+  font-size: clamp(1.3rem, 6vw, 2rem);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  opacity: 0.86;
+}
+
+.fish-count-value {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: clamp(7rem, 38vw, 12rem);
+  line-height: 0.9;
+}
+
+.fish-minus-button {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  z-index: 2;
+  width: 3.1rem;
+  height: 3.1rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 247, 220, 0.72);
+  background: rgba(7, 13, 11, 0.72);
+  color: #fff7dc;
+  font-size: 2rem;
+  line-height: 1;
+  box-shadow: 0 0.25rem 0.65rem rgba(0, 0, 0, 0.35);
+}
+
+.fish-minus-button:active {
+  transform: translateY(0.12rem) scale(0.96);
 }
 
 .setting-panel {
