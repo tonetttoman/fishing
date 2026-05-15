@@ -32,6 +32,7 @@ function App() {
   const [isRunning, setIsRunning] = useState(false);
   const [hasExpired, setHasExpired] = useState(false);
   const [isSettingLocked, setIsSettingLocked] = useState(true);
+  const [fishCount, setFishCount] = useState(0);
 
   const deadlineRef = useRef<number | null>(null);
   const tickTimerRef = useRef<number | null>(null);
@@ -205,23 +206,36 @@ function App() {
     }
   };
 
-  const primaryLabel = isRunning ? 'Újradobás' : 'Indítás';
+  const incrementFishCount = () => {
+    setFishCount((current) => current + 1);
+  };
+
+  const decrementFishCount = () => {
+    setFishCount((current) => Math.max(0, current - 1));
+  };
 
   return (
     <main className="app-shell">
       <section className="timer-card">
-        <div className={`timer-face ${hasExpired ? 'timer-face--expired' : ''}`}>
-          <span className="timer-label">{hasExpired ? 'Túlcsúszás' : 'Hátralévő idő'}</span>
-          <strong className="timer-value">{displayLabel}</strong>
-        </div>
-
         <button
-          className={`primary-action ${hasExpired ? 'primary-action--expired' : ''}`}
+          className={`timer-face timer-button ${hasExpired ? 'timer-face--expired' : ''}`}
           type="button"
           onClick={restartTimer}
+          aria-label="Újradobás időzítő indítása"
         >
-          {primaryLabel}
+          <span className="timer-label">{hasExpired ? 'Túlcsúszás' : 'Hátralévő idő'}</span>
+          <strong className="timer-value">{displayLabel}</strong>
         </button>
+
+        <section className="fish-counter" aria-label="Hal számláló">
+          <button className="fish-count-button" type="button" onClick={incrementFishCount}>
+            <span className="fish-count-label">Hal</span>
+            <strong className="fish-count-value">{fishCount}</strong>
+          </button>
+          <button className="fish-minus-button" type="button" onClick={decrementFishCount} aria-label="Hal számláló csökkentése">
+            −
+          </button>
+        </section>
 
         <section className={`setting-panel ${isSettingLocked ? 'setting-panel--locked' : ''}`} aria-label="Idő beállítása">
           <div className="setting-header">
