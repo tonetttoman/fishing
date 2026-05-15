@@ -79,15 +79,36 @@ button {
   border-color: rgba(255, 247, 235, 0.88);
 }
 
+.date-time-display {
+  position: absolute;
+  top: 0.72rem;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 247, 220, 0.42);
+  background: rgba(7, 13, 11, 0.62);
+  color: rgba(255, 247, 220, 0.96);
+  padding: 0.28rem 0.72rem;
+  font-size: clamp(1.05rem, 4.6vw, 1.45rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  box-shadow: 0 0.22rem 0.55rem rgba(0, 0, 0, 0.25);
+}
+
 .timer-main-button {
   width: 100%;
   height: 100%;
   min-height: 17rem;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   color: inherit;
   text-align: center;
-  padding: 1rem 0.75rem 1.15rem;
+  padding: 2.55rem 0.75rem 1.15rem;
   cursor: pointer;
 }
 
@@ -97,7 +118,7 @@ button {
 
 .timer-label {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: rgba(255, 247, 220, 0.82);
@@ -105,8 +126,8 @@ button {
 
 .timer-value {
   display: block;
-  margin-top: 0.25rem;
-  font-size: clamp(5rem, 27vw, 8.6rem);
+  margin-top: 0.18rem;
+  font-size: clamp(4.65rem, 25vw, 8.1rem);
   line-height: 0.95;
   letter-spacing: 0.04em;
   text-shadow: 0 0.18rem 0 rgba(0, 0, 0, 0.34);
