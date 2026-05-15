@@ -99,6 +99,17 @@ button {
   right: 0.7rem;
 }
 
+.session-top-control {
+  position: absolute;
+  top: 0.72rem;
+  left: 50%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.28rem;
+  transform: translateX(-50%);
+}
+
 .timer-main-button {
   width: 100%;
   height: 100%;
@@ -257,7 +268,8 @@ button {
 
 .lock-button,
 .cast-reset-button,
-.session-placeholder-button {
+.session-placeholder-button,
+.session-reset-button {
   min-width: 3.5rem;
   min-height: 1.65rem;
   border-radius: 999px;
@@ -272,11 +284,7 @@ button {
 }
 
 .session-placeholder-button {
-  position: absolute;
-  left: 50%;
-  bottom: 0.2rem;
-  transform: translateX(-50%);
-  min-width: 6.8rem;
+  min-width: 6.2rem;
   padding: 0 0.55rem;
   background: rgba(7, 13, 11, 0.74);
   font-variant-numeric: tabular-nums;
@@ -284,6 +292,17 @@ button {
 
 .session-placeholder-button--running {
   background: linear-gradient(180deg, #1f8d55 0%, #126537 100%);
+}
+
+.session-reset-button {
+  min-width: 1.65rem;
+  width: 1.65rem;
+  padding: 0;
+  border-color: rgba(255, 235, 228, 0.62);
+  background: linear-gradient(180deg, #b42318 0%, #7d170f 100%);
+  color: #fff7eb;
+  font-size: 1.15rem;
+  line-height: 1;
 }
 
 .cast-reset-button {
