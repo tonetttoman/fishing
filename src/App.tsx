@@ -26,6 +26,14 @@ function formatClock(totalSeconds: number) {
   return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
+function formatSessionClock(totalSeconds: number) {
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
 function formatDate(date: Date) {
   return new Intl.DateTimeFormat('hu-HU', {
     month: '2-digit',
@@ -49,10 +57,13 @@ function App() {
   const [fishCount, setFishCount] = useState(0);
   const [castCount, setCastCount] = useState(0);
   const [currentDate, setCurrentDate] = useState(() => new Date());
+  const [isSessionRunning, setIsSessionRunning] = useState(false);
+  const [sessionSeconds, setSessionSeconds] = useState(0);
 
   const deadlineRef = useRef<number | null>(null);
   const tickTimerRef = useRef<number | null>(null);
   const clockTimerRef = useRef<number | null>(null);
+  const sessionTimerRef = useRef<number | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const alarmPlayedRef = useRef(false);
   const wakeLockRef = useRef<WakeLockSentinelLike | null>(null);
@@ -60,6 +71,7 @@ function App() {
   const displayLabel = useMemo(() => formatClock(displaySeconds), [displaySeconds]);
   const dateLabel = useMemo(() => formatDate(currentDate), [currentDate]);
   const timeLabel = useMemo(() => formatTime(currentDate), [currentDate]);
+  const sessionLabel = useMemo(() => formatSessionClock(sessionSeconds), [sessionSeconds]);
 
   useEffect(() => {
     clockTimerRef.current = window.setInterval(() => {
@@ -73,6 +85,10 @@ function App() {
 
       if (clockTimerRef.current !== null) {
         window.clearInterval(clockTimerRef.current);
+      }
+
+      if (sessionTimerRef.current !== null) {
+        window.clearInterval(sessionTimerRef.current);
       }
 
       releaseWakeLock();
@@ -115,6 +131,28 @@ function App() {
       }
     };
   }, [hasExpired, isRunning]);
+
+  useEffect(() => {
+    if (!isSessionRunning) {
+      if (sessionTimerRef.current !== null) {
+        window.clearInterval(sessionTimerRef.current);
+        sessionTimerRef.current = null;
+      }
+
+      return;
+    }
+
+    sessionTimerRef.current = window.setInterval(() => {
+      setSessionSeconds((current) => current + 1);
+    }, 1000);
+
+    return () => {
+      if (sessionTimerRef.current !== null) {
+        window.clearInterval(sessionTimerRef.current);
+        sessionTimerRef.current = null;
+      }
+    };
+  }, [isSessionRunning]);
 
   useEffect(() => {
     const handleVisibilityChange = () => {
@@ -250,6 +288,10 @@ function App() {
     setCastCount(0);
   };
 
+  const toggleSessionTimer = () => {
+    setIsSessionRunning((current) => !current);
+  };
+
   return (
     <main className="app-shell">
       <section className="timer-card">
@@ -315,8 +357,13 @@ function App() {
               <button className="cast-reset-button" type="button" onClick={resetCastCount}>
                 0
               </button>
-              <button className="session-placeholder-button" type="button" aria-label="Session időzítő">
-                00:00:00
+              <button
+                className={`session-placeholder-button ${isSessionRunning ? 'session-placeholder-button--running' : ''}`}
+                type="button"
+                onClick={toggleSessionTimer}
+                aria-label="Session időzítő indítása vagy megállítása"
+              >
+                {sessionLabel}
               </button>
             </>
           ) : null}
