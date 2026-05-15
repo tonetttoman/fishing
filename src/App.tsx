@@ -21,6 +21,7 @@ function App() {
   const [displaySeconds, setDisplaySeconds] = useState(DEFAULT_SECONDS);
   const [isRunning, setIsRunning] = useState(false);
   const [hasExpired, setHasExpired] = useState(false);
+  const [isSettingLocked, setIsSettingLocked] = useState(true);
 
   const deadlineRef = useRef<number | null>(null);
   const tickTimerRef = useRef<number | null>(null);
@@ -141,17 +142,28 @@ function App() {
           <strong className="timer-value">{displayLabel}</strong>
         </div>
 
-        <button className="primary-action" type="button" onClick={restartTimer}>
+        <button
+          className={`primary-action ${hasExpired ? 'primary-action--expired' : ''}`}
+          type="button"
+          onClick={restartTimer}
+        >
           {primaryLabel}
         </button>
 
-        <section className="setting-panel" aria-label="Idő beállítása">
+        <section className={`setting-panel ${isSettingLocked ? 'setting-panel--locked' : ''}`} aria-label="Idő beállítása">
           <div className="setting-header">
             <div>
               <p className="setting-label">Beállított idő</p>
               <strong className="setting-value">{formatClock(configuredSeconds)}</strong>
             </div>
-            <span className="setting-hint">5 mp - 60 perc</span>
+            <button
+              className="lock-button"
+              type="button"
+              onClick={() => setIsSettingLocked((current) => !current)}
+              aria-pressed={isSettingLocked}
+            >
+              {isSettingLocked ? 'Zárva' : 'Nyitva'}
+            </button>
           </div>
 
           <input
@@ -161,6 +173,7 @@ function App() {
             max={MAX_SECONDS}
             step={5}
             value={configuredSeconds}
+            disabled={isSettingLocked}
             onChange={(event) => updateConfiguredTime(Number(event.target.value))}
             aria-label="Visszaszámláló ideje"
           />
