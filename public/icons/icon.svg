@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Feeder Timer icon">
+  <rect width="512" height="512" rx="112" fill="#07120f"/>
+  <circle cx="256" cy="256" r="184" fill="#101816" stroke="#fff7dc" stroke-width="18"/>
+  <path d="M156 286c44-66 156-66 200 0-44 66-156 66-200 0Z" fill="#1f8d55" stroke="#fff7dc" stroke-width="14" stroke-linejoin="round"/>
+  <circle cx="314" cy="276" r="13" fill="#fff7dc"/>
+  <path d="M178 286l-40-36v72l40-36Z" fill="#1f8d55" stroke="#fff7dc" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M256 110v54M256 348v54M110 256h54M348 256h54" stroke="#fff7dc" stroke-width="18" stroke-linecap="round"/>
+</svg>
