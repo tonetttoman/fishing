@@ -282,6 +282,10 @@ button {
   font-variant-numeric: tabular-nums;
 }
 
+.session-placeholder-button--running {
+  background: linear-gradient(180deg, #1f8d55 0%, #126537 100%);
+}
+
 .cast-reset-button {
   position: absolute;
   left: 0.45rem;
