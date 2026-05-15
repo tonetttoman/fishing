@@ -1,11 +1,12 @@
 :root {
-  color-scheme: light;
-  font-family: "Trebuchet MS", "Arial Black", Arial, sans-serif;
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   line-height: 1.4;
-  font-weight: 700;
+  font-weight: 750;
   background:
-    radial-gradient(circle at top, #fff7bf 0%, #f3d659 30%, #ba8d11 100%);
-  color: #111111;
+    radial-gradient(circle at top left, rgba(38, 125, 92, 0.34) 0%, transparent 34%),
+    linear-gradient(160deg, #07120f 0%, #0e1714 48%, #17211d 100%);
+  color: #f7f3e8;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -60,19 +61,21 @@ button {
 }
 
 .timer-face {
-  background: #111111;
-  color: #f8f1c4;
+  background: linear-gradient(180deg, #101816 0%, #070d0b 100%);
+  color: #fff7dc;
   border-radius: 1.65rem;
-  border: 4px solid #f8f1c4;
+  border: 2px solid rgba(255, 247, 220, 0.72);
   padding: 1rem 0.75rem 1.15rem;
   text-align: center;
-  box-shadow: 0 0.55rem 0 rgba(17, 17, 17, 0.2);
+  box-shadow:
+    0 0.55rem 1.25rem rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .timer-face--expired {
-  background: #8d1a12;
+  background: linear-gradient(180deg, #b42318 0%, #76160f 100%);
   color: #fff7eb;
-  border-color: #fff7eb;
+  border-color: rgba(255, 247, 235, 0.88);
 }
 
 .timer-label {
@@ -80,6 +83,7 @@ button {
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  color: rgba(255, 247, 220, 0.82);
 }
 
 .timer-value {
@@ -88,6 +92,7 @@ button {
   font-size: clamp(5rem, 27vw, 8.6rem);
   line-height: 0.95;
   letter-spacing: 0.04em;
+  text-shadow: 0 0.18rem 0 rgba(0, 0, 0, 0.34);
 }
 
 .primary-action {
@@ -95,35 +100,43 @@ button {
   height: 100%;
   min-height: 17rem;
   border-radius: 1.75rem;
-  border: 5px solid #1d1d1d;
-  box-shadow: 0 0.45rem 0 #1d1d1d;
-  background: #0b7a28;
+  border: 2px solid rgba(231, 255, 240, 0.86);
+  box-shadow:
+    0 0.65rem 1.4rem rgba(0, 0, 0, 0.42),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+  background: linear-gradient(180deg, #20a45b 0%, #087238 100%);
   color: #ffffff;
   font-size: clamp(2.6rem, 13vw, 4.6rem);
   line-height: 1;
+  text-shadow: 0 0.16rem 0 rgba(0, 0, 0, 0.32);
   transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
 }
 
 .primary-action--expired {
-  background: #8d1a12;
+  background: linear-gradient(180deg, #d73525 0%, #951b12 100%);
   color: #fff7eb;
+  border-color: rgba(255, 235, 228, 0.9);
 }
 
 .primary-action:active {
-  transform: translateY(0.25rem);
-  box-shadow: 0 0.2rem 0 #1d1d1d;
+  transform: translateY(0.22rem) scale(0.995);
+  box-shadow:
+    0 0.32rem 0.75rem rgba(0, 0, 0, 0.48),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .setting-panel {
-  background: rgba(255, 250, 217, 0.92);
-  border: 3px solid #1d1d1d;
+  background: rgba(18, 28, 24, 0.94);
+  border: 2px solid rgba(255, 247, 220, 0.34);
   border-radius: 0.95rem;
   padding: 0.3rem 0.55rem 0.12rem;
-  box-shadow: 0 0.22rem 0 #1d1d1d;
+  box-shadow:
+    0 0.28rem 0.8rem rgba(0, 0, 0, 0.34),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .setting-panel--locked {
-  background: rgba(225, 218, 184, 0.92);
+  background: rgba(28, 28, 24, 0.94);
 }
 
 .setting-header {
@@ -139,38 +152,41 @@ button {
   font-size: 1.2rem;
   line-height: 1;
   margin-top: 0;
+  color: #fff7dc;
 }
 
 .setting-label {
   font-size: 0.85rem;
   line-height: 1;
+  color: rgba(255, 247, 220, 0.72);
 }
 
 .lock-button {
   min-width: 5.6rem;
   min-height: 2rem;
-  border-radius: 0.65rem;
-  border: 2px solid #1d1d1d;
-  background: #111111;
-  color: #fff7bf;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 247, 220, 0.48);
+  background: linear-gradient(180deg, #1f8d55 0%, #126537 100%);
+  color: #ffffff;
   font-size: 0.9rem;
-  box-shadow: 0 0.12rem 0 #1d1d1d;
+  box-shadow: 0 0.16rem 0.4rem rgba(0, 0, 0, 0.35);
 }
 
 .setting-panel--locked .lock-button {
-  background: #8d1a12;
+  background: linear-gradient(180deg, #b42318 0%, #7d170f 100%);
   color: #fff7eb;
+  border-color: rgba(255, 235, 228, 0.62);
 }
 
 .time-slider {
   width: 100%;
   height: 1.65rem;
   margin: 0;
-  accent-color: #111111;
+  accent-color: #23b665;
 }
 
 .time-slider:disabled {
-  opacity: 0.35;
+  opacity: 0.32;
 }
 
 @media (min-width: 640px) {
