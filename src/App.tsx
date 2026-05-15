@@ -311,9 +311,14 @@ function App() {
           />
 
           {!isSettingLocked ? (
-            <button className="cast-reset-button" type="button" onClick={resetCastCount}>
-              0
-            </button>
+            <>
+              <button className="cast-reset-button" type="button" onClick={resetCastCount}>
+                0
+              </button>
+              <button className="session-placeholder-button" type="button" aria-label="Session időzítő">
+                00:00:00
+              </button>
+            </>
           ) : null}
         </section>
       </section>
