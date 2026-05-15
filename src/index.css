@@ -256,7 +256,8 @@ button {
 }
 
 .lock-button,
-.cast-reset-button {
+.cast-reset-button,
+.session-placeholder-button {
   min-width: 3.5rem;
   min-height: 1.65rem;
   border-radius: 999px;
@@ -268,6 +269,17 @@ button {
 
 .lock-button {
   background: linear-gradient(180deg, #1f8d55 0%, #126537 100%);
+}
+
+.session-placeholder-button {
+  position: absolute;
+  left: 50%;
+  bottom: 0.2rem;
+  transform: translateX(-50%);
+  min-width: 6.8rem;
+  padding: 0 0.55rem;
+  background: rgba(7, 13, 11, 0.74);
+  font-variant-numeric: tabular-nums;
 }
 
 .cast-reset-button {
