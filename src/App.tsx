@@ -216,6 +216,10 @@ function App() {
     setFishCount((current) => Math.max(0, current - 1));
   };
 
+  const decrementCastCount = () => {
+    setCastCount((current) => Math.max(0, current - 1));
+  };
+
   const resetCastCount = () => {
     setCastCount(0);
   };
@@ -232,6 +236,9 @@ function App() {
           <span className="timer-label">{hasExpired ? 'Túlcsúszás' : 'Hátralévő idő'}</span>
           <strong className="timer-value">{displayLabel}</strong>
           <span className="cast-count-badge">Dobás {castCount}</span>
+        </button>
+        <button className="cast-minus-button" type="button" onClick={decrementCastCount} aria-label="Dobás számláló csökkentése">
+          −
         </button>
 
         <section className="fish-counter" aria-label="Hal számláló">
@@ -251,11 +258,6 @@ function App() {
               <strong className="setting-value">{formatClock(configuredSeconds)}</strong>
             </div>
             <div className="setting-actions">
-              {!isSettingLocked ? (
-                <button className="cast-reset-button" type="button" onClick={resetCastCount}>
-                  Dobás 0
-                </button>
-              ) : null}
               <button
                 className="lock-button"
                 type="button"
@@ -278,6 +280,12 @@ function App() {
             onChange={(event) => updateConfiguredTime(Number(event.target.value))}
             aria-label="Visszaszámláló ideje"
           />
+
+          {!isSettingLocked ? (
+            <button className="cast-reset-button" type="button" onClick={resetCastCount}>
+              Dobás 0
+            </button>
+          ) : null}
         </section>
       </section>
     </main>
