@@ -33,6 +33,7 @@ function App() {
   const [hasExpired, setHasExpired] = useState(false);
   const [isSettingLocked, setIsSettingLocked] = useState(true);
   const [fishCount, setFishCount] = useState(0);
+  const [castCount, setCastCount] = useState(0);
 
   const deadlineRef = useRef<number | null>(null);
   const tickTimerRef = useRef<number | null>(null);
@@ -195,6 +196,7 @@ function App() {
     setDisplaySeconds(configuredSeconds);
     setHasExpired(false);
     setIsRunning(true);
+    setCastCount((current) => current + 1);
   };
 
   const updateConfiguredTime = (nextValue: number) => {
@@ -214,6 +216,10 @@ function App() {
     setFishCount((current) => Math.max(0, current - 1));
   };
 
+  const resetCastCount = () => {
+    setCastCount(0);
+  };
+
   return (
     <main className="app-shell">
       <section className="timer-card">
@@ -225,6 +231,7 @@ function App() {
         >
           <span className="timer-label">{hasExpired ? 'Túlcsúszás' : 'Hátralévő idő'}</span>
           <strong className="timer-value">{displayLabel}</strong>
+          <span className="cast-count-badge">Dobás {castCount}</span>
         </button>
 
         <section className="fish-counter" aria-label="Hal számláló">
@@ -243,14 +250,21 @@ function App() {
               <p className="setting-label">Beállított idő</p>
               <strong className="setting-value">{formatClock(configuredSeconds)}</strong>
             </div>
-            <button
-              className="lock-button"
-              type="button"
-              onClick={() => setIsSettingLocked((current) => !current)}
-              aria-pressed={isSettingLocked}
-            >
-              {isSettingLocked ? 'Zárva' : 'Nyitva'}
-            </button>
+            <div className="setting-actions">
+              {!isSettingLocked ? (
+                <button className="cast-reset-button" type="button" onClick={resetCastCount}>
+                  Dobás 0
+                </button>
+              ) : null}
+              <button
+                className="lock-button"
+                type="button"
+                onClick={() => setIsSettingLocked((current) => !current)}
+                aria-pressed={isSettingLocked}
+              >
+                {isSettingLocked ? 'Zárva' : 'Nyitva'}
+              </button>
+            </div>
           </div>
 
           <input
