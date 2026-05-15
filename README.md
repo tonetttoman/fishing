@@ -14,6 +14,38 @@ https://tonetttoman.github.io/fishing/
 
 Telefonon érdemes Chrome-ból megnyitni, majd kezdőképernyőre telepíteni.
 
+## Tesztelés és visszajelzés
+
+A projekt publikus, tesztelhető és véleményezhető.
+
+App:
+
+```text
+https://tonetttoman.github.io/fishing/
+```
+
+Repository:
+
+```text
+https://github.com/tonetttoman/fishing
+```
+
+Hibajelentést és fejlesztési ötletet GitHub Issue-ként érdemes rögzíteni:
+
+```text
+https://github.com/tonetttoman/fishing/issues
+```
+
+Hasznos visszajelzéshez érdemes megadni:
+
+- milyen telefonon tesztelted,
+- milyen böngészőben futott,
+- kezdőképernyőről vagy böngészőből indítottad-e,
+- mi működött jól,
+- mi volt zavaró,
+- pontosan mit nyomtál meg, amikor a hiba előjött,
+- lehetőleg képernyőképet is.
+
 ## Fő funkciók
 
 - állítható dobás-visszaszámláló `5 mp` és `60 perc` között,
