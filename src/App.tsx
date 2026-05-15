@@ -150,14 +150,9 @@ function App() {
           <strong className="timer-value">{displayLabel}</strong>
         </div>
 
-        <div className="controls controls--single">
-          <button className="primary-action" type="button" onClick={handlePrimaryAction}>
-            {primaryLabel}
-          </button>
-          <button className="restart-action" type="button" onClick={restartTimer}>
-            Újraindítás
-          </button>
-        </div>
+        <button className="primary-action" type="button" onClick={handlePrimaryAction}>
+          {primaryLabel}
+        </button>
 
         <section className="setting-panel" aria-label="Idő beállítása">
           <div className="setting-header">
