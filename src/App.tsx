@@ -3,7 +3,6 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 const MIN_SECONDS = 30;
 const MAX_SECONDS = 30 * 60;
 const DEFAULT_SECONDS = 5 * 60;
-const QUICK_PRESETS = [30, 60, 3 * 60, 5 * 60, 10 * 60, 15 * 60, 20 * 60, 30 * 60];
 
 function clampSeconds(value: number) {
   return Math.min(MAX_SECONDS, Math.max(MIN_SECONDS, Math.round(value)));
@@ -15,15 +14,6 @@ function formatClock(totalSeconds: number) {
   const seconds = absolute % 60;
   const prefix = totalSeconds < 0 ? '+' : '';
   return `${prefix}${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-}
-
-function formatPresetLabel(seconds: number) {
-  if (seconds < 60) {
-    return `${seconds} mp`;
-  }
-
-  const minutes = seconds / 60;
-  return `${minutes} perc`;
 }
 
 function App() {
@@ -184,23 +174,11 @@ function App() {
     }
   };
 
-  const statusText = hasExpired
-    ? 'Kapás ellenőrzés ideje. Nyomj a nagy gombra az újraindításhoz.'
-    : isRunning
-      ? 'Fut a visszaszámlálás.'
-      : 'Állítsd be az időt, majd indítsd el.';
-
   const primaryLabel = hasExpired ? 'Újradobás' : isRunning ? 'Szünet' : 'Indítás';
 
   return (
     <main className="app-shell">
       <section className="timer-card">
-        <header className="hero">
-          <p className="eyebrow">Feeder Timer</p>
-          <h1>Nagy gombok, tiszta kijelzés, gyors újraindítás.</h1>
-          <p className="status-text">{statusText}</p>
-        </header>
-
         <div className={`timer-face ${hasExpired ? 'timer-face--expired' : ''}`}>
           <span className="timer-label">{hasExpired ? 'Túlcsúszás' : 'Hátralévő idő'}</span>
           <strong className="timer-value">{displayLabel}</strong>
@@ -234,19 +212,6 @@ function App() {
             onChange={(event) => updateConfiguredTime(Number(event.target.value))}
             aria-label="Visszaszámláló ideje"
           />
-
-          <div className="preset-grid">
-            {QUICK_PRESETS.map((preset) => (
-              <button
-                key={preset}
-                className={preset === configuredSeconds ? 'preset preset--active' : 'preset'}
-                type="button"
-                onClick={() => updateConfiguredTime(preset)}
-              >
-                {formatPresetLabel(preset)}
-              </button>
-            ))}
-          </div>
         </section>
 
         <footer className="footer-note">
