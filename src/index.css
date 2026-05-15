@@ -62,6 +62,7 @@ button {
 
 .timer-wrap {
   position: relative;
+  display: block;
 }
 
 .timer-face {
