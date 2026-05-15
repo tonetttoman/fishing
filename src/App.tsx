@@ -21,7 +21,6 @@ function App() {
   const [displaySeconds, setDisplaySeconds] = useState(DEFAULT_SECONDS);
   const [isRunning, setIsRunning] = useState(false);
   const [hasExpired, setHasExpired] = useState(false);
-  const [audioUnlocked, setAudioUnlocked] = useState(false);
 
   const deadlineRef = useRef<number | null>(null);
   const tickTimerRef = useRef<number | null>(null);
@@ -108,7 +107,6 @@ function App() {
       await audioContextRef.current.resume();
     }
 
-    setAudioUnlocked(true);
     return audioContextRef.current;
   };
 
@@ -129,40 +127,25 @@ function App() {
       oscillator.start();
       oscillator.stop(context.currentTime + 0.38);
     } catch {
-      setAudioUnlocked(false);
+      // A böngésző hangblokkolása nem állíthatja meg a timer működését.
     }
   };
 
-  const startTimer = async () => {
+  const restartTimer = async () => {
     await ensureAudioContext();
-    deadlineRef.current = Date.now() + displaySeconds * 1000;
+    deadlineRef.current = Date.now() + configuredSeconds * 1000;
+    setDisplaySeconds(configuredSeconds);
     setHasExpired(false);
     setIsRunning(true);
   };
 
   const handlePrimaryAction = async () => {
-    if (hasExpired) {
-      await ensureAudioContext();
-      deadlineRef.current = Date.now() + configuredSeconds * 1000;
-      setDisplaySeconds(configuredSeconds);
-      setHasExpired(false);
-      setIsRunning(true);
-      return;
-    }
-
-    if (isRunning) {
+    if (isRunning && !hasExpired) {
       setIsRunning(false);
       return;
     }
 
-    await startTimer();
-  };
-
-  const handleReset = () => {
-    setIsRunning(false);
-    setHasExpired(false);
-    setDisplaySeconds(configuredSeconds);
-    deadlineRef.current = null;
+    await restartTimer();
   };
 
   const updateConfiguredTime = (nextValue: number) => {
@@ -184,12 +167,12 @@ function App() {
           <strong className="timer-value">{displayLabel}</strong>
         </div>
 
-        <div className="controls">
+        <div className="controls controls--single">
           <button className="primary-action" type="button" onClick={handlePrimaryAction}>
             {primaryLabel}
           </button>
-          <button className="secondary-action" type="button" onClick={handleReset}>
-            Nullázás
+          <button className="restart-action" type="button" onClick={restartTimer}>
+            Újraindítás
           </button>
         </div>
 
@@ -213,11 +196,6 @@ function App() {
             aria-label="Visszaszámláló ideje"
           />
         </section>
-
-        <footer className="footer-note">
-          <p>0-nál hangjelzés indul, az idő pedig tovább fut, amíg újra nem indítod.</p>
-          {!audioUnlocked ? <p>Az első gombnyomás engedélyezi a hangjelzést a böngészőben.</p> : null}
-        </footer>
       </section>
     </main>
   );
