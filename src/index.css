@@ -51,7 +51,7 @@ button {
   min-height: calc(100svh - 1.1rem);
   display: grid;
   grid-template-rows: auto minmax(17rem, 0.8fr) auto;
-  gap: 0.65rem;
+  gap: 0.55rem;
   padding: max(0.55rem, env(safe-area-inset-top)) 0 max(0.55rem, env(safe-area-inset-bottom));
 }
 
@@ -127,12 +127,12 @@ button {
 
 .setting-panel {
   background: rgba(18, 28, 24, 0.94);
-  border: 2px solid rgba(255, 247, 220, 0.34);
-  border-radius: 0.95rem;
-  padding: 0.3rem 0.55rem 0.12rem;
+  border: 1px solid rgba(255, 247, 220, 0.32);
+  border-radius: 0.75rem;
+  padding: 0.18rem 0.45rem 0.02rem;
   box-shadow:
-    0 0.28rem 0.8rem rgba(0, 0, 0, 0.34),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    0 0.18rem 0.5rem rgba(0, 0, 0, 0.28),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
 .setting-panel--locked {
@@ -143,33 +143,33 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.55rem;
-  margin-bottom: -0.15rem;
+  gap: 0.45rem;
+  margin-bottom: -0.28rem;
 }
 
 .setting-value {
   display: block;
-  font-size: 1.2rem;
-  line-height: 1;
+  font-size: 1.05rem;
+  line-height: 0.95;
   margin-top: 0;
   color: #fff7dc;
 }
 
 .setting-label {
-  font-size: 0.85rem;
-  line-height: 1;
+  font-size: 0.72rem;
+  line-height: 0.95;
   color: rgba(255, 247, 220, 0.72);
 }
 
 .lock-button {
-  min-width: 5.6rem;
-  min-height: 2rem;
+  min-width: 5rem;
+  min-height: 1.65rem;
   border-radius: 999px;
-  border: 2px solid rgba(255, 247, 220, 0.48);
+  border: 1px solid rgba(255, 247, 220, 0.48);
   background: linear-gradient(180deg, #1f8d55 0%, #126537 100%);
   color: #ffffff;
-  font-size: 0.9rem;
-  box-shadow: 0 0.16rem 0.4rem rgba(0, 0, 0, 0.35);
+  font-size: 0.78rem;
+  box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.3);
 }
 
 .setting-panel--locked .lock-button {
@@ -180,9 +180,10 @@ button {
 
 .time-slider {
   width: 100%;
-  height: 1.65rem;
+  height: 1.25rem;
   margin: 0;
   accent-color: #23b665;
+  display: block;
 }
 
 .time-slider:disabled {
@@ -197,6 +198,6 @@ button {
   .timer-card {
     width: min(100%, 30rem);
     min-height: calc(100svh - 2rem);
-    gap: 0.8rem;
+    gap: 0.7rem;
   }
 }
