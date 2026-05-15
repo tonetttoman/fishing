@@ -119,6 +119,26 @@ button {
   line-height: 1;
 }
 
+.cast-minus-button {
+  position: absolute;
+  left: 1.25rem;
+  bottom: calc(17rem + 5.2rem);
+  z-index: 3;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 247, 220, 0.62);
+  background: rgba(7, 13, 11, 0.74);
+  color: #fff7dc;
+  font-size: 1.8rem;
+  line-height: 1;
+  box-shadow: 0 0.22rem 0.55rem rgba(0, 0, 0, 0.35);
+}
+
+.cast-minus-button:active {
+  transform: translateY(0.1rem) scale(0.96);
+}
+
 .fish-counter {
   position: relative;
   min-height: 17rem;
@@ -183,6 +203,7 @@ button {
 }
 
 .setting-panel {
+  position: relative;
   background: rgba(18, 28, 24, 0.94);
   border: 1px solid rgba(255, 247, 220, 0.32);
   border-radius: 0.75rem;
@@ -240,7 +261,15 @@ button {
 }
 
 .cast-reset-button {
+  position: absolute;
+  left: 0.45rem;
+  bottom: 0.2rem;
+  min-width: 4.8rem;
   background: rgba(7, 13, 11, 0.74);
+}
+
+.setting-panel:has(.cast-reset-button) {
+  padding-bottom: 1.85rem;
 }
 
 .setting-panel--locked .lock-button {
