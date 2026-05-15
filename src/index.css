@@ -50,7 +50,7 @@ button {
   width: min(100%, 27rem);
   min-height: calc(100svh - 1.1rem);
   display: grid;
-  grid-template-rows: auto minmax(17rem, 0.8fr) auto;
+  grid-template-rows: minmax(17rem, 0.8fr) minmax(17rem, 0.8fr) auto;
   gap: 0.55rem;
   padding: max(0.55rem, env(safe-area-inset-top)) 0 max(0.55rem, env(safe-area-inset-bottom));
 }
@@ -60,38 +60,39 @@ button {
   margin: 0;
 }
 
-.timer-wrap {
+.timer-panel {
   position: relative;
-  display: block;
-}
-
-.timer-face {
+  min-height: 17rem;
+  border-radius: 1.75rem;
+  border: 2px solid rgba(255, 247, 220, 0.72);
   background: linear-gradient(180deg, #101816 0%, #070d0b 100%);
   color: #fff7dc;
-  border-radius: 1.65rem;
-  border: 2px solid rgba(255, 247, 220, 0.72);
-  padding: 1rem 0.75rem 1.15rem;
-  text-align: center;
   box-shadow:
-    0 0.55rem 1.25rem rgba(0, 0, 0, 0.35),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    0 0.65rem 1.4rem rgba(0, 0, 0, 0.42),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  overflow: hidden;
 }
 
-.timer-button {
-  width: 100%;
-  position: relative;
-  display: block;
-  cursor: pointer;
-}
-
-.timer-button:active {
-  transform: translateY(0.12rem) scale(0.998);
-}
-
-.timer-face--expired {
+.timer-panel--expired {
   background: linear-gradient(180deg, #b42318 0%, #76160f 100%);
   color: #fff7eb;
   border-color: rgba(255, 247, 235, 0.88);
+}
+
+.timer-main-button {
+  width: 100%;
+  height: 100%;
+  min-height: 17rem;
+  display: block;
+  background: transparent;
+  color: inherit;
+  text-align: center;
+  padding: 1rem 0.75rem 1.15rem;
+  cursor: pointer;
+}
+
+.timer-main-button:active {
+  transform: translateY(0.12rem) scale(0.998);
 }
 
 .timer-label {
