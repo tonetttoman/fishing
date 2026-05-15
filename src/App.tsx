@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 const MIN_SECONDS = 5;
 const MAX_SECONDS = 60 * 60;
 const DEFAULT_SECONDS = 2 * 60 + 30;
+const SESSION_IDLE_RESET_SECONDS = 60 * 60;
 
 type WakeLockSentinelLike = {
   release: () => Promise<void>;
@@ -24,6 +25,14 @@ function formatClock(totalSeconds: number) {
   const minutes = Math.floor(absolute / 60);
   const seconds = absolute % 60;
   return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function formatSessionClock(totalSeconds: number) {
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
 function formatDate(date: Date) {
@@ -49,6 +58,9 @@ function App() {
   const [fishCount, setFishCount] = useState(0);
   const [castCount, setCastCount] = useState(0);
   const [currentDate, setCurrentDate] = useState(() => new Date());
+  const [isSessionRunning, setIsSessionRunning] = useState(false);
+  const [sessionSeconds, setSessionSeconds] = useState(0);
+  const [lastSessionActivityAt, setLastSessionActivityAt] = useState<number | null>(null);
 
   const deadlineRef = useRef<number | null>(null);
   const tickTimerRef = useRef<number | null>(null);
@@ -60,10 +72,18 @@ function App() {
   const displayLabel = useMemo(() => formatClock(displaySeconds), [displaySeconds]);
   const dateLabel = useMemo(() => formatDate(currentDate), [currentDate]);
   const timeLabel = useMemo(() => formatTime(currentDate), [currentDate]);
+  const sessionLabel = useMemo(() => formatSessionClock(sessionSeconds), [sessionSeconds]);
 
   useEffect(() => {
     clockTimerRef.current = window.setInterval(() => {
       setCurrentDate(new Date());
+      setSessionSeconds((current) => (isSessionRunning ? current + 1 : current));
+
+      if (lastSessionActivityAt !== null && Date.now() - lastSessionActivityAt >= SESSION_IDLE_RESET_SECONDS * 1000) {
+        setIsSessionRunning(false);
+        setSessionSeconds(0);
+        setLastSessionActivityAt(null);
+      }
     }, 1000);
 
     return () => {
@@ -77,7 +97,7 @@ function App() {
 
       releaseWakeLock();
     };
-  }, []);
+  }, [isSessionRunning, lastSessionActivityAt]);
 
   useEffect(() => {
     if (!isRunning) {
@@ -182,6 +202,10 @@ function App() {
     return audioContextRef.current;
   };
 
+  const markSessionActivity = () => {
+    setLastSessionActivityAt(Date.now());
+  };
+
   const vibrateAlarm = () => {
     if ('vibrate' in navigator) {
       navigator.vibrate([260, 120, 260, 120, 520]);
@@ -223,6 +247,7 @@ function App() {
     setHasExpired(false);
     setIsRunning(true);
     setCastCount((current) => current + 1);
+    markSessionActivity();
   };
 
   const updateConfiguredTime = (nextValue: number) => {
@@ -236,6 +261,7 @@ function App() {
 
   const incrementFishCount = () => {
     setFishCount((current) => current + 1);
+    markSessionActivity();
   };
 
   const decrementFishCount = () => {
@@ -248,6 +274,18 @@ function App() {
 
   const resetCastCount = () => {
     setCastCount(0);
+  };
+
+  const toggleSessionTimer = () => {
+    setIsSessionRunning((current) => {
+      const nextValue = !current;
+
+      if (nextValue) {
+        setLastSessionActivityAt(Date.now());
+      }
+
+      return nextValue;
+    });
   };
 
   return (
@@ -287,6 +325,16 @@ function App() {
           <div className="setting-header">
             <strong className="setting-value">{formatClock(configuredSeconds)}</strong>
             <div className="setting-actions">
+              {!isSettingLocked ? (
+                <button
+                  className={`session-button ${isSessionRunning ? 'session-button--running' : ''}`}
+                  type="button"
+                  onClick={toggleSessionTimer}
+                  aria-label="Session időzítő indítása vagy megállítása"
+                >
+                  {sessionLabel}
+                </button>
+              ) : null}
               <button
                 className="lock-button"
                 type="button"
