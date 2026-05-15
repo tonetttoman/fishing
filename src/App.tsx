@@ -246,9 +246,11 @@ function App() {
             <span className="fish-count-label">Hal</span>
             <strong className="fish-count-value">{fishCount}</strong>
           </button>
-          <button className="fish-minus-button" type="button" onClick={decrementFishCount} aria-label="Hal számláló csökkentése">
-            −
-          </button>
+          {!isSettingLocked ? (
+            <button className="fish-minus-button" type="button" onClick={decrementFishCount} aria-label="Hal számláló csökkentése">
+              −
+            </button>
+          ) : null}
         </section>
 
         <section className={`setting-panel ${isSettingLocked ? 'setting-panel--locked' : ''}`} aria-label="Idő beállítása">
