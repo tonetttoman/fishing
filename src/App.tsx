@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 const MIN_SECONDS = 5;
 const MAX_SECONDS = 60 * 60;
-const DEFAULT_SECONDS = 5 * 60;
+const DEFAULT_SECONDS = 2 * 60 + 30;
 
 type WakeLockSentinelLike = {
   release: () => Promise<void>;
