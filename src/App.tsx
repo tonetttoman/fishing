@@ -1,9 +1,19 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-const MIN_SECONDS = 30;
-const MAX_SECONDS = 30 * 60;
-const DEFAULT_SECONDS = 5 * 60;
-const QUICK_PRESETS = [30, 60, 3 * 60, 5 * 60, 10 * 60, 15 * 60, 20 * 60, 30 * 60];
+const MIN_SECONDS = 5;
+const MAX_SECONDS = 60 * 60;
+const DEFAULT_SECONDS = 2 * 60 + 30;
+
+type WakeLockSentinelLike = {
+  release: () => Promise<void>;
+  addEventListener: (type: 'release', listener: () => void) => void;
+};
+
+type NavigatorWithWakeLock = Navigator & {
+  wakeLock?: {
+    request: (type: 'screen') => Promise<WakeLockSentinelLike>;
+  };
+};
 
 function clampSeconds(value: number) {
   return Math.min(MAX_SECONDS, Math.max(MIN_SECONDS, Math.round(value)));
@@ -13,17 +23,29 @@ function formatClock(totalSeconds: number) {
   const absolute = Math.abs(totalSeconds);
   const minutes = Math.floor(absolute / 60);
   const seconds = absolute % 60;
-  const prefix = totalSeconds < 0 ? '+' : '';
-  return `${prefix}${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
-function formatPresetLabel(seconds: number) {
-  if (seconds < 60) {
-    return `${seconds} mp`;
-  }
+function formatSessionClock(totalSeconds: number) {
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
 
-  const minutes = seconds / 60;
-  return `${minutes} perc`;
+  return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat('hu-HU', {
+    month: '2-digit',
+    day: '2-digit',
+  }).format(date);
+}
+
+function formatTime(date: Date) {
+  return new Intl.DateTimeFormat('hu-HU', {
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(date);
 }
 
 function App() {
@@ -31,24 +53,45 @@ function App() {
   const [displaySeconds, setDisplaySeconds] = useState(DEFAULT_SECONDS);
   const [isRunning, setIsRunning] = useState(false);
   const [hasExpired, setHasExpired] = useState(false);
-  const [audioUnlocked, setAudioUnlocked] = useState(false);
+  const [isSettingLocked, setIsSettingLocked] = useState(true);
+  const [fishCount, setFishCount] = useState(0);
+  const [castCount, setCastCount] = useState(0);
+  const [currentDate, setCurrentDate] = useState(() => new Date());
+  const [isSessionRunning, setIsSessionRunning] = useState(false);
+  const [sessionSeconds, setSessionSeconds] = useState(0);
 
   const deadlineRef = useRef<number | null>(null);
   const tickTimerRef = useRef<number | null>(null);
+  const clockTimerRef = useRef<number | null>(null);
+  const sessionTimerRef = useRef<number | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
-  const alarmIntervalRef = useRef<number | null>(null);
+  const alarmPlayedRef = useRef(false);
+  const wakeLockRef = useRef<WakeLockSentinelLike | null>(null);
 
   const displayLabel = useMemo(() => formatClock(displaySeconds), [displaySeconds]);
+  const dateLabel = useMemo(() => formatDate(currentDate), [currentDate]);
+  const timeLabel = useMemo(() => formatTime(currentDate), [currentDate]);
+  const sessionLabel = useMemo(() => formatSessionClock(sessionSeconds), [sessionSeconds]);
 
   useEffect(() => {
+    clockTimerRef.current = window.setInterval(() => {
+      setCurrentDate(new Date());
+    }, 1000);
+
     return () => {
       if (tickTimerRef.current !== null) {
         window.clearInterval(tickTimerRef.current);
       }
 
-      if (alarmIntervalRef.current !== null) {
-        window.clearInterval(alarmIntervalRef.current);
+      if (clockTimerRef.current !== null) {
+        window.clearInterval(clockTimerRef.current);
       }
+
+      if (sessionTimerRef.current !== null) {
+        window.clearInterval(sessionTimerRef.current);
+      }
+
+      releaseWakeLock();
     };
   }, []);
 
@@ -59,8 +102,11 @@ function App() {
         tickTimerRef.current = null;
       }
 
+      releaseWakeLock();
       return;
     }
+
+    requestWakeLock();
 
     const updateDisplay = () => {
       if (deadlineRef.current === null) {
@@ -87,27 +133,80 @@ function App() {
   }, [hasExpired, isRunning]);
 
   useEffect(() => {
-    if (!hasExpired) {
-      if (alarmIntervalRef.current !== null) {
-        window.clearInterval(alarmIntervalRef.current);
-        alarmIntervalRef.current = null;
+    if (!isSessionRunning) {
+      if (sessionTimerRef.current !== null) {
+        window.clearInterval(sessionTimerRef.current);
+        sessionTimerRef.current = null;
       }
 
       return;
     }
 
-    playBeep();
-    alarmIntervalRef.current = window.setInterval(() => {
-      playBeep();
-    }, 1800);
+    sessionTimerRef.current = window.setInterval(() => {
+      setSessionSeconds((current) => current + 1);
+    }, 1000);
 
     return () => {
-      if (alarmIntervalRef.current !== null) {
-        window.clearInterval(alarmIntervalRef.current);
-        alarmIntervalRef.current = null;
+      if (sessionTimerRef.current !== null) {
+        window.clearInterval(sessionTimerRef.current);
+        sessionTimerRef.current = null;
       }
     };
+  }, [isSessionRunning]);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && isRunning) {
+        requestWakeLock();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [isRunning]);
+
+  useEffect(() => {
+    if (!hasExpired || alarmPlayedRef.current) {
+      return;
+    }
+
+    alarmPlayedRef.current = true;
+    playAlarm();
   }, [hasExpired]);
+
+  const requestWakeLock = async () => {
+    try {
+      const wakeLock = (navigator as NavigatorWithWakeLock).wakeLock;
+
+      if (!wakeLock || wakeLockRef.current) {
+        return;
+      }
+
+      wakeLockRef.current = await wakeLock.request('screen');
+      wakeLockRef.current.addEventListener('release', () => {
+        wakeLockRef.current = null;
+      });
+    } catch {
+      wakeLockRef.current = null;
+    }
+  };
+
+  const releaseWakeLock = async () => {
+    if (!wakeLockRef.current) {
+      return;
+    }
+
+    try {
+      await wakeLockRef.current.release();
+    } catch {
+      // Ha a rendszer már elengedte, nincs több dolgunk vele.
+    } finally {
+      wakeLockRef.current = null;
+    }
+  };
 
   const ensureAudioContext = async () => {
     if (!audioContextRef.current) {
@@ -118,8 +217,18 @@ function App() {
       await audioContextRef.current.resume();
     }
 
-    setAudioUnlocked(true);
     return audioContextRef.current;
+  };
+
+  const vibrateAlarm = () => {
+    if ('vibrate' in navigator) {
+      navigator.vibrate([260, 120, 260, 120, 520]);
+    }
+  };
+
+  const playAlarm = () => {
+    vibrateAlarm();
+    playBeep();
   };
 
   const playBeep = async () => {
@@ -139,40 +248,19 @@ function App() {
       oscillator.start();
       oscillator.stop(context.currentTime + 0.38);
     } catch {
-      setAudioUnlocked(false);
+      // A böngésző hangblokkolása nem állíthatja meg a timer működését.
     }
   };
 
-  const startTimer = async () => {
+  const restartTimer = async () => {
     await ensureAudioContext();
-    deadlineRef.current = Date.now() + displaySeconds * 1000;
+    await requestWakeLock();
+    alarmPlayedRef.current = false;
+    deadlineRef.current = Date.now() + configuredSeconds * 1000;
+    setDisplaySeconds(configuredSeconds);
     setHasExpired(false);
     setIsRunning(true);
-  };
-
-  const handlePrimaryAction = async () => {
-    if (hasExpired) {
-      await ensureAudioContext();
-      deadlineRef.current = Date.now() + configuredSeconds * 1000;
-      setDisplaySeconds(configuredSeconds);
-      setHasExpired(false);
-      setIsRunning(true);
-      return;
-    }
-
-    if (isRunning) {
-      setIsRunning(false);
-      return;
-    }
-
-    await startTimer();
-  };
-
-  const handleReset = () => {
-    setIsRunning(false);
-    setHasExpired(false);
-    setDisplaySeconds(configuredSeconds);
-    deadlineRef.current = null;
+    setCastCount((current) => current + 1);
   };
 
   const updateConfiguredTime = (nextValue: number) => {
@@ -184,44 +272,97 @@ function App() {
     }
   };
 
-  const statusText = hasExpired
-    ? 'Kapás ellenőrzés ideje. Nyomj a nagy gombra az újraindításhoz.'
-    : isRunning
-      ? 'Fut a visszaszámlálás.'
-      : 'Állítsd be az időt, majd indítsd el.';
+  const incrementFishCount = () => {
+    setFishCount((current) => current + 1);
+  };
 
-  const primaryLabel = hasExpired ? 'Újradobás' : isRunning ? 'Szünet' : 'Indítás';
+  const decrementFishCount = () => {
+    setFishCount((current) => Math.max(0, current - 1));
+  };
+
+  const decrementCastCount = () => {
+    setCastCount((current) => Math.max(0, current - 1));
+  };
+
+  const resetCastCount = () => {
+    setCastCount(0);
+  };
+
+  const toggleSessionTimer = () => {
+    if (isSettingLocked) {
+      return;
+    }
+
+    setIsSessionRunning((current) => !current);
+  };
+
+  const resetSessionTimer = () => {
+    setIsSessionRunning(false);
+    setSessionSeconds(0);
+  };
 
   return (
     <main className="app-shell">
       <section className="timer-card">
-        <header className="hero">
-          <p className="eyebrow">Feeder Timer</p>
-          <h1>Nagy gombok, tiszta kijelzés, gyors újraindítás.</h1>
-          <p className="status-text">{statusText}</p>
-        </header>
-
-        <div className={`timer-face ${hasExpired ? 'timer-face--expired' : ''}`}>
-          <span className="timer-label">{hasExpired ? 'Túlcsúszás' : 'Hátralévő idő'}</span>
-          <strong className="timer-value">{displayLabel}</strong>
-        </div>
-
-        <div className="controls">
-          <button className="primary-action" type="button" onClick={handlePrimaryAction}>
-            {primaryLabel}
+        <section className={`timer-panel ${hasExpired ? 'timer-panel--expired' : ''}`}>
+          <div className="date-display">{dateLabel}</div>
+          <div className="time-display">{timeLabel}</div>
+          <div className="session-top-control">
+            <button
+              className={`session-placeholder-button ${isSessionRunning ? 'session-placeholder-button--running' : ''}`}
+              type="button"
+              onClick={toggleSessionTimer}
+              disabled={isSettingLocked}
+              aria-label="Session időzítő indítása vagy megállítása"
+            >
+              {sessionLabel}
+            </button>
+            {!isSettingLocked ? (
+              <button className="session-reset-button" type="button" onClick={resetSessionTimer} aria-label="Session időzítő nullázása">
+                ×
+              </button>
+            ) : null}
+          </div>
+          <button
+            className="timer-main-button"
+            type="button"
+            onClick={restartTimer}
+            aria-label="Újradobás időzítő indítása"
+          >
+            <strong className="timer-value">{displayLabel}</strong>
           </button>
-          <button className="secondary-action" type="button" onClick={handleReset}>
-            Nullázás
-          </button>
-        </div>
+          {!isSettingLocked ? (
+            <button className="cast-minus-button" type="button" onClick={decrementCastCount} aria-label="Dobás számláló csökkentése">
+              −
+            </button>
+          ) : null}
+          <span className="cast-count-badge">{castCount}</span>
+        </section>
 
-        <section className="setting-panel" aria-label="Idő beállítása">
+        <section className="fish-counter" aria-label="Hal számláló">
+          <button className="fish-count-button" type="button" onClick={incrementFishCount}>
+            <strong className="fish-count-value">{fishCount}</strong>
+          </button>
+          {!isSettingLocked ? (
+            <button className="fish-minus-button" type="button" onClick={decrementFishCount} aria-label="Hal számláló csökkentése">
+              −
+            </button>
+          ) : null}
+        </section>
+
+        <section className={`setting-panel ${isSettingLocked ? 'setting-panel--locked' : ''}`} aria-label="Idő beállítása">
           <div className="setting-header">
-            <div>
-              <p className="setting-label">Beállított idő</p>
-              <strong className="setting-value">{formatClock(configuredSeconds)}</strong>
+            <strong className="setting-value">{formatClock(configuredSeconds)}</strong>
+            <div className="setting-actions">
+              <button
+                className="lock-button"
+                type="button"
+                onClick={() => setIsSettingLocked((current) => !current)}
+                aria-pressed={isSettingLocked}
+              >
+                {isSettingLocked ? '🔒' : '🔓'}
+              </button>
             </div>
-            <span className="setting-hint">30 mp - 30 perc</span>
           </div>
 
           <input
@@ -229,30 +370,19 @@ function App() {
             type="range"
             min={MIN_SECONDS}
             max={MAX_SECONDS}
-            step={30}
+            step={5}
             value={configuredSeconds}
+            disabled={isSettingLocked}
             onChange={(event) => updateConfiguredTime(Number(event.target.value))}
             aria-label="Visszaszámláló ideje"
           />
 
-          <div className="preset-grid">
-            {QUICK_PRESETS.map((preset) => (
-              <button
-                key={preset}
-                className={preset === configuredSeconds ? 'preset preset--active' : 'preset'}
-                type="button"
-                onClick={() => updateConfiguredTime(preset)}
-              >
-                {formatPresetLabel(preset)}
-              </button>
-            ))}
-          </div>
+          {!isSettingLocked ? (
+            <button className="cast-reset-button" type="button" onClick={resetCastCount}>
+              0
+            </button>
+          ) : null}
         </section>
-
-        <footer className="footer-note">
-          <p>0-nál hangjelzés indul, az idő pedig tovább fut, amíg újra nem indítod.</p>
-          {!audioUnlocked ? <p>Az első gombnyomás engedélyezi a hangjelzést a böngészőben.</p> : null}
-        </footer>
       </section>
     </main>
   );
