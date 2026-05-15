@@ -292,12 +292,32 @@ function App() {
     setIsSessionRunning((current) => !current);
   };
 
+  const resetSessionTimer = () => {
+    setIsSessionRunning(false);
+    setSessionSeconds(0);
+  };
+
   return (
     <main className="app-shell">
       <section className="timer-card">
         <section className={`timer-panel ${hasExpired ? 'timer-panel--expired' : ''}`}>
           <div className="date-display">{dateLabel}</div>
           <div className="time-display">{timeLabel}</div>
+          <div className="session-top-control">
+            <button
+              className={`session-placeholder-button ${isSessionRunning ? 'session-placeholder-button--running' : ''}`}
+              type="button"
+              onClick={toggleSessionTimer}
+              aria-label="Session időzítő indítása vagy megállítása"
+            >
+              {sessionLabel}
+            </button>
+            {!isSettingLocked ? (
+              <button className="session-reset-button" type="button" onClick={resetSessionTimer} aria-label="Session időzítő nullázása">
+                ×
+              </button>
+            ) : null}
+          </div>
           <button
             className="timer-main-button"
             type="button"
@@ -353,19 +373,9 @@ function App() {
           />
 
           {!isSettingLocked ? (
-            <>
-              <button className="cast-reset-button" type="button" onClick={resetCastCount}>
-                0
-              </button>
-              <button
-                className={`session-placeholder-button ${isSessionRunning ? 'session-placeholder-button--running' : ''}`}
-                type="button"
-                onClick={toggleSessionTimer}
-                aria-label="Session időzítő indítása vagy megállítása"
-              >
-                {sessionLabel}
-              </button>
-            </>
+            <button className="cast-reset-button" type="button" onClick={resetCastCount}>
+              0
+            </button>
           ) : null}
         </section>
       </section>
