@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-const MIN_SECONDS = 30;
-const MAX_SECONDS = 30 * 60;
+const MIN_SECONDS = 5;
+const MAX_SECONDS = 60 * 60;
 const DEFAULT_SECONDS = 5 * 60;
 
 function clampSeconds(value: number) {
@@ -25,7 +25,7 @@ function App() {
   const deadlineRef = useRef<number | null>(null);
   const tickTimerRef = useRef<number | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
-  const alarmIntervalRef = useRef<number | null>(null);
+  const alarmPlayedRef = useRef(false);
 
   const displayLabel = useMemo(() => formatClock(displaySeconds), [displaySeconds]);
 
@@ -33,10 +33,6 @@ function App() {
     return () => {
       if (tickTimerRef.current !== null) {
         window.clearInterval(tickTimerRef.current);
-      }
-
-      if (alarmIntervalRef.current !== null) {
-        window.clearInterval(alarmIntervalRef.current);
       }
     };
   }, []);
@@ -76,26 +72,12 @@ function App() {
   }, [hasExpired, isRunning]);
 
   useEffect(() => {
-    if (!hasExpired) {
-      if (alarmIntervalRef.current !== null) {
-        window.clearInterval(alarmIntervalRef.current);
-        alarmIntervalRef.current = null;
-      }
-
+    if (!hasExpired || alarmPlayedRef.current) {
       return;
     }
 
+    alarmPlayedRef.current = true;
     playBeep();
-    alarmIntervalRef.current = window.setInterval(() => {
-      playBeep();
-    }, 1800);
-
-    return () => {
-      if (alarmIntervalRef.current !== null) {
-        window.clearInterval(alarmIntervalRef.current);
-        alarmIntervalRef.current = null;
-      }
-    };
   }, [hasExpired]);
 
   const ensureAudioContext = async () => {
@@ -133,6 +115,7 @@ function App() {
 
   const restartTimer = async () => {
     await ensureAudioContext();
+    alarmPlayedRef.current = false;
     deadlineRef.current = Date.now() + configuredSeconds * 1000;
     setDisplaySeconds(configuredSeconds);
     setHasExpired(false);
@@ -182,7 +165,7 @@ function App() {
               <p className="setting-label">Beállított idő</p>
               <strong className="setting-value">{formatClock(configuredSeconds)}</strong>
             </div>
-            <span className="setting-hint">30 mp - 30 perc</span>
+            <span className="setting-hint">5 mp - 60 perc</span>
           </div>
 
           <input
@@ -190,7 +173,7 @@ function App() {
             type="range"
             min={MIN_SECONDS}
             max={MAX_SECONDS}
-            step={30}
+            step={5}
             value={configuredSeconds}
             onChange={(event) => updateConfiguredTime(Number(event.target.value))}
             aria-label="Visszaszámláló ideje"
