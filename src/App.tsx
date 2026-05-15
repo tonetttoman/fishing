@@ -26,6 +26,15 @@ function formatClock(totalSeconds: number) {
   return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
+function formatDateTime(date: Date) {
+  return new Intl.DateTimeFormat('hu-HU', {
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(date);
+}
+
 function App() {
   const [configuredSeconds, setConfiguredSeconds] = useState(DEFAULT_SECONDS);
   const [displaySeconds, setDisplaySeconds] = useState(DEFAULT_SECONDS);
@@ -34,19 +43,30 @@ function App() {
   const [isSettingLocked, setIsSettingLocked] = useState(true);
   const [fishCount, setFishCount] = useState(0);
   const [castCount, setCastCount] = useState(0);
+  const [currentDate, setCurrentDate] = useState(() => new Date());
 
   const deadlineRef = useRef<number | null>(null);
   const tickTimerRef = useRef<number | null>(null);
+  const clockTimerRef = useRef<number | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const alarmPlayedRef = useRef(false);
   const wakeLockRef = useRef<WakeLockSentinelLike | null>(null);
 
   const displayLabel = useMemo(() => formatClock(displaySeconds), [displaySeconds]);
+  const dateTimeLabel = useMemo(() => formatDateTime(currentDate), [currentDate]);
 
   useEffect(() => {
+    clockTimerRef.current = window.setInterval(() => {
+      setCurrentDate(new Date());
+    }, 1000);
+
     return () => {
       if (tickTimerRef.current !== null) {
         window.clearInterval(tickTimerRef.current);
+      }
+
+      if (clockTimerRef.current !== null) {
+        window.clearInterval(clockTimerRef.current);
       }
 
       releaseWakeLock();
@@ -228,6 +248,7 @@ function App() {
     <main className="app-shell">
       <section className="timer-card">
         <section className={`timer-panel ${hasExpired ? 'timer-panel--expired' : ''}`}>
+          <div className="date-time-display">{dateTimeLabel}</div>
           <button
             className="timer-main-button"
             type="button"
