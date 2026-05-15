@@ -289,6 +289,10 @@ function App() {
   };
 
   const toggleSessionTimer = () => {
+    if (isSettingLocked) {
+      return;
+    }
+
     setIsSessionRunning((current) => !current);
   };
 
@@ -308,6 +312,7 @@ function App() {
               className={`session-placeholder-button ${isSessionRunning ? 'session-placeholder-button--running' : ''}`}
               type="button"
               onClick={toggleSessionTimer}
+              disabled={isSettingLocked}
               aria-label="Session időzítő indítása vagy megállítása"
             >
               {sessionLabel}
