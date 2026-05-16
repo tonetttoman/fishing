@@ -68,7 +68,7 @@ Useful testing feedback includes:
 - whether the main buttons are in the right place,
 - whether fish and cast counting is fast enough,
 - whether the session timer placement is useful,
-- anything missing for real bank-side use.
+- anything missing for practical use on the bank.
 
 For bug reports, please include:
 
@@ -377,6 +377,6 @@ https://tonetttoman.github.io/fishing/
 
 `v1.0` funkcionális, vízparti tesztelés előtt / alatt.
 
-Current focus: real bank-side usability, phone behavior, strong sunlight visibility, wet-hand handling and competition-pace operation.
+Current focus: practical use on the bank, phone behavior, visibility in strong sunlight, wet-hand handling and competition-pace operation.
 
 Jelenlegi fókusz: vízparti használhatóság, telefonos működés, kezelhetőség erős fényben, vizes kézzel és versenytempóban.
