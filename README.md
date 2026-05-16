@@ -1,8 +1,10 @@
 # Feeder Timer
 
-Egyszerű, mobilra optimalizált feeder horgász segédapp dobásidőzítéshez, fogásszámláláshoz és session idő méréséhez.
+Tempos feeder versenyhorgászathoz készült mobilos segédeszköz.
 
-Az app elsődleges célja, hogy vízparton, telefonról, nagy gombokkal és erős kontraszttal gyorsan kezelhető legyen.
+Az app célja, hogy egyetlen telefonos felületen kiváltsa a külön halszámláló klikkert és a dobástempó figyelésére használt stoppert. Verseny vagy intenzív feeder peca közben gyorsan kezelhető: nagy gombokkal, erős kontraszttal, minimális szöveggel és véletlen nyomások ellen lockolható beállításokkal.
+
+Elsősorban olyan helyzetekre készült, ahol fontos a pontos dobásritmus, a fogások gyors számolása és az adott etap / session idejének követése.
 
 ## Élő verzió
 
@@ -14,9 +16,19 @@ https://tonetttoman.github.io/fishing/
 
 Telefonon érdemes Chrome-ból megnyitni, majd kezdőképernyőre telepíteni.
 
+## Mire való?
+
+A Feeder Timer három dolgot fog össze egy képernyőre:
+
+- dobástempó figyelése visszaszámlálóval,
+- fogások számolása halszámlálóként,
+- teljes horgász session / etap idejének mérése.
+
+Így nem kell külön klikkert, külön stoppert és külön órát használni. A cél az, hogy versenytempóban is egyértelmű legyen, mikor kell újradobni, mennyi halnál jársz, és mennyi ideje tart az adott etap.
+
 ## Tesztelés és visszajelzés
 
-A projekt publikus, tesztelhető és véleményezhető.
+A projekt jelenleg `v1.0` tesztállapotban van. Elsősorban feeder versenyhorgászok, intenzív method / feeder pecát gyakorlók és olyan horgászok visszajelzése hasznos, akik ténylegesen figyelik a dobástempót és számolják a fogásokat.
 
 App:
 
@@ -36,34 +48,41 @@ Hibajelentést és fejlesztési ötletet GitHub Issue-ként érdemes rögzíteni
 https://github.com/tonetttoman/fishing/issues
 ```
 
-Hasznos visszajelzéshez érdemes megadni:
+Tesztelésnél különösen hasznos visszajelzés:
+
+- mennyire jól látható erős napfényben,
+- mennyire kezelhető vizes kézzel,
+- zavaró-e bármi versenytempóban,
+- jó helyen vannak-e a fő gombok,
+- elég gyors-e a hal és dobás számolása,
+- hasznos-e a session timer elhelyezése,
+- hiányzik-e valami a valódi vízparti használathoz.
+
+Hibajelentéshez érdemes megadni:
 
 - milyen telefonon tesztelted,
 - milyen böngészőben futott,
 - kezdőképernyőről vagy böngészőből indítottad-e,
-- mi működött jól,
-- mi volt zavaró,
 - pontosan mit nyomtál meg, amikor a hiba előjött,
 - lehetőleg képernyőképet is.
 
 ## Fő funkciók
 
-- állítható dobás-visszaszámláló `5 mp` és `60 perc` között,
-- alapértelmezett idő: `02:30`,
-- a nagy időzítő panel érintésre indítja vagy újraindítja a dobásidőt,
-- lejáratkor hangjelzés,
-- lejáratkor a timer panel pirosra vált,
-- külön dobásszámláló,
-- külön halszámláló,
-- hibajavító `-` gombok unlock módban,
+- dobástempó-időzítő `5 mp` és `60 perc` között,
+- alapértelmezett dobásidő: `02:30`,
+- a nagy felső panel érintésre indítja vagy újraindítja a dobásidőt,
+- lejáratkor hangjelzés és piros figyelmeztető állapot,
+- automatikus dobásszámlálás minden újraindításnál,
+- nagy halszámláló panel, amely klikkerként használható,
+- halszám és dobásszám javítása unlock módban,
 - dobásszámláló nullázása unlock módban,
-- külön session timer,
+- külön session timer az adott peca / etap teljes idejének mérésére,
 - session start/stop csak unlock módban,
 - session reset csak unlock módban,
+- lockolt kezelőfelület a véletlen nyomások ellen,
 - dátum és pontos idő kijelzés,
-- beállítási slider lockolható,
-- PWA metadata, ikon és service worker,
-- kezdőképernyőről app-szerűen indítható.
+- mobilra és kültéri használatra optimalizált, nagy kontrasztú felület,
+- kezdőképernyőről app-szerűen indítható PWA.
 
 ## Telefonos telepítés
 
@@ -100,10 +119,18 @@ A felső nagy időzítő panel maga a dobás timer gombja.
 
 ### Hal számláló
 
-A középső nagy panel a halszámláló.
+A középső nagy panel a halszámláló klikker.
 
 - érintésre `+1` hal,
 - unlock módban a bal alsó `-` gombbal javítható.
+
+### Session timer
+
+A felső sor közepén látható session timer az adott horgász etap teljes idejét méri.
+
+- locked módban csak kijelzőként működik,
+- unlock módban indítható és megállítható,
+- unlock módban a piros `×` gombbal nullázható.
 
 ### Lock / unlock
 
@@ -180,4 +207,4 @@ https://tonetttoman.github.io/fishing/
 
 `v1.0` funkcionális próba előtt / alatt.
 
-A jelenlegi fókusz: vízparti használhatóság, telefonos működés, kezelhetőség erős fényben és vizes kézzel.
+A jelenlegi fókusz: vízparti használhatóság, telefonos működés, kezelhetőség erős fényben, vizes kézzel és versenytempóban.
