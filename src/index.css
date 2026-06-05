@@ -231,10 +231,11 @@ button {
 
 .setting-panel {
   position: relative;
+  z-index: 3;
   background: rgba(18, 28, 24, 0.94);
   border: 1px solid rgba(255, 247, 220, 0.32);
-  border-radius: 0.75rem;
-  padding: 0.18rem 0.45rem 0.02rem;
+  border-radius: 0.95rem;
+  padding: 0.4rem 0.55rem 0.3rem;
   box-shadow:
     0 0.18rem 0.5rem rgba(0, 0, 0, 0.28),
     inset 0 0 0 1px rgba(255, 255, 255, 0.04);
@@ -242,22 +243,48 @@ button {
 
 .setting-panel--locked {
   background: rgba(28, 28, 24, 0.94);
+  padding-bottom: 0.22rem;
+}
+
+.setting-panel--unlocked {
+  min-height: 7.6rem;
+  margin-top: -1.3rem;
+  padding-top: 0.65rem;
+  padding-bottom: 2.35rem;
+  box-shadow:
+    0 0.45rem 1rem rgba(0, 0, 0, 0.34),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .setting-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 0.45rem;
-  margin-bottom: -0.28rem;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-bottom: 0.45rem;
+}
+
+.setting-value-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+}
+
+.setting-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 247, 220, 0.64);
 }
 
 .setting-value {
   display: block;
-  font-size: 1.05rem;
-  line-height: 0.95;
+  font-size: clamp(1.45rem, 7vw, 2.2rem);
+  line-height: 0.92;
   margin-top: 0;
   color: #fff7dc;
+  font-variant-numeric: tabular-nums;
 }
 
 .setting-actions {
@@ -269,7 +296,8 @@ button {
 .lock-button,
 .cast-reset-button,
 .session-placeholder-button,
-.session-reset-button {
+.session-reset-button,
+.time-adjust-button {
   min-width: 3.5rem;
   min-height: 1.65rem;
   border-radius: 999px;
@@ -308,13 +336,9 @@ button {
 .cast-reset-button {
   position: absolute;
   left: 0.45rem;
-  bottom: 0.2rem;
+  bottom: 0.45rem;
   min-width: 3.5rem;
   background: rgba(7, 13, 11, 0.74);
-}
-
-.setting-panel:has(.cast-reset-button) {
-  padding-bottom: 1.85rem;
 }
 
 .setting-panel--locked .lock-button {
@@ -323,12 +347,38 @@ button {
   border-color: rgba(255, 235, 228, 0.62);
 }
 
+.time-control-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.time-adjust-button {
+  min-width: 3.65rem;
+  min-height: 3.65rem;
+  padding: 0;
+  border: 2px solid rgba(255, 247, 220, 0.6);
+  background: linear-gradient(180deg, #183f2a 0%, #0f281c 100%);
+  color: #fff7dc;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.time-adjust-button:active {
+  transform: translateY(0.12rem) scale(0.97);
+}
+
 .time-slider {
   width: 100%;
-  height: 1.25rem;
+  height: 3.4rem;
   margin: 0;
   accent-color: #23b665;
   display: block;
+}
+
+.setting-panel--locked .time-slider {
+  height: 1.5rem;
 }
 
 .time-slider:disabled {

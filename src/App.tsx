@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-const MIN_SECONDS = 5;
-const MAX_SECONDS = 60 * 60;
-const DEFAULT_SECONDS = 2 * 60 + 30;
+const MIN_CAST_SECONDS = 60;
+const MAX_CAST_SECONDS = 30 * 60;
+const DEFAULT_CAST_SECONDS = 150;
+const CAST_STEP_SECONDS = 10;
+const CAST_SECONDS_STORAGE_KEY = 'fishing.castSeconds';
 
 type WakeLockSentinelLike = {
   release: () => Promise<void>;
@@ -15,8 +17,20 @@ type NavigatorWithWakeLock = Navigator & {
   };
 };
 
-function clampSeconds(value: number) {
-  return Math.min(MAX_SECONDS, Math.max(MIN_SECONDS, Math.round(value)));
+function clampCastSeconds(value: number) {
+  return Math.min(MAX_CAST_SECONDS, Math.max(MIN_CAST_SECONDS, value));
+}
+
+function snapCastSeconds(value: number) {
+  return Math.round(value / CAST_STEP_SECONDS) * CAST_STEP_SECONDS;
+}
+
+function normalizeCastSeconds(value: unknown) {
+  if (typeof value !== 'number' || !Number.isFinite(value)) {
+    return DEFAULT_CAST_SECONDS;
+  }
+
+  return clampCastSeconds(snapCastSeconds(value));
 }
 
 function formatClock(totalSeconds: number) {
@@ -48,9 +62,27 @@ function formatTime(date: Date) {
   }).format(date);
 }
 
+function readStoredCastSeconds() {
+  if (typeof window === 'undefined') {
+    return DEFAULT_CAST_SECONDS;
+  }
+
+  try {
+    const storedValue = window.localStorage.getItem(CAST_SECONDS_STORAGE_KEY);
+
+    if (storedValue === null) {
+      return DEFAULT_CAST_SECONDS;
+    }
+
+    return normalizeCastSeconds(Number(storedValue));
+  } catch {
+    return DEFAULT_CAST_SECONDS;
+  }
+}
+
 function App() {
-  const [configuredSeconds, setConfiguredSeconds] = useState(DEFAULT_SECONDS);
-  const [displaySeconds, setDisplaySeconds] = useState(DEFAULT_SECONDS);
+  const [configuredSeconds, setConfiguredSeconds] = useState(readStoredCastSeconds);
+  const [displaySeconds, setDisplaySeconds] = useState(readStoredCastSeconds);
   const [isRunning, setIsRunning] = useState(false);
   const [hasExpired, setHasExpired] = useState(false);
   const [isSettingLocked, setIsSettingLocked] = useState(true);
@@ -177,6 +209,14 @@ function App() {
     playAlarm();
   }, [hasExpired]);
 
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(CAST_SECONDS_STORAGE_KEY, String(configuredSeconds));
+    } catch {
+      // If storage is unavailable, keep the timer usable anyway.
+    }
+  }, [configuredSeconds]);
+
   const requestWakeLock = async () => {
     try {
       const wakeLock = (navigator as NavigatorWithWakeLock).wakeLock;
@@ -202,7 +242,7 @@ function App() {
     try {
       await wakeLockRef.current.release();
     } catch {
-      // Ha a rendszer már elengedte, nincs több dolgunk vele.
+      // If the system already released it, there is nothing else to do.
     } finally {
       wakeLockRef.current = null;
     }
@@ -248,7 +288,7 @@ function App() {
       oscillator.start();
       oscillator.stop(context.currentTime + 0.38);
     } catch {
-      // A böngésző hangblokkolása nem állíthatja meg a timer működését.
+      // Browser audio blocking should not stop the timer from working.
     }
   };
 
@@ -264,12 +304,16 @@ function App() {
   };
 
   const updateConfiguredTime = (nextValue: number) => {
-    const safeValue = clampSeconds(nextValue);
+    const safeValue = normalizeCastSeconds(nextValue);
     setConfiguredSeconds(safeValue);
 
     if (!isRunning) {
       setDisplaySeconds(safeValue);
     }
+  };
+
+  const nudgeConfiguredTime = (deltaSeconds: number) => {
+    updateConfiguredTime(configuredSeconds + deltaSeconds);
   };
 
   const incrementFishCount = () => {
@@ -350,9 +394,15 @@ function App() {
           ) : null}
         </section>
 
-        <section className={`setting-panel ${isSettingLocked ? 'setting-panel--locked' : ''}`} aria-label="Idő beállítása">
+        <section
+          className={`setting-panel ${isSettingLocked ? 'setting-panel--locked' : 'setting-panel--unlocked'}`}
+          aria-label="Idő beállítása"
+        >
           <div className="setting-header">
-            <strong className="setting-value">{formatClock(configuredSeconds)}</strong>
+            <div className="setting-value-group">
+              <span className="setting-label">Dobási idő</span>
+              <strong className="setting-value">{formatClock(configuredSeconds)}</strong>
+            </div>
             <div className="setting-actions">
               <button
                 className="lock-button"
@@ -365,17 +415,41 @@ function App() {
             </div>
           </div>
 
-          <input
-            className="time-slider"
-            type="range"
-            min={MIN_SECONDS}
-            max={MAX_SECONDS}
-            step={5}
-            value={configuredSeconds}
-            disabled={isSettingLocked}
-            onChange={(event) => updateConfiguredTime(Number(event.target.value))}
-            aria-label="Visszaszámláló ideje"
-          />
+          <div className="time-control-row">
+            {!isSettingLocked ? (
+              <button
+                className="time-adjust-button"
+                type="button"
+                onClick={() => nudgeConfiguredTime(-CAST_STEP_SECONDS)}
+                aria-label="Dobási idő csökkentése 10 másodperccel"
+              >
+                −
+              </button>
+            ) : null}
+
+            <input
+              className="time-slider"
+              type="range"
+              min={MIN_CAST_SECONDS}
+              max={MAX_CAST_SECONDS}
+              step={CAST_STEP_SECONDS}
+              value={configuredSeconds}
+              disabled={isSettingLocked}
+              onChange={(event) => updateConfiguredTime(Number(event.target.value))}
+              aria-label="Visszaszámláló ideje"
+            />
+
+            {!isSettingLocked ? (
+              <button
+                className="time-adjust-button"
+                type="button"
+                onClick={() => nudgeConfiguredTime(CAST_STEP_SECONDS)}
+                aria-label="Dobási idő növelése 10 másodperccel"
+              >
+                +
+              </button>
+            ) : null}
+          </div>
 
           {!isSettingLocked ? (
             <button className="cast-reset-button" type="button" onClick={resetCastCount}>
