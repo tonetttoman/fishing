@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Query latest transcription workflow runs and cancel duplicates
+      - name: Query transcript workflow runs and cancel podcast duplicates
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -51,6 +51,21 @@ jobs:
               > research/transcription_run_status/latest_run.json
           fi
 
+          gh run list \
+            --repo "$GITHUB_REPOSITORY" \
+            --workflow fetch-external-youtube-transcripts.yml \
+            --limit 5 \
+            --json databaseId,status,conclusion,createdAt,updatedAt,url,headSha,displayTitle \
+            > research/transcription_run_status/external_runs.json
+
+          EXTERNAL_ID=$(jq -r '.[0].databaseId // empty' research/transcription_run_status/external_runs.json)
+          if [ -n "$EXTERNAL_ID" ]; then
+            gh run view "$EXTERNAL_ID" \
+              --repo "$GITHUB_REPOSITORY" \
+              --json databaseId,status,conclusion,createdAt,updatedAt,url,jobs \
+              > research/transcription_run_status/external_run.json
+          fi
+
       - name: Commit status snapshot
         run: |
           git config user.name 'github-actions[bot]'
@@ -59,8 +74,8 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No workflow status changes to commit.'
           else
-            git commit -m 'Update podcast transcription status'
+            git commit -m 'Update transcript workflow status'
             git push
           fi
 
-# Keeps the oldest active transcription run and cancels later duplicates.
+# Keeps the oldest active podcast transcription run and records external fallback status.
