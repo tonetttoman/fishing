@@ -1,0 +1,56 @@
+name: Query podcast transcription status
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/query-podcast-transcription-status.yml
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  query:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Query latest transcription workflow runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p research/transcription_run_status
+          gh run list \
+            --repo "$GITHUB_REPOSITORY" \
+            --workflow transcribe-podcast-audio.yml \
+            --limit 5 \
+            --json databaseId,status,conclusion,createdAt,updatedAt,url,headSha,displayTitle \
+            > research/transcription_run_status/latest_runs.json
+
+          RUN_ID=$(jq -r '.[0].databaseId // empty' research/transcription_run_status/latest_runs.json)
+          if [ -n "$RUN_ID" ]; then
+            gh run view "$RUN_ID" \
+              --repo "$GITHUB_REPOSITORY" \
+              --json databaseId,status,conclusion,createdAt,updatedAt,url,jobs \
+              > research/transcription_run_status/latest_run.json
+          fi
+
+      - name: Commit status snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/transcription_run_status
+          if git diff --cached --quiet; then
+            echo 'No workflow status changes to commit.'
+          else
+            git commit -m 'Update podcast transcription status'
+            git push
+          fi
