@@ -1,4 +1,4 @@
-YouTube-only videos attempted: 17
-Captions extracted: 17
-Captions failed/unavailable: 0
-Timestamped entries: 6127
+Playlist videos attempted: 45
+Captions extracted: 36
+Captions failed/unavailable: 9
+Clean timestamped entries: 9855

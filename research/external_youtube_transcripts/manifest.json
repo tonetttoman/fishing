@@ -1,5 +1,16 @@
 [
   {
+    "index": 1,
+    "video_id": "daGvAit3o3k",
+    "title": "102. A trükk, ami meghozta a világbajnoki címet - Csillag László | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 152,
+    "provider_url": "https://youtube-transcript.ai/transcript/daGvAit3o3k.txt?lang=hu",
+    "response_bytes": 236409,
+    "raw_file": "raw_markdown/daGvAit3o3k.txt",
+    "transcript_file": "clean_txt/001_daGvAit3o3k.txt"
+  },
+  {
     "index": 2,
     "video_id": "mCgbBdYVFQQ",
     "title": "Parti-Arcok Live - Walter Tamással - 14. rész - Helykeresés vol. 2.",
@@ -176,6 +187,28 @@
     "transcript_file": "clean_txt/017_niCiVZxXJ5A.txt"
   },
   {
+    "index": 18,
+    "video_id": "PjXmWtiQvwA",
+    "title": "124. A pontyozás kémiája és orvosi eszközök a vízparton – Kovács Zoltán | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 215,
+    "provider_url": "https://youtube-transcript.ai/transcript/PjXmWtiQvwA.txt?lang=hu",
+    "response_bytes": 373206,
+    "raw_file": "raw_markdown/PjXmWtiQvwA.txt",
+    "transcript_file": "clean_txt/018_PjXmWtiQvwA.txt"
+  },
+  {
+    "index": 19,
+    "video_id": "gOk_2ticXCw",
+    "title": "123. A legfinomabb peca és a büdös nagy dévérek – Ujvári Zsolt | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 184,
+    "provider_url": "https://youtube-transcript.ai/transcript/gOk_2ticXCw.txt?lang=hu",
+    "response_bytes": 268433,
+    "raw_file": "raw_markdown/gOk_2ticXCw.txt",
+    "transcript_file": "clean_txt/019_gOk_2ticXCw.txt"
+  },
+  {
     "index": 20,
     "video_id": "0Jb6zEpz_Pg",
     "title": "Parti-Arcok 10. Live+ - Etetőanyagok Walter Tamással",
@@ -185,5 +218,253 @@
     "response_bytes": 405398,
     "raw_file": "raw_markdown/0Jb6zEpz_Pg.txt",
     "transcript_file": "clean_txt/020_0Jb6zEpz_Pg.txt"
+  },
+  {
+    "index": 21,
+    "video_id": "LRYrg3Hj1SE",
+    "title": "119. A legjobban motiválható hal és a keszegekkel suttogó - Sivák Mátyás | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 159,
+    "provider_url": "https://youtube-transcript.ai/transcript/LRYrg3Hj1SE.txt?lang=hu",
+    "response_bytes": 228185,
+    "raw_file": "raw_markdown/LRYrg3Hj1SE.txt",
+    "transcript_file": "clean_txt/021_LRYrg3Hj1SE.txt"
+  },
+  {
+    "index": 22,
+    "video_id": "jaLetRbG3io",
+    "title": "116. „Van a halfogás és van a horgászat” - Orbán István | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 203,
+    "provider_url": "https://youtube-transcript.ai/transcript/jaLetRbG3io.txt?lang=hu",
+    "response_bytes": 313519,
+    "raw_file": "raw_markdown/jaLetRbG3io.txt",
+    "transcript_file": "clean_txt/022_jaLetRbG3io.txt"
+  },
+  {
+    "index": 23,
+    "video_id": "qxWWDNWNKPQ",
+    "title": "109. A világ egyik legtechnikásabb horgásza - Bodzsár Norbert | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 222,
+    "provider_url": "https://youtube-transcript.ai/transcript/qxWWDNWNKPQ.txt?lang=hu",
+    "response_bytes": 374050,
+    "raw_file": "raw_markdown/qxWWDNWNKPQ.txt",
+    "transcript_file": "clean_txt/023_qxWWDNWNKPQ.txt"
+  },
+  {
+    "index": 24,
+    "video_id": "n8ZbdsSVev4",
+    "title": "108. A kenyér reneszánsza és trükkös márnázások | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 180,
+    "provider_url": "https://youtube-transcript.ai/transcript/n8ZbdsSVev4.txt?lang=hu",
+    "response_bytes": 296241,
+    "raw_file": "raw_markdown/n8ZbdsSVev4.txt",
+    "transcript_file": "clean_txt/024_n8ZbdsSVev4.txt"
+  },
+  {
+    "index": 25,
+    "video_id": "tZjDq117b_Q",
+    "title": "107. Hosszúelőkés cuccot a method kosárba! - Bakó Péter | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 246,
+    "provider_url": "https://youtube-transcript.ai/transcript/tZjDq117b_Q.txt?lang=hu",
+    "response_bytes": 423920,
+    "raw_file": "raw_markdown/tZjDq117b_Q.txt",
+    "transcript_file": "clean_txt/025_tZjDq117b_Q.txt"
+  },
+  {
+    "index": 26,
+    "video_id": "vrpNap7cMow",
+    "title": "106. Világbajnok etetőanyag két nap alatt - Tímár Gábor | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 261,
+    "provider_url": "https://youtube-transcript.ai/transcript/vrpNap7cMow.txt?lang=hu",
+    "response_bytes": 318734,
+    "raw_file": "raw_markdown/vrpNap7cMow.txt",
+    "transcript_file": "clean_txt/026_vrpNap7cMow.txt"
+  },
+  {
+    "index": 27,
+    "video_id": "ix2ChQ-oJP4",
+    "title": "105. Minden világversenyen vért kell hugyozni  - Szabó Bence | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 235,
+    "provider_url": "https://youtube-transcript.ai/transcript/ix2ChQ-oJP4.txt?lang=hu",
+    "response_bytes": 375380,
+    "raw_file": "raw_markdown/ix2ChQ-oJP4.txt",
+    "transcript_file": "clean_txt/027_ix2ChQ-oJP4.txt"
+  },
+  {
+    "index": 28,
+    "video_id": "o70jkdoNxy4",
+    "title": "104. A horgászat Chuck Norrisa - Erdei Attila | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 228,
+    "provider_url": "https://youtube-transcript.ai/transcript/o70jkdoNxy4.txt?lang=hu",
+    "response_bytes": 327455,
+    "raw_file": "raw_markdown/o70jkdoNxy4.txt",
+    "transcript_file": "clean_txt/028_o70jkdoNxy4.txt"
+  },
+  {
+    "index": 29,
+    "video_id": "JDMl-QhY8hk",
+    "title": "97. A jó horgászathoz négy dolog elég - Szilvási Szilárd | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 187,
+    "provider_url": "https://youtube-transcript.ai/transcript/JDMl-QhY8hk.txt?lang=hu",
+    "response_bytes": 260693,
+    "raw_file": "raw_markdown/JDMl-QhY8hk.txt",
+    "transcript_file": "clean_txt/029_JDMl-QhY8hk.txt"
+  },
+  {
+    "index": 30,
+    "video_id": "X_wRPajL7eE",
+    "title": "91. Mi volt 2024 nagy innovációja a versenyhorgászatban? - Szabó Bence | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 166,
+    "provider_url": "https://youtube-transcript.ai/transcript/X_wRPajL7eE.txt?lang=hu",
+    "response_bytes": 257844,
+    "raw_file": "raw_markdown/X_wRPajL7eE.txt",
+    "transcript_file": "clean_txt/030_X_wRPajL7eE.txt"
+  },
+  {
+    "index": 31,
+    "video_id": "2Dqt5q2N0lk",
+    "title": "79. Üdvözlet a \"tuhanyi HÉV mellől\" - Jéger Szabolcs | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 170,
+    "provider_url": "https://youtube-transcript.ai/transcript/2Dqt5q2N0lk.txt?lang=hu",
+    "response_bytes": 267780,
+    "raw_file": "raw_markdown/2Dqt5q2N0lk.txt",
+    "transcript_file": "clean_txt/031_2Dqt5q2N0lk.txt"
+  },
+  {
+    "index": 32,
+    "video_id": "rvimoZbpiBY",
+    "title": "78. Pontyok extrém mélységből és a csalik kémiája - Kovács Zoltán | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 208,
+    "provider_url": "https://youtube-transcript.ai/transcript/rvimoZbpiBY.txt?lang=hu",
+    "response_bytes": 356134,
+    "raw_file": "raw_markdown/rvimoZbpiBY.txt",
+    "transcript_file": "clean_txt/032_rvimoZbpiBY.txt"
+  },
+  {
+    "index": 33,
+    "video_id": "IPemBavRZZM",
+    "title": "77. Az etetőanyag-gyártás titkai - Timár Szabolcs | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 170,
+    "provider_url": "https://youtube-transcript.ai/transcript/IPemBavRZZM.txt?lang=hu",
+    "response_bytes": 262323,
+    "raw_file": "raw_markdown/IPemBavRZZM.txt",
+    "transcript_file": "clean_txt/033_IPemBavRZZM.txt"
+  },
+  {
+    "index": 34,
+    "video_id": "gjyFGofMxtA",
+    "title": "76. Út a 10 világbajnoki címig - Bakó Péter | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 192,
+    "provider_url": "https://youtube-transcript.ai/transcript/gjyFGofMxtA.txt?lang=hu",
+    "response_bytes": 337554,
+    "raw_file": "raw_markdown/gjyFGofMxtA.txt",
+    "transcript_file": "clean_txt/034_gjyFGofMxtA.txt"
+  },
+  {
+    "index": 35,
+    "video_id": "FwSYJDMHtPA",
+    "title": "72. A folyóvízi horgászat alapvető trükkje - vendég: Gyulai Ferenc | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 182,
+    "provider_url": "https://youtube-transcript.ai/transcript/FwSYJDMHtPA.txt?lang=hu",
+    "response_bytes": 243784,
+    "raw_file": "raw_markdown/FwSYJDMHtPA.txt",
+    "transcript_file": "clean_txt/035_FwSYJDMHtPA.txt"
+  },
+  {
+    "index": 36,
+    "video_id": "eYvZyIySNlY",
+    "title": "65. \"Horgászni könnyebb megtanulni, mint jó csapattagnak lenni\" - Szabó Bence | Parti-Arcok Podcast",
+    "status": "caption_extracted",
+    "entries": 168,
+    "provider_url": "https://youtube-transcript.ai/transcript/eYvZyIySNlY.txt?lang=hu",
+    "response_bytes": 257871,
+    "raw_file": "raw_markdown/eYvZyIySNlY.txt",
+    "transcript_file": "clean_txt/036_eYvZyIySNlY.txt"
+  },
+  {
+    "index": 37,
+    "video_id": "gxkGmMLh2K0",
+    "title": "50. A pontyok viagrája - Vendég: Futó Márton | Parti-Arcok Podcast",
+    "status": "failed",
+    "response_bytes": 609,
+    "error": "provider response contained no parseable timestamped transcript rows"
+  },
+  {
+    "index": 38,
+    "video_id": "YoP9wXOVFkE",
+    "title": "42. \"Szia uram, a világ legjobb úszója érdekel?\" Vendég: Králik Károly | Parti-Arcok Podcast",
+    "status": "failed",
+    "response_bytes": 638,
+    "error": "provider response contained no parseable timestamped transcript rows"
+  },
+  {
+    "index": 39,
+    "video_id": "7Y_3xkARV6o",
+    "title": "39. Method feeder: a OB cím értékesebb, mint világbajnoki–Szabó Bence | Parti-Arcok Podcast",
+    "status": "failed",
+    "response_bytes": 637,
+    "error": "provider response contained no parseable timestamped transcript rows"
+  },
+  {
+    "index": 40,
+    "video_id": "xYIxq4ZgjvQ",
+    "title": "32. Amur horgászat hagyományos és különleges módokon - Vendég: Bánki Márk | Parti-Arcok Podcast",
+    "status": "failed",
+    "response_bytes": 643,
+    "error": "provider response contained no parseable timestamped transcript rows"
+  },
+  {
+    "index": 41,
+    "video_id": "GrXVKLnF20k",
+    "title": "19. Method feeder - Tanácsok egy világbajnoktól - Vendég: Szabó Bence",
+    "status": "failed",
+    "response_bytes": 613,
+    "error": "provider response contained no parseable timestamped transcript rows"
+  },
+  {
+    "index": 42,
+    "video_id": "z3ROENzuA3U",
+    "title": "18. Úszós horgászat a mindennapokban és versenyeken - Vendég: Jéger Szabolcs",
+    "status": "failed",
+    "response_bytes": 621,
+    "error": "provider response contained no parseable timestamped transcript rows"
+  },
+  {
+    "index": 43,
+    "video_id": "72JM1a_b8Vk",
+    "title": "12. A feeder horgászat és a versenyzés - Vendég: Pechnyó Gergely",
+    "status": "failed",
+    "response_bytes": 608,
+    "error": "provider response contained no parseable timestamped transcript rows"
+  },
+  {
+    "index": 44,
+    "video_id": "qcXx57fnYqo",
+    "title": "4. Pontos, ütemes etetés - úszós és feeder horgászat - Vendég: Jámbor Attila",
+    "status": "failed",
+    "response_bytes": 623,
+    "error": "provider response contained no parseable timestamped transcript rows"
+  },
+  {
+    "index": 45,
+    "video_id": "ii19xL2LbgI",
+    "title": "11. A Tisza és a folyóvízi horgászat - Vendég: Farkas Máté",
+    "status": "failed",
+    "response_bytes": 604,
+    "error": "provider response contained no parseable timestamped transcript rows"
   }
 ]
