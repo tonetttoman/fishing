@@ -12,6 +12,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: external-youtube-transcripts
+  cancel-in-progress: true
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -47,7 +51,8 @@ jobs:
             echo 'No external transcript changes to commit.'
           else
             git commit -m 'Add external YouTube transcripts'
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
 
       - name: Upload transcript package
