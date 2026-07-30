@@ -1,0 +1,60 @@
+name: Map podcast audio sources
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - tools/prepare_podcast_audio_map.py
+      - .github/workflows/map-podcast-audio.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: podcast-audio-mapping
+  cancel-in-progress: false
+
+jobs:
+  map:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Match playlist videos to podcast RSS audio
+        run: |
+          python tools/prepare_podcast_audio_map.py \
+            research/youtube_transcripts/playlist.json \
+            --output research/podcast_audio_map.json
+
+      - name: Commit podcast audio map
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/podcast_audio_map.json research/podcast_audio_map.summary.txt
+          if git diff --cached --quiet; then
+            echo 'No podcast mapping changes to commit.'
+          else
+            git commit -m 'Add podcast audio source map'
+            git push
+          fi
+
+      - name: Upload mapping artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: podcast-audio-map
+          path: |
+            research/podcast_audio_map.json
+            research/podcast_audio_map.summary.txt
+          retention-days: 30
