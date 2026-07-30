@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  actions: read
+  actions: write
   contents: write
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Query latest transcription workflow runs
+      - name: Query latest transcription workflow runs and cancel duplicates
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -31,13 +31,21 @@ jobs:
           gh run list \
             --repo "$GITHUB_REPOSITORY" \
             --workflow transcribe-podcast-audio.yml \
-            --limit 5 \
+            --limit 10 \
             --json databaseId,status,conclusion,createdAt,updatedAt,url,headSha,displayTitle \
             > research/transcription_run_status/latest_runs.json
 
-          RUN_ID=$(jq -r '.[0].databaseId // empty' research/transcription_run_status/latest_runs.json)
-          if [ -n "$RUN_ID" ]; then
-            gh run view "$RUN_ID" \
+          KEEP_ID=$(jq -r '[.[] | select(.status != "completed")] | sort_by(.createdAt) | .[0].databaseId // empty' research/transcription_run_status/latest_runs.json)
+          jq -r --arg keep "$KEEP_ID" '.[] | select(.status != "completed") | select((.databaseId|tostring) != $keep) | .databaseId' \
+            research/transcription_run_status/latest_runs.json \
+            | while read -r DUPLICATE_ID; do
+                [ -n "$DUPLICATE_ID" ] || continue
+                echo "Cancelling duplicate transcription run $DUPLICATE_ID"
+                gh run cancel "$DUPLICATE_ID" --repo "$GITHUB_REPOSITORY" || true
+              done
+
+          if [ -n "$KEEP_ID" ]; then
+            gh run view "$KEEP_ID" \
               --repo "$GITHUB_REPOSITORY" \
               --json databaseId,status,conclusion,createdAt,updatedAt,url,jobs \
               > research/transcription_run_status/latest_run.json
@@ -55,4 +63,4 @@ jobs:
             git push
           fi
 
-# Triggered to capture the current run state.
+# Keeps the oldest active transcription run and cancels later duplicates.
