@@ -1,0 +1,58 @@
+name: Monitor podcast transcription
+
+on:
+  workflow_run:
+    workflows:
+      - Transcribe podcast audio
+    types:
+      - completed
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Save workflow result and job details
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          RUN_NAME: ${{ github.event.workflow_run.name }}
+          RUN_STATUS: ${{ github.event.workflow_run.status }}
+          RUN_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          mkdir -p research/transcription_run_status
+          cat > research/transcription_run_status/summary.txt <<EOF
+          Workflow: $RUN_NAME
+          Run ID: $RUN_ID
+          Status: $RUN_STATUS
+          Conclusion: $RUN_CONCLUSION
+          URL: $RUN_URL
+          EOF
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RUN_ID/jobs?per_page=100" \
+            > research/transcription_run_status/jobs.json
+          gh run view "$RUN_ID" --repo "$GITHUB_REPOSITORY" --log \
+            > research/transcription_run_status/full.log 2>&1 || true
+
+      - name: Commit diagnostics
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/transcription_run_status
+          if git diff --cached --quiet; then
+            echo 'No diagnostics changes to commit.'
+          else
+            git commit -m 'Record podcast transcription workflow result'
+            git push
+          fi
