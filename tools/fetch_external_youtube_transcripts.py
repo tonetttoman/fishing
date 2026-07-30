@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""Fetch captions for playlist items unavailable through YouTube datacenter IPs.
+"""Fetch public captions for playlist items blocked on GitHub datacenter IPs.
 
-Uses the documented public API at getvideotranscript.com only for public video IDs.
+Uses the documented no-key text endpoint at youtube-transcript.ai. It only requests
+public caption tracks and does not bypass private, members-only, or disabled captions.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import re
 import time
 import urllib.error
 import urllib.parse
@@ -15,8 +17,18 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
-API = "https://getvideotranscript.com/api/youtube"
+API_TEMPLATE = "https://youtube-transcript.ai/transcript/{video_id}.txt"
 UA = "Mozilla/5.0 (compatible; FishingResearchBot/1.0; +https://github.com/tonetttoman/fishing)"
+TIMESTAMP_RE = re.compile(r"^\[(?P<stamp>\d{1,2}:\d{2}(?::\d{2})?)\]\s*(?P<text>.*)$")
+
+
+def seconds_from_stamp(value: str) -> int:
+    parts = [int(part) for part in value.split(":")]
+    if len(parts) == 2:
+        return parts[0] * 60 + parts[1]
+    if len(parts) == 3:
+        return parts[0] * 3600 + parts[1] * 60 + parts[2]
+    return 0
 
 
 def stamp(seconds: float | int | None) -> str:
@@ -26,30 +38,57 @@ def stamp(seconds: float | int | None) -> str:
     return f"{hour:02d}:{minute:02d}:{second:02d}"
 
 
-def request_transcript(video_id: str, retries: int = 4) -> tuple[dict[str, Any] | None, str]:
-    url = API + "?" + urllib.parse.urlencode({"video_id": video_id})
-    last_error = ""
-    for attempt in range(1, retries + 1):
-        request = urllib.request.Request(
-            url,
-            headers={
-                "User-Agent": UA,
-                "Accept": "application/json",
-            },
-        )
-        try:
-            with urllib.request.urlopen(request, timeout=300) as response:
-                body = response.read().decode("utf-8", errors="replace")
-            return json.loads(body), ""
-        except urllib.error.HTTPError as exc:
-            body = exc.read().decode("utf-8", errors="replace")[:2000]
-            last_error = f"HTTP {exc.code}: {body}"
-            if exc.code in {400, 404}:
+def request_text(video_id: str, retries: int = 5) -> tuple[str | None, str, str]:
+    base = API_TEMPLATE.format(video_id=urllib.parse.quote(video_id, safe=""))
+    attempts = [base + "?lang=hu", base]
+    errors: list[str] = []
+    for url in attempts:
+        for attempt in range(1, retries + 1):
+            request = urllib.request.Request(
+                url,
+                headers={
+                    "User-Agent": UA,
+                    "Accept": "text/markdown,text/plain;q=0.9,*/*;q=0.5",
+                },
+            )
+            try:
+                with urllib.request.urlopen(request, timeout=180) as response:
+                    body = response.read().decode("utf-8", errors="replace")
+                    content_type = response.headers.get("content-type", "")
+                if response.status == 200 and TIMESTAMP_RE.search(body, re.MULTILINE):
+                    return body, url, content_type
+                errors.append(f"{url}: unusable response ({len(body)} bytes, {content_type})")
                 break
-        except Exception as exc:
-            last_error = f"{type(exc).__name__}: {exc}"
-        time.sleep(min(30, 3 * attempt))
-    return None, last_error
+            except urllib.error.HTTPError as exc:
+                body = exc.read().decode("utf-8", errors="replace")[:1500]
+                errors.append(f"{url}: HTTP {exc.code}: {body}")
+                if exc.code in {400, 404}:
+                    break
+                if exc.code == 429:
+                    time.sleep(min(90, 15 * attempt))
+                else:
+                    time.sleep(min(30, 3 * attempt))
+            except Exception as exc:
+                errors.append(f"{url}: {type(exc).__name__}: {exc}")
+                time.sleep(min(30, 3 * attempt))
+    return None, "", " | ".join(errors[-8:])
+
+
+def parse_markdown(body: str) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for raw_line in body.splitlines():
+        line = raw_line.strip()
+        match = TIMESTAMP_RE.match(line)
+        if not match:
+            continue
+        text = " ".join(match.group("text").split())
+        if not text:
+            continue
+        rows.append({
+            "start": seconds_from_stamp(match.group("stamp")),
+            "text": text,
+        })
+    return rows
 
 
 def main() -> int:
@@ -62,7 +101,7 @@ def main() -> int:
     unmatched = [item for item in mapping.get("items") or [] if item.get("status") != "matched"]
     output = Path(args.output)
     clean = output / "clean_txt"
-    raw = output / "raw_json"
+    raw = output / "raw_markdown"
     clean.mkdir(parents=True, exist_ok=True)
     raw.mkdir(parents=True, exist_ok=True)
 
@@ -76,8 +115,8 @@ def main() -> int:
         video_id = str(item.get("video_id") or "")
         title = str(item.get("youtube_title") or video_id)
         print(f"[{n}/{len(unmatched)}] {title} ({video_id})", flush=True)
-        data, error = request_transcript(video_id)
-        if data is None:
+        body, provider_url, error = request_text(video_id)
+        if body is None:
             failed += 1
             manifest.append({
                 "index": item.get("index"),
@@ -88,31 +127,9 @@ def main() -> int:
             })
             continue
 
-        (raw / f"{video_id}.json").write_text(
-            json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
-        )
-        transcript = data.get("transcript") or data.get("entries") or data.get("segments") or []
-        if not data.get("success", True) or not isinstance(transcript, list) or not transcript:
-            failed += 1
-            manifest.append({
-                "index": item.get("index"),
-                "video_id": video_id,
-                "title": title,
-                "status": "failed",
-                "error": str(data.get("error") or data.get("message") or "empty transcript"),
-            })
-            continue
-
-        rows = []
-        for entry in transcript:
-            if not isinstance(entry, dict):
-                continue
-            text = " ".join(str(entry.get("text") or "").split())
-            if not text:
-                continue
-            start = float(entry.get("start") or entry.get("offset") or 0)
-            duration = float(entry.get("duration") or entry.get("dur") or 0)
-            rows.append({"start": start, "duration": duration, "text": text})
+        raw_path = raw / f"{video_id}.txt"
+        raw_path.write_text(body, encoding="utf-8")
+        rows = parse_markdown(body)
         if not rows:
             failed += 1
             manifest.append({
@@ -120,7 +137,7 @@ def main() -> int:
                 "video_id": video_id,
                 "title": title,
                 "status": "failed",
-                "error": "transcript response contained no usable rows",
+                "error": "provider response contained no timestamped transcript rows",
             })
             continue
 
@@ -130,7 +147,7 @@ def main() -> int:
             f"VIDEÓ: {title}",
             f"URL: {item.get('youtube_url', '')}",
             f"VIDEÓ_ID: {video_id}",
-            "FORRÁS: getvideotranscript.com nyilvános transcript API",
+            "FORRÁS: youtube-transcript.ai kulcs nélküli transcript végpont",
             "",
         ]
         lines.extend(f"[{stamp(row['start'])}] {row['text']}" for row in rows)
@@ -143,9 +160,11 @@ def main() -> int:
             "title": title,
             "status": "caption_extracted",
             "entries": len(rows),
+            "provider_url": provider_url,
+            "raw_file": str(raw_path.relative_to(output)),
             "transcript_file": str(txt_path.relative_to(output)),
         })
-        time.sleep(2)
+        time.sleep(4)
 
     output.mkdir(parents=True, exist_ok=True)
     (output / "manifest.json").write_text(
