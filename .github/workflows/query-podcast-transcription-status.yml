@@ -75,7 +75,8 @@ jobs:
             echo 'No workflow status changes to commit.'
           else
             git commit -m 'Update transcript workflow status'
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
 
-# Keeps the oldest active podcast transcription run and records external fallback status.
+# Refresh marker: 2026-07-30T22:40Z
