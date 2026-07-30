@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - tools/extract_youtube_transcripts.py
+      - tools/process_innertube_transcripts.py
       - .github/workflows/extract-youtube-transcripts.yml
   workflow_dispatch:
 
@@ -32,36 +33,100 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Set up Node for YouTube player challenges
-        uses: actions/setup-node@v4
+      - name: Set up Go
+        uses: actions/setup-go@v5
         with:
-          node-version: '22'
+          go-version: 'stable'
 
-      - name: Install extractor
-        run: python -m pip install --upgrade yt-dlp
+      - name: Build InnerTube transcript client
+        run: |
+          rm -rf /tmp/yt-transcript-src
+          git clone --depth 1 https://github.com/edouard-claude/yt-transcript.git /tmp/yt-transcript-src
+          cd /tmp/yt-transcript-src
+          go build -o /tmp/yt-transcript .
 
-      - name: Extract public captions
+      - name: Prepare video request
         run: |
           rm -rf transcript_work
-          python tools/extract_youtube_transcripts.py \
-            'https://www.youtube.com/playlist?list=PLUBPUx40N7Lo' \
-            --output transcript_work \
-            --retries 8 \
-            --sleep 2.0
+          mkdir -p transcript_work
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path('research/youtube_transcripts')
+          ids = []
+
+          playlist_path = root / 'playlist.json'
+          if playlist_path.exists():
+              playlist = json.loads(playlist_path.read_text(encoding='utf-8'))
+              for entry in playlist.get('entries') or []:
+                  video_id = str(entry.get('id') or '').strip()
+                  if video_id and video_id not in ids:
+                      ids.append(video_id)
+
+          manifest_path = root / 'manifest.json'
+          if not ids and manifest_path.exists():
+              manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+              for entry in manifest:
+                  video_id = str(entry.get('video_id') or '').strip()
+                  if video_id and video_id not in ids:
+                      ids.append(video_id)
+
+          if not ids:
+              raise SystemExit('No playlist video IDs were found in the repository.')
+
+          payload = {
+              'urls': [f'https://www.youtube.com/watch?v={video_id}' for video_id in ids],
+              'lang': 'hu',
+              'segments': True,
+              'limit': 0,
+          }
+          Path('transcript_work/request.json').write_text(
+              json.dumps(payload, ensure_ascii=False), encoding='utf-8'
+          )
+          Path('transcript_work/video_ids.txt').write_text(
+              '\n'.join(ids) + '\n', encoding='utf-8'
+          )
+          print(f'Prepared {len(ids)} video URLs.')
+          PY
+
+      - name: Extract captions through Android InnerTube
+        run: |
+          PORT=8765 /tmp/yt-transcript serve > transcript_work/innertube-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:8765/healthz >/dev/null; then
+              break
+            fi
+            sleep 1
+          done
+
+          curl --fail --show-error --silent \
+            --max-time 3600 \
+            -X POST http://127.0.0.1:8765/api/transcripts \
+            -H 'Content-Type: application/json' \
+            --data-binary @transcript_work/request.json \
+            > transcript_work/innertube_response.json
+
+      - name: Build timestamped transcripts and research candidates
+        id: process
+        continue-on-error: true
+        run: |
+          python tools/process_innertube_transcripts.py \
+            transcript_work/innertube_response.json \
+            --output transcript_work/output
+          echo "status=$?" >> "$GITHUB_OUTPUT"
 
       - name: Prepare repository results
         if: always()
         run: |
+          cp research/youtube_transcripts/playlist.json transcript_work/output/playlist.json 2>/dev/null || true
           rm -rf research/youtube_transcripts
           mkdir -p research/youtube_transcripts
-          if [ -d transcript_work/clean_txt ]; then
-            cp -R transcript_work/clean_txt research/youtube_transcripts/
-          fi
-          for file in playlist.json manifest.json summary.txt all_transcripts_timestamped.txt; do
-            if [ -f "transcript_work/$file" ]; then
-              cp "transcript_work/$file" research/youtube_transcripts/
-            fi
-          done
+          cp -R transcript_work/output/. research/youtube_transcripts/
+          cp transcript_work/innertube-server.log research/youtube_transcripts/ 2>/dev/null || true
 
       - name: Commit extracted transcripts
         if: always()
@@ -72,7 +137,7 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No transcript changes to commit.'
           else
-            git commit -m 'Add extracted YouTube transcripts'
+            git commit -m 'Add InnerTube YouTube transcripts'
             git push
           fi
 
@@ -80,7 +145,13 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: youtube-transcripts
+          name: youtube-transcripts-innertube
           path: transcript_work
           if-no-files-found: warn
           retention-days: 30
+
+      - name: Validate extraction
+        if: always()
+        run: |
+          test -f research/youtube_transcripts/summary.txt
+          grep -Eq '^Captions extracted: [1-9][0-9]*$' research/youtube_transcripts/summary.txt
