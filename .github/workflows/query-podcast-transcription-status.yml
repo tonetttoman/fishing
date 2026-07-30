@@ -54,3 +54,5 @@ jobs:
             git commit -m 'Update podcast transcription status'
             git push
           fi
+
+# Triggered to capture the current run state.
