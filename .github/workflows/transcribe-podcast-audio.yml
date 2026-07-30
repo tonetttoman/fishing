@@ -182,3 +182,5 @@ jobs:
         run: |
           test -f research/podcast_transcripts/summary.txt
           grep -Eq '^Episodes transcribed: [1-9][0-9]*$' research/podcast_transcripts/summary.txt
+
+# Triggered by workflow or transcription-tool changes.
