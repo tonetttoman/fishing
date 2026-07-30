@@ -1,5 +1,6 @@
-Playlist: Horgász
-Playlist URL: https://www.youtube.com/playlist?list=PLUBPUx40N7Lo
-Videos listed: 45
+Videos returned: 45
 Captions extracted: 0
 Captions unavailable/failed: 45
+Timestamped caption segments: 0
+Professional candidate blocks: 0
+Warnings: 0

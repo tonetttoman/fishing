@@ -1,0 +1,6 @@
+HORGÁSZATI SZAKMAI ÁLLÍTÁSJELÖLTEK – AUTOMATIKUS ELSŐ SZŰRÉS
+====================================================================================================
+
+A blokkok valódi feliratokból származnak. Ez még nem a végleges, normalizált tudásbázis:
+a következő fázisban minden jelöltet szakmailag értelmezni, deduplikálni és forrásolni kell.
+
