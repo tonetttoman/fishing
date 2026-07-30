@@ -1,0 +1,369 @@
+name: Build fishing knowledge records
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - research/external_youtube_transcripts/summary.txt
+      - research/podcast_transcripts/summary.txt
+      - tools/build_fishing_candidates.py
+      - tools/normalize_fishing_claims.py
+      - tools/collect_fishing_claims.py
+      - .github/workflows/build-fishing-knowledge.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  MODEL_REPO: Qwen/Qwen2.5-1.5B-Instruct-GGUF
+  MODEL_FILE: qwen2.5-1.5b-instruct-q4_k_m.gguf
+  MODEL_PATH: ${{ github.workspace }}/.cache/models/qwen2.5-1.5b-instruct-q4_k_m.gguf
+  LLAMA_ROOT: ${{ github.workspace }}/.cache/llama.cpp
+
+concurrency:
+  group: fishing-knowledge-build
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+      count: ${{ steps.matrix.outputs.count }}
+      smoke_video: ${{ steps.matrix.outputs.smoke_video }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build canonical transcript source directory
+        run: |
+          rm -rf combined_clean_transcripts research/fishing_candidates
+          mkdir -p combined_clean_transcripts
+          python - <<'PY'
+          import re
+          import shutil
+          from pathlib import Path
+
+          time_re = re.compile(r'^VIDEÓ_ID:\s*(.+)$')
+          chosen = {}
+          # External captions provide broad coverage; Whisper podcast transcripts overwrite them when available.
+          for directory in (
+              Path('research/external_youtube_transcripts/clean_txt'),
+              Path('research/podcast_transcripts/clean_txt'),
+          ):
+              if not directory.exists():
+                  continue
+              for path in sorted(directory.glob('*.txt')):
+                  video_id = ''
+                  for line in path.read_text(encoding='utf-8', errors='replace').splitlines()[:12]:
+                      match = time_re.match(line)
+                      if match:
+                          video_id = match.group(1).strip()
+                          break
+                  if video_id:
+                      chosen[video_id] = path
+          for video_id, source in chosen.items():
+              shutil.copy2(source, Path('combined_clean_transcripts') / f'{video_id}.txt')
+          print(f'Canonical transcripts: {len(chosen)}')
+          if not chosen:
+              raise SystemExit('No cleaned transcripts are available.')
+          PY
+
+      - name: Build high-recall technical candidate blocks
+        run: |
+          python tools/build_fishing_candidates.py \
+            combined_clean_transcripts \
+            --output research/fishing_candidates
+
+      - name: Build missing-video matrix
+        id: matrix
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          existing = Path('research/fishing_knowledge/per_video')
+          candidates = Path('research/fishing_candidates/per_video')
+          items = []
+          for path in sorted(candidates.glob('*.json')):
+              video_id = path.stem
+              existing_path = existing / f'{video_id}.json'
+              complete = False
+              if existing_path.exists():
+                  try:
+                      data = json.loads(existing_path.read_text(encoding='utf-8'))
+                      complete = bool(data.get('claims')) and not data.get('failed_batches')
+                  except Exception:
+                      complete = False
+              if not complete:
+                  items.append({'video_id': video_id})
+          smoke_video = items[0]['video_id'] if items else 'none'
+          matrix_items = items if items else [{'video_id': 'none'}]
+          matrix = json.dumps({'include': matrix_items}, separators=(',', ':'))
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write(f'matrix={matrix}\n')
+              output.write(f'count={len(items)}\n')
+              output.write(f'smoke_video={smoke_video}\n')
+          print(f'Missing videos to normalize: {len(items)}')
+          PY
+
+      - name: Upload candidate package
+        uses: actions/upload-artifact@v4
+        with:
+          name: fishing-candidates
+          path: research/fishing_candidates
+          retention-days: 30
+
+      - name: Restore local model and llama.cpp cache
+        id: model-cache
+        if: steps.matrix.outputs.count != '0'
+        uses: actions/cache@v4
+        with:
+          path: |
+            .cache/llama.cpp
+            .cache/models
+          key: fishing-qwen25-15b-q4km-llamacpp-v1
+
+      - name: Build llama.cpp and download the official Qwen model
+        if: steps.matrix.outputs.count != '0' && steps.model-cache.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake build-essential
+          mkdir -p .cache/models
+          git clone --depth 1 https://github.com/ggml-org/llama.cpp.git "$LLAMA_ROOT"
+          cmake -S "$LLAMA_ROOT" -B "$LLAMA_ROOT/build" \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DLLAMA_CURL=OFF \
+            -DGGML_NATIVE=OFF
+          cmake --build "$LLAMA_ROOT/build" --target llama-server -j2
+          python -m pip install --upgrade huggingface-hub
+          python - <<'PY'
+          import os
+          from huggingface_hub import hf_hub_download
+          hf_hub_download(
+              repo_id=os.environ['MODEL_REPO'],
+              filename=os.environ['MODEL_FILE'],
+              local_dir='.cache/models',
+          )
+          PY
+          test -x "$LLAMA_ROOT/build/bin/llama-server"
+          test -s "$MODEL_PATH"
+
+  smoke:
+    needs: prepare
+    if: needs.prepare.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download candidate package
+        uses: actions/download-artifact@v4
+        with:
+          name: fishing-candidates
+          path: research/fishing_candidates
+
+      - name: Restore local model and llama.cpp
+        uses: actions/cache@v4
+        with:
+          path: |
+            .cache/llama.cpp
+            .cache/models
+          key: fishing-qwen25-15b-q4km-llamacpp-v1
+          fail-on-cache-miss: true
+
+      - name: Start local model server
+        run: |
+          "$LLAMA_ROOT/build/bin/llama-server" \
+            -m "$MODEL_PATH" -c 8192 -t 4 -b 1024 -ub 256 \
+            --host 127.0.0.1 --port 8080 --jinja \
+            > llama-smoke.log 2>&1 &
+          echo $! > llama-smoke.pid
+          for attempt in $(seq 1 120); do
+            curl --fail --silent http://127.0.0.1:8080/health >/dev/null && exit 0
+            sleep 1
+          done
+          cat llama-smoke.log
+          exit 1
+
+      - name: Run structured extraction smoke test
+        env:
+          VIDEO_ID: ${{ needs.prepare.outputs.smoke_video }}
+        run: |
+          mkdir -p smoke_input smoke_output
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          video_id = os.environ['VIDEO_ID']
+          source = Path('research/fishing_candidates/per_video') / f'{video_id}.json'
+          rows = json.loads(source.read_text(encoding='utf-8'))[:6]
+          Path('smoke_input/smoke.json').write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding='utf-8')
+          PY
+          python tools/normalize_fishing_claims.py \
+            smoke_input/smoke.json \
+            --output-dir smoke_output \
+            --server http://127.0.0.1:8080 \
+            --batch-size 3
+          test -f smoke_output/*.json
+
+      - name: Upload smoke logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fishing-knowledge-smoke
+          path: |
+            smoke_output
+            llama-smoke.log
+          if-no-files-found: warn
+          retention-days: 14
+
+  normalize:
+    needs:
+      - prepare
+      - smoke
+    if: needs.prepare.outputs.count != '0' && needs.smoke.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download candidate package
+        uses: actions/download-artifact@v4
+        with:
+          name: fishing-candidates
+          path: research/fishing_candidates
+
+      - name: Restore local model and llama.cpp
+        uses: actions/cache@v4
+        with:
+          path: |
+            .cache/llama.cpp
+            .cache/models
+          key: fishing-qwen25-15b-q4km-llamacpp-v1
+          fail-on-cache-miss: true
+
+      - name: Start local model server
+        run: |
+          "$LLAMA_ROOT/build/bin/llama-server" \
+            -m "$MODEL_PATH" -c 8192 -t 4 -b 1024 -ub 256 \
+            --host 127.0.0.1 --port 8080 --jinja \
+            > "llama-${{ matrix.video_id }}.log" 2>&1 &
+          for attempt in $(seq 1 120); do
+            curl --fail --silent http://127.0.0.1:8080/health >/dev/null && exit 0
+            sleep 1
+          done
+          cat "llama-${{ matrix.video_id }}.log"
+          exit 1
+
+      - name: Normalize professional claims
+        run: |
+          mkdir -p normalized_output
+          python tools/normalize_fishing_claims.py \
+            "research/fishing_candidates/per_video/${{ matrix.video_id }}.json" \
+            --output-dir normalized_output \
+            --server http://127.0.0.1:8080 \
+            --batch-size 6
+
+      - name: Upload per-video knowledge records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fishing-claims-${{ matrix.video_id }}
+          path: |
+            normalized_output
+            llama-${{ matrix.video_id }}.log
+          if-no-files-found: warn
+          retention-days: 30
+
+  collect:
+    needs:
+      - prepare
+      - smoke
+      - normalize
+    if: always() && needs.prepare.result == 'success' && (needs.normalize.result == 'success' || needs.normalize.result == 'failure')
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download new per-video records
+        uses: actions/download-artifact@v4
+        with:
+          pattern: fishing-claims-*
+          path: downloaded_claims
+          merge-multiple: false
+
+      - name: Merge and collect knowledge records
+        run: |
+          mkdir -p research/fishing_knowledge/per_video research/fishing_knowledge/per_video_txt
+          find downloaded_claims -type f -name '*.json' -path '*/normalized_output/*' -exec cp {} research/fishing_knowledge/per_video/ \;
+          find downloaded_claims -type f -name '*.txt' -path '*/normalized_output/*' -exec cp {} research/fishing_knowledge/per_video_txt/ \;
+          python tools/collect_fishing_claims.py \
+            research/fishing_knowledge/per_video \
+            --output research/fishing_knowledge
+          cp research/fishing_candidates/summary.txt research/fishing_knowledge/candidate_summary.txt 2>/dev/null || true
+
+      - name: Commit knowledge records
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/fishing_knowledge
+          if git diff --cached --quiet; then
+            echo 'No fishing knowledge changes to commit.'
+          else
+            git commit -m 'Add source-faithful fishing knowledge records'
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main && git push origin HEAD:main && exit 0
+              sleep $((attempt * 5))
+            done
+            exit 1
+          fi
+
+      - name: Upload final knowledge package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fishing-knowledge-records
+          path: research/fishing_knowledge
+          if-no-files-found: warn
+          retention-days: 30
