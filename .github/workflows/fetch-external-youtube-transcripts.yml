@@ -1,0 +1,66 @@
+name: Fetch external YouTube transcripts
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - tools/fetch_external_youtube_transcripts.py
+      - .github/workflows/fetch-external-youtube-transcripts.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch YouTube-only transcripts through public API
+        id: fetch
+        continue-on-error: true
+        run: |
+          rm -rf research/external_youtube_transcripts
+          python tools/fetch_external_youtube_transcripts.py \
+            research/podcast_audio_map.json \
+            --output research/external_youtube_transcripts
+
+      - name: Commit transcript results
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/external_youtube_transcripts
+          if git diff --cached --quiet; then
+            echo 'No external transcript changes to commit.'
+          else
+            git commit -m 'Add external YouTube transcripts'
+            git push
+          fi
+
+      - name: Upload transcript package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-youtube-transcripts
+          path: research/external_youtube_transcripts
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Validate result
+        if: always()
+        run: |
+          test -f research/external_youtube_transcripts/summary.txt
+          cat research/external_youtube_transcripts/summary.txt
