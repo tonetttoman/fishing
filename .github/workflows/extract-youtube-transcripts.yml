@@ -1,0 +1,86 @@
+name: Extract YouTube transcripts
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - tools/extract_youtube_transcripts.py
+      - .github/workflows/extract-youtube-transcripts.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-transcript-extraction
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node for YouTube player challenges
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install extractor
+        run: python -m pip install --upgrade yt-dlp
+
+      - name: Extract public captions
+        run: |
+          rm -rf transcript_work
+          python tools/extract_youtube_transcripts.py \
+            'https://www.youtube.com/playlist?list=PLUBPUx40N7Lo' \
+            --output transcript_work \
+            --retries 8 \
+            --sleep 2.0
+
+      - name: Prepare repository results
+        if: always()
+        run: |
+          rm -rf research/youtube_transcripts
+          mkdir -p research/youtube_transcripts
+          if [ -d transcript_work/clean_txt ]; then
+            cp -R transcript_work/clean_txt research/youtube_transcripts/
+          fi
+          for file in playlist.json manifest.json summary.txt all_transcripts_timestamped.txt; do
+            if [ -f "transcript_work/$file" ]; then
+              cp "transcript_work/$file" research/youtube_transcripts/
+            fi
+          done
+
+      - name: Commit extracted transcripts
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/youtube_transcripts
+          if git diff --cached --quiet; then
+            echo 'No transcript changes to commit.'
+          else
+            git commit -m 'Add extracted YouTube transcripts'
+            git push
+          fi
+
+      - name: Upload complete transcript artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: youtube-transcripts
+          path: transcript_work
+          if-no-files-found: warn
+          retention-days: 30
