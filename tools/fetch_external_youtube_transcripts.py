@@ -8,6 +8,7 @@ public caption tracks and does not bypass private, members-only, or disabled cap
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 import time
@@ -19,7 +20,10 @@ from typing import Any
 
 API_TEMPLATE = "https://youtube-transcript.ai/transcript/{video_id}.txt"
 UA = "Mozilla/5.0 (compatible; FishingResearchBot/1.0; +https://github.com/tonetttoman/fishing)"
-TIMESTAMP_RE = re.compile(r"^\[(?P<stamp>\d{1,2}:\d{2}(?::\d{2})?)\]\s*(?P<text>.*)$")
+# Accept [1:23], **[1:23]**, - [1:23], and timestamp links such as [1:23](...).
+TIMESTAMP_TOKEN_RE = re.compile(r"\[(?P<stamp>\d{1,2}:\d{2}(?::\d{2})?)\]")
+MARKDOWN_LINK_RE = re.compile(r"\]\([^)]*\)")
+MARKDOWN_DECORATION_RE = re.compile(r"^[\s>*#_`~-]+|[\s*_`~]+$")
 
 
 def seconds_from_stamp(value: str) -> int:
@@ -55,9 +59,10 @@ def request_text(video_id: str, retries: int = 5) -> tuple[str | None, str, str]
                 with urllib.request.urlopen(request, timeout=180) as response:
                     body = response.read().decode("utf-8", errors="replace")
                     content_type = response.headers.get("content-type", "")
-                if response.status == 200 and TIMESTAMP_RE.search(body, re.MULTILINE):
+                    status = response.status
+                if status == 200 and body.strip():
                     return body, url, content_type
-                errors.append(f"{url}: unusable response ({len(body)} bytes, {content_type})")
+                errors.append(f"{url}: empty response ({len(body)} bytes, {content_type})")
                 break
             except urllib.error.HTTPError as exc:
                 body = exc.read().decode("utf-8", errors="replace")[:1500]
@@ -74,21 +79,46 @@ def request_text(video_id: str, retries: int = 5) -> tuple[str | None, str, str]
     return None, "", " | ".join(errors[-8:])
 
 
+def clean_markdown_text(value: str) -> str:
+    value = html.unescape(value)
+    value = MARKDOWN_LINK_RE.sub("]", value)
+    value = MARKDOWN_DECORATION_RE.sub("", value)
+    value = value.replace("**", "").replace("__", "").replace("`", "")
+    return " ".join(value.split()).strip(" -–—|:")
+
+
 def parse_markdown(body: str) -> list[dict[str, Any]]:
+    """Parse timestamps whether each cue is on one line or spans paragraphs."""
+    matches = list(TIMESTAMP_TOKEN_RE.finditer(body))
     rows: list[dict[str, Any]] = []
-    for raw_line in body.splitlines():
-        line = raw_line.strip()
-        match = TIMESTAMP_RE.match(line)
-        if not match:
+    for index, match in enumerate(matches):
+        start_of_text = match.end()
+        end_of_text = matches[index + 1].start() if index + 1 < len(matches) else len(body)
+        text = clean_markdown_text(body[start_of_text:end_of_text])
+        # Ignore metadata/header timestamps and accidental URL fragments.
+        if not text or text.lower().startswith(("source video", "language", "duration", "words")):
             continue
-        text = " ".join(match.group("text").split())
-        if not text:
+        if len(text) > 5000:
+            # A false timestamp match in a header should not swallow the transcript.
             continue
         rows.append({
             "start": seconds_from_stamp(match.group("stamp")),
             "text": text,
         })
-    return rows
+
+    # Keep chronological transcript cues and remove exact duplicates.
+    cleaned: list[dict[str, Any]] = []
+    last_start = -1
+    last_text = ""
+    for row in rows:
+        if row["start"] < last_start:
+            continue
+        if row["text"] == last_text:
+            continue
+        cleaned.append(row)
+        last_start = row["start"]
+        last_text = row["text"]
+    return cleaned
 
 
 def main() -> int:
@@ -137,7 +167,9 @@ def main() -> int:
                 "video_id": video_id,
                 "title": title,
                 "status": "failed",
-                "error": "provider response contained no timestamped transcript rows",
+                "response_bytes": len(body.encode("utf-8")),
+                "response_prefix": body[:1200],
+                "error": "provider response contained no parseable timestamped transcript rows",
             })
             continue
 
@@ -161,10 +193,11 @@ def main() -> int:
             "status": "caption_extracted",
             "entries": len(rows),
             "provider_url": provider_url,
+            "response_bytes": len(body.encode("utf-8")),
             "raw_file": str(raw_path.relative_to(output)),
             "transcript_file": str(txt_path.relative_to(output)),
         })
-        time.sleep(4)
+        time.sleep(3)
 
     output.mkdir(parents=True, exist_ok=True)
     (output / "manifest.json").write_text(
