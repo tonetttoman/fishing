@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch public captions for playlist items blocked on GitHub datacenter IPs.
-
-Uses the documented no-key text endpoint at youtube-transcript.ai. It only requests
-public caption tracks and does not bypass private, members-only, or disabled captions.
-"""
+"""Fetch and clean public captions for every video in the fishing playlist."""
 
 from __future__ import annotations
 
@@ -20,10 +16,10 @@ from typing import Any
 
 API_TEMPLATE = "https://youtube-transcript.ai/transcript/{video_id}.txt"
 UA = "Mozilla/5.0 (compatible; FishingResearchBot/1.0; +https://github.com/tonetttoman/fishing)"
-# Accept [1:23], **[1:23]**, - [1:23], and timestamp links such as [1:23](...).
 TIMESTAMP_TOKEN_RE = re.compile(r"\[(?P<stamp>\d{1,2}:\d{2}(?::\d{2})?)\]")
 MARKDOWN_LINK_RE = re.compile(r"\]\([^)]*\)")
 MARKDOWN_DECORATION_RE = re.compile(r"^[\s>*#_`~-]+|[\s*_`~]+$")
+SPACE_RE = re.compile(r"\s+")
 
 
 def seconds_from_stamp(value: str) -> int:
@@ -50,10 +46,7 @@ def request_text(video_id: str, retries: int = 5) -> tuple[str | None, str, str]
         for attempt in range(1, retries + 1):
             request = urllib.request.Request(
                 url,
-                headers={
-                    "User-Agent": UA,
-                    "Accept": "text/markdown,text/plain;q=0.9,*/*;q=0.5",
-                },
+                headers={"User-Agent": UA, "Accept": "text/markdown,text/plain;q=0.9,*/*;q=0.5"},
             )
             try:
                 with urllib.request.urlopen(request, timeout=180) as response:
@@ -69,10 +62,7 @@ def request_text(video_id: str, retries: int = 5) -> tuple[str | None, str, str]
                 errors.append(f"{url}: HTTP {exc.code}: {body}")
                 if exc.code in {400, 404}:
                     break
-                if exc.code == 429:
-                    time.sleep(min(90, 15 * attempt))
-                else:
-                    time.sleep(min(30, 3 * attempt))
+                time.sleep(min(90, 15 * attempt) if exc.code == 429 else min(30, 3 * attempt))
             except Exception as exc:
                 errors.append(f"{url}: {type(exc).__name__}: {exc}")
                 time.sleep(min(30, 3 * attempt))
@@ -84,40 +74,72 @@ def clean_markdown_text(value: str) -> str:
     value = MARKDOWN_LINK_RE.sub("]", value)
     value = MARKDOWN_DECORATION_RE.sub("", value)
     value = value.replace("**", "").replace("__", "").replace("`", "")
-    return " ".join(value.split()).strip(" -–—|:")
+    return SPACE_RE.sub(" ", value).strip(" -–—|:")
+
+
+def collapse_immediate_repetitions(text: str) -> str:
+    """Collapse rolling-caption phrases repeated two or three times in the same cue."""
+    tokens = text.split()
+    if len(tokens) < 4:
+        return text
+    changed = True
+    passes = 0
+    while changed and passes < 8:
+        changed = False
+        passes += 1
+        i = 0
+        while i < len(tokens) - 3:
+            max_size = min(90, (len(tokens) - i) // 2)
+            found = 0
+            for size in range(max_size, 1, -1):
+                if tokens[i : i + size] == tokens[i + size : i + 2 * size]:
+                    found = size
+                    break
+            if found:
+                del tokens[i + found : i + 2 * found]
+                changed = True
+            else:
+                i += 1
+    return " ".join(tokens)
+
+
+def remove_previous_overlap(previous: str, current: str) -> str:
+    """Remove the rolling-caption suffix repeated at the start of the next cue."""
+    left = previous.split()
+    right = current.split()
+    max_overlap = min(120, len(left), len(right))
+    for size in range(max_overlap, 2, -1):
+        if left[-size:] == right[:size]:
+            return " ".join(right[size:]).strip()
+    return current
 
 
 def parse_markdown(body: str) -> list[dict[str, Any]]:
-    """Parse timestamps whether each cue is on one line or spans paragraphs."""
     matches = list(TIMESTAMP_TOKEN_RE.finditer(body))
-    rows: list[dict[str, Any]] = []
+    parsed: list[dict[str, Any]] = []
     for index, match in enumerate(matches):
         start_of_text = match.end()
         end_of_text = matches[index + 1].start() if index + 1 < len(matches) else len(body)
         text = clean_markdown_text(body[start_of_text:end_of_text])
-        # Ignore metadata/header timestamps and accidental URL fragments.
         if not text or text.lower().startswith(("source video", "language", "duration", "words")):
             continue
         if len(text) > 5000:
-            # A false timestamp match in a header should not swallow the transcript.
             continue
-        rows.append({
-            "start": seconds_from_stamp(match.group("stamp")),
-            "text": text,
-        })
+        parsed.append({"start": seconds_from_stamp(match.group("stamp")), "text": text})
 
-    # Keep chronological transcript cues and remove exact duplicates.
     cleaned: list[dict[str, Any]] = []
     last_start = -1
-    last_text = ""
-    for row in rows:
+    for row in parsed:
         if row["start"] < last_start:
             continue
-        if row["text"] == last_text:
+        text = collapse_immediate_repetitions(row["text"])
+        if cleaned:
+            text = remove_previous_overlap(cleaned[-1]["text"], text)
+        text = SPACE_RE.sub(" ", text).strip()
+        if not text or (cleaned and text == cleaned[-1]["text"]):
             continue
-        cleaned.append(row)
+        cleaned.append({"start": row["start"], "text": text})
         last_start = row["start"]
-        last_text = row["text"]
     return cleaned
 
 
@@ -128,7 +150,7 @@ def main() -> int:
     args = parser.parse_args()
 
     mapping = json.loads(Path(args.audio_map_json).read_text(encoding="utf-8"))
-    unmatched = [item for item in mapping.get("items") or [] if item.get("status") != "matched"]
+    items = list(mapping.get("items") or [])
     output = Path(args.output)
     clean = output / "clean_txt"
     raw = output / "raw_markdown"
@@ -137,24 +159,16 @@ def main() -> int:
 
     manifest: list[dict[str, Any]] = []
     combined: list[str] = []
-    extracted = 0
-    failed = 0
-    total_entries = 0
+    extracted = failed = total_entries = 0
 
-    for n, item in enumerate(unmatched, start=1):
+    for n, item in enumerate(items, start=1):
         video_id = str(item.get("video_id") or "")
         title = str(item.get("youtube_title") or video_id)
-        print(f"[{n}/{len(unmatched)}] {title} ({video_id})", flush=True)
+        print(f"[{n}/{len(items)}] {title} ({video_id})", flush=True)
         body, provider_url, error = request_text(video_id)
         if body is None:
             failed += 1
-            manifest.append({
-                "index": item.get("index"),
-                "video_id": video_id,
-                "title": title,
-                "status": "failed",
-                "error": error,
-            })
+            manifest.append({"index": item.get("index"), "video_id": video_id, "title": title, "status": "failed", "error": error})
             continue
 
         raw_path = raw / f"{video_id}.txt"
@@ -163,12 +177,8 @@ def main() -> int:
         if not rows:
             failed += 1
             manifest.append({
-                "index": item.get("index"),
-                "video_id": video_id,
-                "title": title,
-                "status": "failed",
-                "response_bytes": len(body.encode("utf-8")),
-                "response_prefix": body[:1200],
+                "index": item.get("index"), "video_id": video_id, "title": title,
+                "status": "failed", "response_bytes": len(body.encode("utf-8")),
                 "error": "provider response contained no parseable timestamped transcript rows",
             })
             continue
@@ -176,41 +186,28 @@ def main() -> int:
         extracted += 1
         total_entries += len(rows)
         lines = [
-            f"VIDEÓ: {title}",
-            f"URL: {item.get('youtube_url', '')}",
-            f"VIDEÓ_ID: {video_id}",
-            "FORRÁS: youtube-transcript.ai kulcs nélküli transcript végpont",
-            "",
+            f"VIDEÓ: {title}", f"URL: {item.get('youtube_url', '')}", f"VIDEÓ_ID: {video_id}",
+            "FORRÁS: youtube-transcript.ai nyilvános feliratvégpont", "",
         ]
         lines.extend(f"[{stamp(row['start'])}] {row['text']}" for row in rows)
         txt_path = clean / f"{int(item.get('index') or 0):03d}_{video_id}.txt"
         txt_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
         combined.extend(["=" * 100, *lines, ""])
         manifest.append({
-            "index": item.get("index"),
-            "video_id": video_id,
-            "title": title,
-            "status": "caption_extracted",
-            "entries": len(rows),
-            "provider_url": provider_url,
+            "index": item.get("index"), "video_id": video_id, "title": title,
+            "status": "caption_extracted", "entries": len(rows), "provider_url": provider_url,
             "response_bytes": len(body.encode("utf-8")),
             "raw_file": str(raw_path.relative_to(output)),
             "transcript_file": str(txt_path.relative_to(output)),
         })
-        time.sleep(3)
+        time.sleep(2)
 
     output.mkdir(parents=True, exist_ok=True)
-    (output / "manifest.json").write_text(
-        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
-    (output / "all_transcripts_timestamped.txt").write_text(
-        "\n".join(combined) + "\n", encoding="utf-8"
-    )
+    (output / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    (output / "all_transcripts_timestamped.txt").write_text("\n".join(combined) + "\n", encoding="utf-8")
     summary = [
-        f"YouTube-only videos attempted: {len(unmatched)}",
-        f"Captions extracted: {extracted}",
-        f"Captions failed/unavailable: {failed}",
-        f"Timestamped entries: {total_entries}",
+        f"Playlist videos attempted: {len(items)}", f"Captions extracted: {extracted}",
+        f"Captions failed/unavailable: {failed}", f"Clean timestamped entries: {total_entries}",
     ]
     (output / "summary.txt").write_text("\n".join(summary) + "\n", encoding="utf-8")
     print("\n".join(summary))
