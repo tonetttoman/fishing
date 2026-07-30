@@ -1,0 +1,184 @@
+name: Transcribe podcast audio
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - tools/transcribe_podcast_episode.py
+      - tools/collect_podcast_transcripts.py
+      - .github/workflows/transcribe-podcast-audio.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  HF_HOME: ${{ github.workspace }}/.cache/huggingface
+
+concurrency:
+  group: podcast-audio-transcription
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build matched episode matrix
+        id: matrix
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          data = json.loads(Path('research/podcast_audio_map.json').read_text(encoding='utf-8'))
+          items = [
+              {'index': int(item['index']), 'video_id': str(item['video_id'])}
+              for item in data.get('items', [])
+              if item.get('status') == 'matched' and item.get('audio_url')
+          ]
+          if not items:
+              raise SystemExit('No matched podcast episodes were found.')
+          matrix = json.dumps({'include': items}, ensure_ascii=False, separators=(',', ':'))
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write(f'matrix={matrix}\n')
+          print(f'Prepared {len(items)} transcription jobs.')
+          PY
+
+      - name: Cache faster-whisper model
+        id: whisper-cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.HF_HOME }}
+          key: faster-whisper-small-v1
+
+      - name: Download faster-whisper model once
+        if: steps.whisper-cache.outputs.cache-hit != 'true'
+        run: |
+          python -m pip install --upgrade huggingface-hub
+          python - <<'PY'
+          from huggingface_hub import snapshot_download
+          snapshot_download('Systran/faster-whisper-small')
+          PY
+
+  transcribe:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Restore faster-whisper model
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.HF_HOME }}
+          key: faster-whisper-small-v1
+
+      - name: Install transcription runtime
+        run: |
+          python -m pip install --upgrade faster-whisper
+          if ! command -v ffmpeg >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+
+      - name: Transcribe episode ${{ matrix.index }}
+        run: |
+          mkdir -p "transcript_job/${{ matrix.index }}"
+          python tools/transcribe_podcast_episode.py \
+            research/podcast_audio_map.json \
+            '${{ matrix.video_id }}' \
+            --output-dir "transcript_job/${{ matrix.index }}" \
+            --model small \
+            --download-root "$HF_HOME"
+
+      - name: Upload episode transcript
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: podcast-transcript-${{ matrix.index }}-${{ matrix.video_id }}
+          path: transcript_job/${{ matrix.index }}
+          if-no-files-found: warn
+          retention-days: 30
+
+  collect:
+    needs:
+      - prepare
+      - transcribe
+    if: always() && needs.prepare.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download episode transcript artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: podcast-transcript-*
+          path: collected_transcripts
+          merge-multiple: false
+
+      - name: Build combined transcript research files
+        run: |
+          rm -rf research/podcast_transcripts
+          python tools/collect_podcast_transcripts.py \
+            collected_transcripts \
+            --output research/podcast_transcripts
+          cp research/podcast_audio_map.json research/podcast_transcripts/audio_map.json
+
+      - name: Commit podcast transcripts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/podcast_transcripts
+          if git diff --cached --quiet; then
+            echo 'No podcast transcript changes to commit.'
+          else
+            git commit -m 'Add Whisper podcast transcripts'
+            git push
+          fi
+
+      - name: Upload combined transcript package
+        uses: actions/upload-artifact@v4
+        with:
+          name: podcast-transcripts-combined
+          path: research/podcast_transcripts
+          retention-days: 30
+
+      - name: Validate combined output
+        run: |
+          test -f research/podcast_transcripts/summary.txt
+          grep -Eq '^Episodes transcribed: [1-9][0-9]*$' research/podcast_transcripts/summary.txt
