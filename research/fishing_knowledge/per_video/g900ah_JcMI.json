@@ -1,0 +1,445 @@
+{
+  "video_id": "g900ah_JcMI",
+  "candidate_blocks": 223,
+  "claims": [
+    {
+      "claim_id": "g900ah_JcMI-C0001",
+      "block_id": "g900ah_JcMI-0223",
+      "video_id": "g900ah_JcMI",
+      "title": "Parti-Arcok Live Extra - Method Feeder Csúcstalálkozó - Bakó Péter x Szabó Bence",
+      "url": "https://www.youtube.com/watch?v=g900ah_JcMI",
+      "start": "03:02:16",
+      "end": "03:02:46",
+      "category": "feeding",
+      "statement": "Nagyak vagyunk ezért. Ígérjük, hogy jó helyre kerülnek ezek a támogatások. Következő Walterv live-ra például abból fogok hozni a Tamásnak távolkeleti, de nem úgy, hogy ebből utazik el Iván tájföldre és úgy elhoz, nem a kínai negyedben elfacsaltan. Jó, a kínai negyedben elfacsaltan. Jó, szóval szóval szóval mekkora fajűlölőmok po köszönjük szépen, hogy kaptad a megvalós kérdést. Köszönt a testvéreim. Könjük szépen, hogy itt voltatok velünk ilyen sokan. Tartsatok velünk legközelebb is. A nagyon fontos szolgálati közlemény. Látom Gábor, mert azon világít a piros.",
+      "conditions": "Nagyak vagyunk ezért. Ígérjük, hogy jó helyre kerülnek ezek a támogatások. Következő Walterv live-ra például abból fogok hozni a Tamásnak távolkeleti, de nem úgy, hogy ebből utazik el Iván tájföldre és úgy elhoz, nem a kínai negyedben elfacsaltan. Jó, a kínai negyedben elfacsaltan. Jó, szóval szóval szóval mekkora fajűlölőmok po köszönjük szépen, hogy kaptad a megvalós kérdést. Köszönt a testvéreim. Könjük szépen, hogy itt voltatok velünk ilyen sokan. Tartsatok velünk legközelebb is. A nagyon fontos szolgálati közlemény. Látom Gábor, mert azon világít a piros.",
+      "recommended_action": "Nagyak vagyunk ezért. Ígérjük, hogy jó helyre kerülnek ezek a támogatások. Következő Walterv live-ra például abból fogok hozni a Tamásnak távolkeleti, de nem úgy, hogy ebből utazik el Iván tájföldre és úgy elhoz, nem a kínai negyedben elfacsaltan. Jó, a kínai negyedben elfacsaltan. Jó, szóval szóval szóval mekkora fajűlölőmok po köszönjük szépen, hogy kaptad a megvalós kérdést. Köszönt a testvéreim. Könjük szépen, hogy itt voltatok velünk ilyen sokan. Tartsatok velünk legközelebb is. A nagyon fontos szolgálati közlemény. Látom Gábor, mert azon világít a piros.",
+      "reason_effect": "Nagyak vagyunk ezért. Ígérjük, hogy jó helyre kerülnek ezek a támogatások. Következő Walterv live-ra például abból fogok hozni a Tamásnak távolkeleti, de nem úgy, hogy ebből utazik el Iván tájföldre és úgy elhoz, nem a kínai negyedben elfacsaltan. Jó, a kínai negyedben elfacsaltan. Jó, szóval szóval szóval mekkora fajűlölőmok po köszönjük szépen, hogy kaptad a megvalós kérdést. Köszönt a testvéreim. Könjük szépen, hogy itt voltatok velünk ilyen sokan. Tartsatok velünk legközelebb is. A nagyon fontos szolgálati közlemény. Látom Gábor, mert azon világít a piros.",
+      "exception": "",
+      "confidence": "high",
+      "source_block": "Nagyon hálásak vagyunk ezért. Ígérjük, hogy jó helyre kerülnek ezek a támogatások. Következő Walterv live-ra például abból fogok hozni a Tamásnak távolkeleti, de nem úgy, hogy ebből utazik el Iván tájföldre és úgy elhoz, nem a kínai negyedben elfacsaltan. Jó, a kínai negyedben elfacsaltan. Jó, szóval szóval szóval mekkora fajűlölőmok po köszönjük szépen, hogy kaptad a megvalós kérdést. Köszönt a testvéreim. Könjük szépen, hogy itt voltatok velünk ilyen sokan. Tartsatok velünk legközelebb is. A nagyon fontos szolgálati közlemény. Látom Gábor, mert azon világít a piros."
+    }
+  ],
+  "failed_batches": [
+    {
+      "batch": 1,
+      "block_ids": [
+        "g900ah_JcMI-0001",
+        "g900ah_JcMI-0002",
+        "g900ah_JcMI-0003",
+        "g900ah_JcMI-0004",
+        "g900ah_JcMI-0005",
+        "g900ah_JcMI-0006"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1326)"
+    },
+    {
+      "batch": 2,
+      "block_ids": [
+        "g900ah_JcMI-0007",
+        "g900ah_JcMI-0008",
+        "g900ah_JcMI-0009",
+        "g900ah_JcMI-0010",
+        "g900ah_JcMI-0011",
+        "g900ah_JcMI-0012"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 568)"
+    },
+    {
+      "batch": 3,
+      "block_ids": [
+        "g900ah_JcMI-0013",
+        "g900ah_JcMI-0014",
+        "g900ah_JcMI-0015",
+        "g900ah_JcMI-0016",
+        "g900ah_JcMI-0017",
+        "g900ah_JcMI-0018"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1443)"
+    },
+    {
+      "batch": 4,
+      "block_ids": [
+        "g900ah_JcMI-0019",
+        "g900ah_JcMI-0020",
+        "g900ah_JcMI-0021",
+        "g900ah_JcMI-0022",
+        "g900ah_JcMI-0023",
+        "g900ah_JcMI-0024"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 496)"
+    },
+    {
+      "batch": 5,
+      "block_ids": [
+        "g900ah_JcMI-0025",
+        "g900ah_JcMI-0026",
+        "g900ah_JcMI-0027",
+        "g900ah_JcMI-0028",
+        "g900ah_JcMI-0029",
+        "g900ah_JcMI-0030"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1541)"
+    },
+    {
+      "batch": 6,
+      "block_ids": [
+        "g900ah_JcMI-0031",
+        "g900ah_JcMI-0032",
+        "g900ah_JcMI-0033",
+        "g900ah_JcMI-0034",
+        "g900ah_JcMI-0035",
+        "g900ah_JcMI-0036"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 515)"
+    },
+    {
+      "batch": 7,
+      "block_ids": [
+        "g900ah_JcMI-0037",
+        "g900ah_JcMI-0038",
+        "g900ah_JcMI-0039",
+        "g900ah_JcMI-0040",
+        "g900ah_JcMI-0041",
+        "g900ah_JcMI-0042"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1849)"
+    },
+    {
+      "batch": 8,
+      "block_ids": [
+        "g900ah_JcMI-0043",
+        "g900ah_JcMI-0044",
+        "g900ah_JcMI-0045",
+        "g900ah_JcMI-0046",
+        "g900ah_JcMI-0047",
+        "g900ah_JcMI-0048"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 369)"
+    },
+    {
+      "batch": 9,
+      "block_ids": [
+        "g900ah_JcMI-0049",
+        "g900ah_JcMI-0050",
+        "g900ah_JcMI-0051",
+        "g900ah_JcMI-0052",
+        "g900ah_JcMI-0053",
+        "g900ah_JcMI-0054"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1934)"
+    },
+    {
+      "batch": 10,
+      "block_ids": [
+        "g900ah_JcMI-0055",
+        "g900ah_JcMI-0056",
+        "g900ah_JcMI-0057",
+        "g900ah_JcMI-0058",
+        "g900ah_JcMI-0059",
+        "g900ah_JcMI-0060"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 718)"
+    },
+    {
+      "batch": 11,
+      "block_ids": [
+        "g900ah_JcMI-0061",
+        "g900ah_JcMI-0062",
+        "g900ah_JcMI-0063",
+        "g900ah_JcMI-0064",
+        "g900ah_JcMI-0065",
+        "g900ah_JcMI-0066"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 459)"
+    },
+    {
+      "batch": 12,
+      "block_ids": [
+        "g900ah_JcMI-0067",
+        "g900ah_JcMI-0068",
+        "g900ah_JcMI-0069",
+        "g900ah_JcMI-0070",
+        "g900ah_JcMI-0071",
+        "g900ah_JcMI-0072"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1283)"
+    },
+    {
+      "batch": 15,
+      "block_ids": [
+        "g900ah_JcMI-0085",
+        "g900ah_JcMI-0086",
+        "g900ah_JcMI-0087",
+        "g900ah_JcMI-0088",
+        "g900ah_JcMI-0089",
+        "g900ah_JcMI-0090"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 759)"
+    },
+    {
+      "batch": 16,
+      "block_ids": [
+        "g900ah_JcMI-0091",
+        "g900ah_JcMI-0092",
+        "g900ah_JcMI-0093",
+        "g900ah_JcMI-0094",
+        "g900ah_JcMI-0095",
+        "g900ah_JcMI-0096"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1815)"
+    },
+    {
+      "batch": 17,
+      "block_ids": [
+        "g900ah_JcMI-0097",
+        "g900ah_JcMI-0098",
+        "g900ah_JcMI-0099",
+        "g900ah_JcMI-0100",
+        "g900ah_JcMI-0101",
+        "g900ah_JcMI-0102"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1104)"
+    },
+    {
+      "batch": 18,
+      "block_ids": [
+        "g900ah_JcMI-0103",
+        "g900ah_JcMI-0104",
+        "g900ah_JcMI-0105",
+        "g900ah_JcMI-0106",
+        "g900ah_JcMI-0107",
+        "g900ah_JcMI-0108"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1141)"
+    },
+    {
+      "batch": 19,
+      "block_ids": [
+        "g900ah_JcMI-0109",
+        "g900ah_JcMI-0110",
+        "g900ah_JcMI-0111",
+        "g900ah_JcMI-0112",
+        "g900ah_JcMI-0113",
+        "g900ah_JcMI-0114"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1981)"
+    },
+    {
+      "batch": 20,
+      "block_ids": [
+        "g900ah_JcMI-0115",
+        "g900ah_JcMI-0116",
+        "g900ah_JcMI-0117",
+        "g900ah_JcMI-0118",
+        "g900ah_JcMI-0119",
+        "g900ah_JcMI-0120"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 589)"
+    },
+    {
+      "batch": 21,
+      "block_ids": [
+        "g900ah_JcMI-0121",
+        "g900ah_JcMI-0122",
+        "g900ah_JcMI-0123",
+        "g900ah_JcMI-0124",
+        "g900ah_JcMI-0125",
+        "g900ah_JcMI-0126"
+      ],
+      "error": "JSONDecodeError: Extra data: line 11 column 6 (char 1609)"
+    },
+    {
+      "batch": 22,
+      "block_ids": [
+        "g900ah_JcMI-0127",
+        "g900ah_JcMI-0128",
+        "g900ah_JcMI-0129",
+        "g900ah_JcMI-0130",
+        "g900ah_JcMI-0131",
+        "g900ah_JcMI-0132"
+      ],
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "batch": 23,
+      "block_ids": [
+        "g900ah_JcMI-0133",
+        "g900ah_JcMI-0134",
+        "g900ah_JcMI-0135",
+        "g900ah_JcMI-0136",
+        "g900ah_JcMI-0137",
+        "g900ah_JcMI-0138"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 838)"
+    },
+    {
+      "batch": 24,
+      "block_ids": [
+        "g900ah_JcMI-0139",
+        "g900ah_JcMI-0140",
+        "g900ah_JcMI-0141",
+        "g900ah_JcMI-0142",
+        "g900ah_JcMI-0143",
+        "g900ah_JcMI-0144"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 917)"
+    },
+    {
+      "batch": 25,
+      "block_ids": [
+        "g900ah_JcMI-0145",
+        "g900ah_JcMI-0146",
+        "g900ah_JcMI-0147",
+        "g900ah_JcMI-0148",
+        "g900ah_JcMI-0149",
+        "g900ah_JcMI-0150"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 825)"
+    },
+    {
+      "batch": 26,
+      "block_ids": [
+        "g900ah_JcMI-0151",
+        "g900ah_JcMI-0152",
+        "g900ah_JcMI-0153",
+        "g900ah_JcMI-0154",
+        "g900ah_JcMI-0155",
+        "g900ah_JcMI-0156"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 591)"
+    },
+    {
+      "batch": 27,
+      "block_ids": [
+        "g900ah_JcMI-0157",
+        "g900ah_JcMI-0158",
+        "g900ah_JcMI-0159",
+        "g900ah_JcMI-0160",
+        "g900ah_JcMI-0161",
+        "g900ah_JcMI-0162"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 827)"
+    },
+    {
+      "batch": 28,
+      "block_ids": [
+        "g900ah_JcMI-0163",
+        "g900ah_JcMI-0164",
+        "g900ah_JcMI-0165",
+        "g900ah_JcMI-0166",
+        "g900ah_JcMI-0167",
+        "g900ah_JcMI-0168"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 468)"
+    },
+    {
+      "batch": 29,
+      "block_ids": [
+        "g900ah_JcMI-0169",
+        "g900ah_JcMI-0170",
+        "g900ah_JcMI-0171",
+        "g900ah_JcMI-0172",
+        "g900ah_JcMI-0173",
+        "g900ah_JcMI-0174"
+      ],
+      "error": "JSONDecodeError: Extra data: line 12 column 6 (char 1199)"
+    },
+    {
+      "batch": 30,
+      "block_ids": [
+        "g900ah_JcMI-0175",
+        "g900ah_JcMI-0176",
+        "g900ah_JcMI-0177",
+        "g900ah_JcMI-0178",
+        "g900ah_JcMI-0179",
+        "g900ah_JcMI-0180"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1418)"
+    },
+    {
+      "batch": 31,
+      "block_ids": [
+        "g900ah_JcMI-0181",
+        "g900ah_JcMI-0182",
+        "g900ah_JcMI-0183",
+        "g900ah_JcMI-0184",
+        "g900ah_JcMI-0185",
+        "g900ah_JcMI-0186"
+      ],
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "batch": 32,
+      "block_ids": [
+        "g900ah_JcMI-0187",
+        "g900ah_JcMI-0188",
+        "g900ah_JcMI-0189",
+        "g900ah_JcMI-0190",
+        "g900ah_JcMI-0191",
+        "g900ah_JcMI-0192"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 879)"
+    },
+    {
+      "batch": 33,
+      "block_ids": [
+        "g900ah_JcMI-0193",
+        "g900ah_JcMI-0194",
+        "g900ah_JcMI-0195",
+        "g900ah_JcMI-0196",
+        "g900ah_JcMI-0197",
+        "g900ah_JcMI-0198"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 816)"
+    },
+    {
+      "batch": 34,
+      "block_ids": [
+        "g900ah_JcMI-0199",
+        "g900ah_JcMI-0200",
+        "g900ah_JcMI-0201",
+        "g900ah_JcMI-0202",
+        "g900ah_JcMI-0203",
+        "g900ah_JcMI-0204"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 700)"
+    },
+    {
+      "batch": 35,
+      "block_ids": [
+        "g900ah_JcMI-0205",
+        "g900ah_JcMI-0206",
+        "g900ah_JcMI-0207",
+        "g900ah_JcMI-0208",
+        "g900ah_JcMI-0209",
+        "g900ah_JcMI-0210"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 437)"
+    },
+    {
+      "batch": 36,
+      "block_ids": [
+        "g900ah_JcMI-0211",
+        "g900ah_JcMI-0212",
+        "g900ah_JcMI-0213",
+        "g900ah_JcMI-0214",
+        "g900ah_JcMI-0215",
+        "g900ah_JcMI-0216"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1818)"
+    },
+    {
+      "batch": 37,
+      "block_ids": [
+        "g900ah_JcMI-0217",
+        "g900ah_JcMI-0218",
+        "g900ah_JcMI-0219",
+        "g900ah_JcMI-0220",
+        "g900ah_JcMI-0221",
+        "g900ah_JcMI-0222"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 657)"
+    }
+  ]
+}

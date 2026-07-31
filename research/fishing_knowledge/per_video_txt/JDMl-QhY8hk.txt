@@ -1,0 +1,128 @@
+VIDEÓ: 97. A jó horgászathoz négy dolog elég - Szilvási Szilárd | Parti-Arcok Podcast
+URL: https://www.youtube.com/watch?v=JDMl-QhY8hk
+VIDEÓ_ID: JDMl-QhY8hk
+
+FELDOLGOZÁSI HIBÁK
+[
+  {
+    "batch": 1,
+    "block_ids": [
+      "JDMl-QhY8hk-0001",
+      "JDMl-QhY8hk-0002",
+      "JDMl-QhY8hk-0003",
+      "JDMl-QhY8hk-0004",
+      "JDMl-QhY8hk-0005",
+      "JDMl-QhY8hk-0006"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 779)"
+  },
+  {
+    "batch": 2,
+    "block_ids": [
+      "JDMl-QhY8hk-0007",
+      "JDMl-QhY8hk-0008",
+      "JDMl-QhY8hk-0009",
+      "JDMl-QhY8hk-0010",
+      "JDMl-QhY8hk-0011",
+      "JDMl-QhY8hk-0012"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 389)"
+  },
+  {
+    "batch": 3,
+    "block_ids": [
+      "JDMl-QhY8hk-0013",
+      "JDMl-QhY8hk-0014",
+      "JDMl-QhY8hk-0015",
+      "JDMl-QhY8hk-0016",
+      "JDMl-QhY8hk-0017",
+      "JDMl-QhY8hk-0018"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 591)"
+  },
+  {
+    "batch": 4,
+    "block_ids": [
+      "JDMl-QhY8hk-0019",
+      "JDMl-QhY8hk-0020",
+      "JDMl-QhY8hk-0021",
+      "JDMl-QhY8hk-0022",
+      "JDMl-QhY8hk-0023",
+      "JDMl-QhY8hk-0024"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 434)"
+  },
+  {
+    "batch": 5,
+    "block_ids": [
+      "JDMl-QhY8hk-0025",
+      "JDMl-QhY8hk-0026",
+      "JDMl-QhY8hk-0027",
+      "JDMl-QhY8hk-0028",
+      "JDMl-QhY8hk-0029",
+      "JDMl-QhY8hk-0030"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 515)"
+  },
+  {
+    "batch": 6,
+    "block_ids": [
+      "JDMl-QhY8hk-0031",
+      "JDMl-QhY8hk-0032",
+      "JDMl-QhY8hk-0033",
+      "JDMl-QhY8hk-0034",
+      "JDMl-QhY8hk-0035",
+      "JDMl-QhY8hk-0036"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 345)"
+  },
+  {
+    "batch": 8,
+    "block_ids": [
+      "JDMl-QhY8hk-0043",
+      "JDMl-QhY8hk-0044",
+      "JDMl-QhY8hk-0045",
+      "JDMl-QhY8hk-0046",
+      "JDMl-QhY8hk-0047",
+      "JDMl-QhY8hk-0048"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 463)"
+  },
+  {
+    "batch": 9,
+    "block_ids": [
+      "JDMl-QhY8hk-0049",
+      "JDMl-QhY8hk-0050",
+      "JDMl-QhY8hk-0051",
+      "JDMl-QhY8hk-0052",
+      "JDMl-QhY8hk-0053",
+      "JDMl-QhY8hk-0054"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 541)"
+  },
+  {
+    "batch": 10,
+    "block_ids": [
+      "JDMl-QhY8hk-0055",
+      "JDMl-QhY8hk-0056",
+      "JDMl-QhY8hk-0057",
+      "JDMl-QhY8hk-0058",
+      "JDMl-QhY8hk-0059",
+      "JDMl-QhY8hk-0060"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 12,
+    "block_ids": [
+      "JDMl-QhY8hk-0067",
+      "JDMl-QhY8hk-0068",
+      "JDMl-QhY8hk-0069",
+      "JDMl-QhY8hk-0070",
+      "JDMl-QhY8hk-0071",
+      "JDMl-QhY8hk-0072"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 556)"
+  }
+]
+

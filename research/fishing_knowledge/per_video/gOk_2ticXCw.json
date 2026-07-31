@@ -1,0 +1,163 @@
+{
+  "video_id": "gOk_2ticXCw",
+  "candidate_blocks": 78,
+  "claims": [],
+  "failed_batches": [
+    {
+      "batch": 1,
+      "block_ids": [
+        "gOk_2ticXCw-0001",
+        "gOk_2ticXCw-0002",
+        "gOk_2ticXCw-0003",
+        "gOk_2ticXCw-0004",
+        "gOk_2ticXCw-0005",
+        "gOk_2ticXCw-0006"
+      ],
+      "error": "JSONDecodeError: Extra data: line 11 column 6 (char 1633)"
+    },
+    {
+      "batch": 2,
+      "block_ids": [
+        "gOk_2ticXCw-0007",
+        "gOk_2ticXCw-0008",
+        "gOk_2ticXCw-0009",
+        "gOk_2ticXCw-0010",
+        "gOk_2ticXCw-0011",
+        "gOk_2ticXCw-0012"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 582)"
+    },
+    {
+      "batch": 3,
+      "block_ids": [
+        "gOk_2ticXCw-0013",
+        "gOk_2ticXCw-0014",
+        "gOk_2ticXCw-0015",
+        "gOk_2ticXCw-0016",
+        "gOk_2ticXCw-0017",
+        "gOk_2ticXCw-0018"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 310)"
+    },
+    {
+      "batch": 4,
+      "block_ids": [
+        "gOk_2ticXCw-0019",
+        "gOk_2ticXCw-0020",
+        "gOk_2ticXCw-0021",
+        "gOk_2ticXCw-0022",
+        "gOk_2ticXCw-0023",
+        "gOk_2ticXCw-0024"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1071)"
+    },
+    {
+      "batch": 5,
+      "block_ids": [
+        "gOk_2ticXCw-0025",
+        "gOk_2ticXCw-0026",
+        "gOk_2ticXCw-0027",
+        "gOk_2ticXCw-0028",
+        "gOk_2ticXCw-0029",
+        "gOk_2ticXCw-0030"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 382)"
+    },
+    {
+      "batch": 6,
+      "block_ids": [
+        "gOk_2ticXCw-0031",
+        "gOk_2ticXCw-0032",
+        "gOk_2ticXCw-0033",
+        "gOk_2ticXCw-0034",
+        "gOk_2ticXCw-0035",
+        "gOk_2ticXCw-0036"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1304)"
+    },
+    {
+      "batch": 7,
+      "block_ids": [
+        "gOk_2ticXCw-0037",
+        "gOk_2ticXCw-0038",
+        "gOk_2ticXCw-0039",
+        "gOk_2ticXCw-0040",
+        "gOk_2ticXCw-0041",
+        "gOk_2ticXCw-0042"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 748)"
+    },
+    {
+      "batch": 8,
+      "block_ids": [
+        "gOk_2ticXCw-0043",
+        "gOk_2ticXCw-0044",
+        "gOk_2ticXCw-0045",
+        "gOk_2ticXCw-0046",
+        "gOk_2ticXCw-0047",
+        "gOk_2ticXCw-0048"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 568)"
+    },
+    {
+      "batch": 9,
+      "block_ids": [
+        "gOk_2ticXCw-0049",
+        "gOk_2ticXCw-0050",
+        "gOk_2ticXCw-0051",
+        "gOk_2ticXCw-0052",
+        "gOk_2ticXCw-0053",
+        "gOk_2ticXCw-0054"
+      ],
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "batch": 10,
+      "block_ids": [
+        "gOk_2ticXCw-0055",
+        "gOk_2ticXCw-0056",
+        "gOk_2ticXCw-0057",
+        "gOk_2ticXCw-0058",
+        "gOk_2ticXCw-0059",
+        "gOk_2ticXCw-0060"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 598)"
+    },
+    {
+      "batch": 11,
+      "block_ids": [
+        "gOk_2ticXCw-0061",
+        "gOk_2ticXCw-0062",
+        "gOk_2ticXCw-0063",
+        "gOk_2ticXCw-0064",
+        "gOk_2ticXCw-0065",
+        "gOk_2ticXCw-0066"
+      ],
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "batch": 12,
+      "block_ids": [
+        "gOk_2ticXCw-0067",
+        "gOk_2ticXCw-0068",
+        "gOk_2ticXCw-0069",
+        "gOk_2ticXCw-0070",
+        "gOk_2ticXCw-0071",
+        "gOk_2ticXCw-0072"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1260)"
+    },
+    {
+      "batch": 13,
+      "block_ids": [
+        "gOk_2ticXCw-0073",
+        "gOk_2ticXCw-0074",
+        "gOk_2ticXCw-0075",
+        "gOk_2ticXCw-0076",
+        "gOk_2ticXCw-0077",
+        "gOk_2ticXCw-0078"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 591)"
+    }
+  ]
+}

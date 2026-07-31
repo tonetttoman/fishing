@@ -1,0 +1,114 @@
+VIDEÓ: 76. Út a 10 világbajnoki címig - Bakó Péter | Parti-Arcok Podcast
+URL: https://www.youtube.com/watch?v=gjyFGofMxtA
+VIDEÓ_ID: gjyFGofMxtA
+
+gjyFGofMxtA-C0001
+IDŐ: 01:35:33–01:36:03
+KATEGÓRIA: feeding
+ÁLLÍTÁS: Most szeretném amit csinálok és nem kellettő több jelenleg hát köszönjük szépen hogy eljöttél hozzánk ez egy nagyon speckó és különleges adás volt számunkra mert már régóta bazíroztunk arra hogy beszélgethessün ez egy mérföldkő az adás adás is lett igen köszönöm széen íg gondátok nagyon megtisztelő a de ez ez
+FELTÉTEL: Most szeretném amit csinálok és nem kellettő több jelenleg hát köszönjük szépen hogy eljöttél hozzánk ez egy nagyon speckó és különleges adás volt számunkra mert már régóta bazíroztunk arra hogy beszélgethessün ez egy mérföldkő az adás adás is lett igen köszönöm széen íg gondátok nagyon megtisztelő a de ez ez
+JAVASOLT MŰVELET: Nem tudnék ennyi napot a a vízparton tölteni foglalkoznom
+INDOK / VÁRT HATÁS: Nem tudnék ennyi napot a a vízparton tölteni foglalkoznom
+KIVÉTEL / KORLÁT: 
+BIZONYOSSÁG: low
+
+FELDOLGOZÁSI HIBÁK
+[
+  {
+    "batch": 2,
+    "block_ids": [
+      "gjyFGofMxtA-0007",
+      "gjyFGofMxtA-0008",
+      "gjyFGofMxtA-0009",
+      "gjyFGofMxtA-0010",
+      "gjyFGofMxtA-0011",
+      "gjyFGofMxtA-0012"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 502)"
+  },
+  {
+    "batch": 4,
+    "block_ids": [
+      "gjyFGofMxtA-0019",
+      "gjyFGofMxtA-0020",
+      "gjyFGofMxtA-0021",
+      "gjyFGofMxtA-0022",
+      "gjyFGofMxtA-0023",
+      "gjyFGofMxtA-0024"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 676)"
+  },
+  {
+    "batch": 5,
+    "block_ids": [
+      "gjyFGofMxtA-0025",
+      "gjyFGofMxtA-0026",
+      "gjyFGofMxtA-0027",
+      "gjyFGofMxtA-0028",
+      "gjyFGofMxtA-0029",
+      "gjyFGofMxtA-0030"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 415)"
+  },
+  {
+    "batch": 6,
+    "block_ids": [
+      "gjyFGofMxtA-0031",
+      "gjyFGofMxtA-0032",
+      "gjyFGofMxtA-0033",
+      "gjyFGofMxtA-0034",
+      "gjyFGofMxtA-0035",
+      "gjyFGofMxtA-0036"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 768)"
+  },
+  {
+    "batch": 7,
+    "block_ids": [
+      "gjyFGofMxtA-0037",
+      "gjyFGofMxtA-0038",
+      "gjyFGofMxtA-0039",
+      "gjyFGofMxtA-0040",
+      "gjyFGofMxtA-0041",
+      "gjyFGofMxtA-0042"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 666)"
+  },
+  {
+    "batch": 8,
+    "block_ids": [
+      "gjyFGofMxtA-0043",
+      "gjyFGofMxtA-0044",
+      "gjyFGofMxtA-0045",
+      "gjyFGofMxtA-0046",
+      "gjyFGofMxtA-0047",
+      "gjyFGofMxtA-0048"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 415)"
+  },
+  {
+    "batch": 9,
+    "block_ids": [
+      "gjyFGofMxtA-0049",
+      "gjyFGofMxtA-0050",
+      "gjyFGofMxtA-0051",
+      "gjyFGofMxtA-0052",
+      "gjyFGofMxtA-0053",
+      "gjyFGofMxtA-0054"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 10,
+    "block_ids": [
+      "gjyFGofMxtA-0055",
+      "gjyFGofMxtA-0056",
+      "gjyFGofMxtA-0057",
+      "gjyFGofMxtA-0058",
+      "gjyFGofMxtA-0059",
+      "gjyFGofMxtA-0060"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 383)"
+  }
+]
+

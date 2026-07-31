@@ -1,0 +1,153 @@
+HORGÁSZATI STRATÉGIAI TUDÁSBÁZIS – FORRÁSHŰ SZAKMAI ÁLLÍTÁSOK
+====================================================================================================
+
+A rekordok nyilvános videófeliratokból készültek. Az állítások nem szó szerinti idézetek,
+hanem időbélyeggel ellátott, forráshű magyar parafrázisok. Az automatikus átirat és a
+gépi strukturálás miatt a rekordokat az alkalmazás végleges adatbázisába emelés előtt
+szakmai mintavétellel és lehetőség szerint a videórészlettel is ellenőrizni kell.
+
+####################################################################################################
+VIDEÓ: 106. Világbajnok etetőanyag két nap alatt - Tímár Gábor | Parti-Arcok Podcast
+URL: https://www.youtube.com/watch?v=vrpNap7cMow
+VIDEÓ_ID: vrpNap7cMow
+
+vrpNap7cMow-C0001
+IDŐ: 02:13:04–02:13:35
+KATEGÓRIA: feeding
+SZAKMAI ÁLLÍTÁS: És hogyha a horogra is pinki gondolom. Igen. Paducozni pinkki. Igen. Aha. Tehát én ehhez elő is készültem már ehhez a kérdéshez. Kész, kész is vagy. A Dunán milyen partszakaszt keresel ilyenkor? ilyenkor? ilyenkor? Nem kell keresni. Hál istennek úgy hívják, hogy Gönyönna strand. Aha. Ez tőlünk légvonalba 100 mre van, ahol ahol tudok horgászni. Ez attól függ, hogy milyen vizállás van. Most körülbelül annyira van. És ez egy kavicsos, sima kavicsos partszakasz, ahol az ötös picbottal beérek, ott 1 m 20 cm. Amikor jobb idő szokott lenni, akkor úgy félábszáig beleállok a vízbe, és akkor az még egy kicsit dob rajta, de most még nem biztos, hogy beleállok, mert egy kicsit még hideg.
+ALKALMAZÁSI FELTÉTEL: Nem kell keresni. Hál istennek úgy hívják, hogy Gönyönna strand. Aha. Ez tőlünk légvonalba 100 mre van, ahol ahol tudok horgászni. Ez attól függ, hogy milyen vizállás van. Most körülbelül annyira van. És ez egy kavicsos, sima kavicsos partszakasz, ahol az ötös picbottal beérek, ott 1 m 20 cm. Amikor jobb idő szokott lenni, akkor úgy félábszáig beleállok a vízbe, és akkor az még egy kicsit dob rajta, de most még nem biztos, hogy beleállok, mert egy kicsit még hideg.
+JAVASOLT MŰVELET: Nem kell keresni. Hál istennek úgy hívják, hogy Gönyönna strand. Aha. Ez tőlünk légvonalba 100 mre van, ahol ahol tudok horgászni. Ez attól függ, hogy milyen vizállás van. Most körülbelül annyira van. És ez egy kavicsos, sima kavicsos partszakasz, ahol az ötös picbottal beérek, ott 1 m 20 cm. Amikor jobb idő szokott lenni, akkor úgy félábszáig beleállok a vízbe, és akkor az még egy kicsit dob rajta, de most még nem biztos, hogy beleállok, mert egy kicsit még hideg.
+INDOK / VÁRT HATÁS: Nem kell keresni. Hál istennek úgy hívják, hogy Gönyönna strand. Aha. Ez tőlünk légvonalba 100 mre van, ahol ahol tudok horgászni. Ez attól függ, hogy milyen vizállás van. Most körülbelül annyira van. És ez egy kavicsos, sima kavicsos partszakasz, ahol az ötös picbottal beérek, ott 1 m 20 cm. Amikor jobb idő szokott lenni, akkor úgy félábszáig beleállok a vízbe, és akkor az még egy kicsit dob rajta, de most még nem biztos, hogy beleállok, mert egy kicsit még hideg.
+KIVÉTEL / KORLÁT: 
+BIZONYOSSÁG: high
+
+####################################################################################################
+VIDEÓ: 72. A folyóvízi horgászat alapvető trükkje - vendég: Gyulai Ferenc | Parti-Arcok Podcast
+URL: https://www.youtube.com/watch?v=FwSYJDMHtPA
+VIDEÓ_ID: FwSYJDMHtPA
+
+FwSYJDMHtPA-C0001
+IDŐ: 01:31:55–01:32:27
+KATEGÓRIA: feeding
+SZAKMAI ÁLLÍTÁS: A gombóc érkezett a kapásban és ez egy nagyon-nagyon fontos dolog volt.
+ALKALMAZÁSI FELTÉTEL: A gombóc érkezett a kapásban és ez egy nagyon-nagyon fontos dolog volt.
+JAVASOLT MŰVELET: Nem ment nem áramlott el és értelemszerűen mögötte is fogtunk különböző fajta halakat.
+INDOK / VÁRT HATÁS: Nem ment nem áramlott el és értelemszerűen mögötte is fogtunk különböző fajta halakat.
+KIVÉTEL / KORLÁT: Nem beszéltünk róla nem tudom esetleg a tb további
+BIZONYOSSÁG: high
+
+####################################################################################################
+VIDEÓ: 76. Út a 10 világbajnoki címig - Bakó Péter | Parti-Arcok Podcast
+URL: https://www.youtube.com/watch?v=gjyFGofMxtA
+VIDEÓ_ID: gjyFGofMxtA
+
+gjyFGofMxtA-C0001
+IDŐ: 01:35:33–01:36:03
+KATEGÓRIA: feeding
+SZAKMAI ÁLLÍTÁS: Most szeretném amit csinálok és nem kellettő több jelenleg hát köszönjük szépen hogy eljöttél hozzánk ez egy nagyon speckó és különleges adás volt számunkra mert már régóta bazíroztunk arra hogy beszélgethessün ez egy mérföldkő az adás adás is lett igen köszönöm széen íg gondátok nagyon megtisztelő a de ez ez
+ALKALMAZÁSI FELTÉTEL: Most szeretném amit csinálok és nem kellettő több jelenleg hát köszönjük szépen hogy eljöttél hozzánk ez egy nagyon speckó és különleges adás volt számunkra mert már régóta bazíroztunk arra hogy beszélgethessün ez egy mérföldkő az adás adás is lett igen köszönöm széen íg gondátok nagyon megtisztelő a de ez ez
+JAVASOLT MŰVELET: Nem tudnék ennyi napot a a vízparton tölteni foglalkoznom
+INDOK / VÁRT HATÁS: Nem tudnék ennyi napot a a vízparton tölteni foglalkoznom
+KIVÉTEL / KORLÁT: 
+BIZONYOSSÁG: low
+
+####################################################################################################
+VIDEÓ: 91. Mi volt 2024 nagy innovációja a versenyhorgászatban? - Szabó Bence | Parti-Arcok Podcast
+URL: https://www.youtube.com/watch?v=X_wRPajL7eE
+VIDEÓ_ID: X_wRPajL7eE
+
+X_wRPajL7eE-C0001
+IDŐ: 01:23:32–01:24:03
+KATEGÓRIA: feeding
+SZAKMAI ÁLLÍTÁS: Mázebbre dobnunk mint korábban, de azért mert utána viszont ott voltak a segítőink a hátterek.
+ALKALMAZÁSI FELTÉTEL: A gábor merr toporog befele hy bence benned van-e még valami amit közölnél a nagy nyilvánossággal.
+JAVASOLT MŰVELET: Nem is volt semmilyen etetés, mert mi is mindig ezzel szívtuk a vérét.
+INDOK / VÁRT HATÁS: Mikor ők elmagyarázták hogy mit kéne csinálni, hogy csináljuk szarul és a végén megdobtam a tá az az igazság hogy az iván volt őt.
+KIVÉTEL / KORLÁT: 
+BIZONYOSSÁG: high
+
+####################################################################################################
+VIDEÓ: Parti-Arcok Live - Walter Tamással - 10. rész - Etetőanyagok
+URL: https://www.youtube.com/watch?v=mIb5MxmHwAs
+VIDEÓ_ID: mIb5MxmHwAs
+
+mIb5MxmHwAs-C0001
+IDŐ: 03:16:03–03:17:03
+KATEGÓRIA: feeding
+SZAKMAI ÁLLÍTÁS: Ezt a kettőt hoztam csak magammal. Ezzel ezzel a a a mondjuk egy matytyéri szituubban. De amúgy meg nem az van, hogy mit szagolgatjuk. Nem nek vagy nem a halnak szól. szól. szól. Azért azért a kukorica egy kukorica aktivátor az kukoricából van. Tehát ott az olaj. Aha is van. Ebben van egy kis vanília neked? De rajta neked ott egy pillanatra rá megfirkálták vele, ahogy szoktad mondani. viszont, hogy tényleg egy nagyon frankót mondjak a végére, amire őrülten büszkék lehetünk mi magyaretőanyaggyártók, és mi ott Szeged környékén ugye a mi gyárunk 30 kmre van onnan, tehát ha van tesztpálya a világon nekünk, akkor a Matyér az nagyon büszke vagyok arra, hogy bármilyen világversenyt rendeznek Magyarországon, tonnákat kell kivigyünk a partra.
+ALKALMAZÁSI FELTÉTEL: Nem tudom, hogy mit szagolgatjuk.
+JAVASOLT MŰVELET: Nem tudom, hogy mit szagolgatjuk.
+INDOK / VÁRT HATÁS: Nem tudom, hogy mit szagolgatjuk.
+KIVÉTEL / KORLÁT: Nem tudom, hogy mit szagolgatjuk.
+BIZONYOSSÁG: high
+
+mIb5MxmHwAs-C0002
+IDŐ: 03:18:34–03:19:07
+KATEGÓRIA: feeding
+SZAKMAI ÁLLÍTÁS: De jöjjenek majd a receptkérdések. Látjátok, mit hoztam magammal? Most nem fogom elhozni többet, viszont elmondani el tudjuk. Itt hagyom, itt hagyom. Ennek ennek ugye a mai adásnak lesz utánlövése a következőben, mert nekem ennyi kérdésem. Na csak ide. Jó, figyeljetek a gyorsan leder egy részére. Ami fontos, ami fontos, aki itt van még, hogy lesz élőkn következő Walter Tamás élőig, egy másik élő. élő. élő. Igen, ami január 26-án, hétfőn 7 óra este 7:00 órakor fog kezdődni Partiyarcok Live Extra néven. Ühüm. Volt egy nagyon kedves ismerősöm, aki ezt a jó nevet bedobta már.
+ALKALMAZÁSI FELTÉTEL: Nem tudom, hogy mit hoztam magammal.
+JAVASOLT MŰVELET: Nem tudom, hogy mit hoztam magammal.
+INDOK / VÁRT HATÁS: Nem tudom, hogy mit hoztam magammal.
+KIVÉTEL / KORLÁT: Nem tudom, hogy mit hoztam magammal.
+BIZONYOSSÁG: high
+
+####################################################################################################
+VIDEÓ: Parti-Arcok Live - Walter Tamással - 11. rész - Etetőanyagok akváriumban
+URL: https://www.youtube.com/watch?v=Nbi-mklca70
+VIDEÓ_ID: Nbi-mklca70
+
+Nbi-mklca70-C0001
+IDŐ: 02:58:32–02:59:34
+KATEGÓRIA: feeding
+SZAKMAI ÁLLÍTÁS: Felhígula a mangoló aroma, abból még baj nem lesz.
+ALKALMAZÁSI FELTÉTEL: Aha. Annak aztán DOS mindegyő megy a harlisztes cuccra oda megfelelő arányú egyéb egyéb egyéb cuccok mellett, olajos magvak meg egyebek mellett. És És És és az nekünk szól, hogy neked éppen melyik tetszik a a boltban.
+JAVASOLT MŰVELET: Hát nem, szerintem ez szép része, hiszen az ember ennyire ennyire, hogy mondjam, így beleéli magát a halelyébe, vagy nem tudom.
+INDOK / VÁRT HATÁS: Igen. Hát nem, szerintem ez szép része, hiszen az ember ennyire ennyire, hogy mondjam, így beleéli magát a halelyébe, vagy nem tudom.
+KIVÉTEL / KORLÁT: Ez annyira lehangoló. Igen. Hát nem, szerintem ez szép része, hiszen az ember ennyire ennyire, hogy mondjam, így beleéli magát a halelyébe, vagy nem tudom.
+BIZONYOSSÁG: high
+
+####################################################################################################
+VIDEÓ: Parti-Arcok Live - Walter Tamással - 13. rész - Helykeresés
+URL: https://www.youtube.com/watch?v=oI4iyT62tuk
+VIDEÓ_ID: oI4iyT62tuk
+
+oI4iyT62tuk-C0001
+IDŐ: 03:01:47–03:02:47
+KATEGÓRIA: feeding
+SZAKMAI ÁLLÍTÁS: I am not able to stop the bleeding when I am bleeding.
+ALKALMAZÁSI FELTÉTEL: I am not bleeding.
+JAVASOLT MŰVELET: I should not bleed.
+INDOK / VÁRT HATÁS: I should not bleed.
+KIVÉTEL / KORLÁT: I should not bleed.
+BIZONYOSSÁG: high
+
+####################################################################################################
+VIDEÓ: Parti-Arcok Live - with Tamás Walter - Hooks
+URL: https://www.youtube.com/watch?v=9HzHemtfrIA
+VIDEÓ_ID: 9HzHemtfrIA
+
+9HzHemtfrIA-C0001
+IDŐ: 02:58:36–02:59:38
+KATEGÓRIA: feeding
+SZAKMAI ÁLLÍTÁS: A peca volt tipikus, és rákényszerültem, de jó érzéssel csináltam, mert tök más volt így metodozni, hogy 70 mre klipszelve nem volt mindegy.
+ALKALMAZÁSI FELTÉTEL: A peca volt tipikus, és rákényszerültem, de jó érzéssel csináltam, mert tök más volt így metodozni, hogy 70 mre klipszelve nem volt mindegy.
+JAVASOLT MŰVELET: A peca volt tipikus, és rákényszerültem, de jó érzéssel csináltam, mert tök más volt így metodozni, hogy 70 mre klipszelve nem volt mindegy.
+INDOK / VÁRT HATÁS: A peca volt tipikus, és rákényszerültem, de jó érzéssel csináltam, mert tök más volt így metodozni, hogy 70 mre klipszelve nem volt mindegy.
+KIVÉTEL / KORLÁT: 
+BIZONYOSSÁG: high
+
+####################################################################################################
+VIDEÓ: Parti-Arcok Live Extra - Method Feeder Csúcstalálkozó - Bakó Péter x Szabó Bence
+URL: https://www.youtube.com/watch?v=g900ah_JcMI
+VIDEÓ_ID: g900ah_JcMI
+
+g900ah_JcMI-C0001
+IDŐ: 03:02:16–03:02:46
+KATEGÓRIA: feeding
+SZAKMAI ÁLLÍTÁS: Nagyak vagyunk ezért. Ígérjük, hogy jó helyre kerülnek ezek a támogatások. Következő Walterv live-ra például abból fogok hozni a Tamásnak távolkeleti, de nem úgy, hogy ebből utazik el Iván tájföldre és úgy elhoz, nem a kínai negyedben elfacsaltan. Jó, a kínai negyedben elfacsaltan. Jó, szóval szóval szóval mekkora fajűlölőmok po köszönjük szépen, hogy kaptad a megvalós kérdést. Köszönt a testvéreim. Könjük szépen, hogy itt voltatok velünk ilyen sokan. Tartsatok velünk legközelebb is. A nagyon fontos szolgálati közlemény. Látom Gábor, mert azon világít a piros.
+ALKALMAZÁSI FELTÉTEL: Nagyak vagyunk ezért. Ígérjük, hogy jó helyre kerülnek ezek a támogatások. Következő Walterv live-ra például abból fogok hozni a Tamásnak távolkeleti, de nem úgy, hogy ebből utazik el Iván tájföldre és úgy elhoz, nem a kínai negyedben elfacsaltan. Jó, a kínai negyedben elfacsaltan. Jó, szóval szóval szóval mekkora fajűlölőmok po köszönjük szépen, hogy kaptad a megvalós kérdést. Köszönt a testvéreim. Könjük szépen, hogy itt voltatok velünk ilyen sokan. Tartsatok velünk legközelebb is. A nagyon fontos szolgálati közlemény. Látom Gábor, mert azon világít a piros.
+JAVASOLT MŰVELET: Nagyak vagyunk ezért. Ígérjük, hogy jó helyre kerülnek ezek a támogatások. Következő Walterv live-ra például abból fogok hozni a Tamásnak távolkeleti, de nem úgy, hogy ebből utazik el Iván tájföldre és úgy elhoz, nem a kínai negyedben elfacsaltan. Jó, a kínai negyedben elfacsaltan. Jó, szóval szóval szóval mekkora fajűlölőmok po köszönjük szépen, hogy kaptad a megvalós kérdést. Köszönt a testvéreim. Könjük szépen, hogy itt voltatok velünk ilyen sokan. Tartsatok velünk legközelebb is. A nagyon fontos szolgálati közlemény. Látom Gábor, mert azon világít a piros.
+INDOK / VÁRT HATÁS: Nagyak vagyunk ezért. Ígérjük, hogy jó helyre kerülnek ezek a támogatások. Következő Walterv live-ra például abból fogok hozni a Tamásnak távolkeleti, de nem úgy, hogy ebből utazik el Iván tájföldre és úgy elhoz, nem a kínai negyedben elfacsaltan. Jó, a kínai negyedben elfacsaltan. Jó, szóval szóval szóval mekkora fajűlölőmok po köszönjük szépen, hogy kaptad a megvalós kérdést. Köszönt a testvéreim. Könjük szépen, hogy itt voltatok velünk ilyen sokan. Tartsatok velünk legközelebb is. A nagyon fontos szolgálati közlemény. Látom Gábor, mert azon világít a piros.
+KIVÉTEL / KORLÁT: 
+BIZONYOSSÁG: high
+

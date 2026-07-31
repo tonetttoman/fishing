@@ -1,0 +1,198 @@
+VIDEÓ: 106. Világbajnok etetőanyag két nap alatt - Tímár Gábor | Parti-Arcok Podcast
+URL: https://www.youtube.com/watch?v=vrpNap7cMow
+VIDEÓ_ID: vrpNap7cMow
+
+vrpNap7cMow-C0001
+IDŐ: 02:13:04–02:13:35
+KATEGÓRIA: feeding
+ÁLLÍTÁS: És hogyha a horogra is pinki gondolom. Igen. Paducozni pinkki. Igen. Aha. Tehát én ehhez elő is készültem már ehhez a kérdéshez. Kész, kész is vagy. A Dunán milyen partszakaszt keresel ilyenkor? ilyenkor? ilyenkor? Nem kell keresni. Hál istennek úgy hívják, hogy Gönyönna strand. Aha. Ez tőlünk légvonalba 100 mre van, ahol ahol tudok horgászni. Ez attól függ, hogy milyen vizállás van. Most körülbelül annyira van. És ez egy kavicsos, sima kavicsos partszakasz, ahol az ötös picbottal beérek, ott 1 m 20 cm. Amikor jobb idő szokott lenni, akkor úgy félábszáig beleállok a vízbe, és akkor az még egy kicsit dob rajta, de most még nem biztos, hogy beleállok, mert egy kicsit még hideg.
+FELTÉTEL: Nem kell keresni. Hál istennek úgy hívják, hogy Gönyönna strand. Aha. Ez tőlünk légvonalba 100 mre van, ahol ahol tudok horgászni. Ez attól függ, hogy milyen vizállás van. Most körülbelül annyira van. És ez egy kavicsos, sima kavicsos partszakasz, ahol az ötös picbottal beérek, ott 1 m 20 cm. Amikor jobb idő szokott lenni, akkor úgy félábszáig beleállok a vízbe, és akkor az még egy kicsit dob rajta, de most még nem biztos, hogy beleállok, mert egy kicsit még hideg.
+JAVASOLT MŰVELET: Nem kell keresni. Hál istennek úgy hívják, hogy Gönyönna strand. Aha. Ez tőlünk légvonalba 100 mre van, ahol ahol tudok horgászni. Ez attól függ, hogy milyen vizállás van. Most körülbelül annyira van. És ez egy kavicsos, sima kavicsos partszakasz, ahol az ötös picbottal beérek, ott 1 m 20 cm. Amikor jobb idő szokott lenni, akkor úgy félábszáig beleállok a vízbe, és akkor az még egy kicsit dob rajta, de most még nem biztos, hogy beleállok, mert egy kicsit még hideg.
+INDOK / VÁRT HATÁS: Nem kell keresni. Hál istennek úgy hívják, hogy Gönyönna strand. Aha. Ez tőlünk légvonalba 100 mre van, ahol ahol tudok horgászni. Ez attól függ, hogy milyen vizállás van. Most körülbelül annyira van. És ez egy kavicsos, sima kavicsos partszakasz, ahol az ötös picbottal beérek, ott 1 m 20 cm. Amikor jobb idő szokott lenni, akkor úgy félábszáig beleállok a vízbe, és akkor az még egy kicsit dob rajta, de most még nem biztos, hogy beleállok, mert egy kicsit még hideg.
+KIVÉTEL / KORLÁT: 
+BIZONYOSSÁG: high
+
+FELDOLGOZÁSI HIBÁK
+[
+  {
+    "batch": 1,
+    "block_ids": [
+      "vrpNap7cMow-0001",
+      "vrpNap7cMow-0002",
+      "vrpNap7cMow-0003",
+      "vrpNap7cMow-0004",
+      "vrpNap7cMow-0005",
+      "vrpNap7cMow-0006"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 365)"
+  },
+  {
+    "batch": 3,
+    "block_ids": [
+      "vrpNap7cMow-0013",
+      "vrpNap7cMow-0014",
+      "vrpNap7cMow-0015",
+      "vrpNap7cMow-0016",
+      "vrpNap7cMow-0017",
+      "vrpNap7cMow-0018"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 480)"
+  },
+  {
+    "batch": 4,
+    "block_ids": [
+      "vrpNap7cMow-0019",
+      "vrpNap7cMow-0020",
+      "vrpNap7cMow-0021",
+      "vrpNap7cMow-0022",
+      "vrpNap7cMow-0023",
+      "vrpNap7cMow-0024"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 627)"
+  },
+  {
+    "batch": 5,
+    "block_ids": [
+      "vrpNap7cMow-0025",
+      "vrpNap7cMow-0026",
+      "vrpNap7cMow-0027",
+      "vrpNap7cMow-0028",
+      "vrpNap7cMow-0029",
+      "vrpNap7cMow-0030"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 515)"
+  },
+  {
+    "batch": 6,
+    "block_ids": [
+      "vrpNap7cMow-0031",
+      "vrpNap7cMow-0032",
+      "vrpNap7cMow-0033",
+      "vrpNap7cMow-0034",
+      "vrpNap7cMow-0035",
+      "vrpNap7cMow-0036"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 662)"
+  },
+  {
+    "batch": 7,
+    "block_ids": [
+      "vrpNap7cMow-0037",
+      "vrpNap7cMow-0038",
+      "vrpNap7cMow-0039",
+      "vrpNap7cMow-0040",
+      "vrpNap7cMow-0041",
+      "vrpNap7cMow-0042"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 690)"
+  },
+  {
+    "batch": 9,
+    "block_ids": [
+      "vrpNap7cMow-0049",
+      "vrpNap7cMow-0050",
+      "vrpNap7cMow-0051",
+      "vrpNap7cMow-0052",
+      "vrpNap7cMow-0053",
+      "vrpNap7cMow-0054"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 555)"
+  },
+  {
+    "batch": 10,
+    "block_ids": [
+      "vrpNap7cMow-0055",
+      "vrpNap7cMow-0056",
+      "vrpNap7cMow-0057",
+      "vrpNap7cMow-0058",
+      "vrpNap7cMow-0059",
+      "vrpNap7cMow-0060"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1713)"
+  },
+  {
+    "batch": 11,
+    "block_ids": [
+      "vrpNap7cMow-0061",
+      "vrpNap7cMow-0062",
+      "vrpNap7cMow-0063",
+      "vrpNap7cMow-0064",
+      "vrpNap7cMow-0065",
+      "vrpNap7cMow-0066"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 504)"
+  },
+  {
+    "batch": 12,
+    "block_ids": [
+      "vrpNap7cMow-0067",
+      "vrpNap7cMow-0068",
+      "vrpNap7cMow-0069",
+      "vrpNap7cMow-0070",
+      "vrpNap7cMow-0071",
+      "vrpNap7cMow-0072"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 728)"
+  },
+  {
+    "batch": 14,
+    "block_ids": [
+      "vrpNap7cMow-0079",
+      "vrpNap7cMow-0080",
+      "vrpNap7cMow-0081",
+      "vrpNap7cMow-0082",
+      "vrpNap7cMow-0083",
+      "vrpNap7cMow-0084"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 800)"
+  },
+  {
+    "batch": 15,
+    "block_ids": [
+      "vrpNap7cMow-0085",
+      "vrpNap7cMow-0086",
+      "vrpNap7cMow-0087",
+      "vrpNap7cMow-0088",
+      "vrpNap7cMow-0089",
+      "vrpNap7cMow-0090"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 561)"
+  },
+  {
+    "batch": 16,
+    "block_ids": [
+      "vrpNap7cMow-0091",
+      "vrpNap7cMow-0092",
+      "vrpNap7cMow-0093",
+      "vrpNap7cMow-0094",
+      "vrpNap7cMow-0095",
+      "vrpNap7cMow-0096"
+    ],
+    "error": "JSONDecodeError: Extra data: line 11 column 6 (char 1679)"
+  },
+  {
+    "batch": 18,
+    "block_ids": [
+      "vrpNap7cMow-0103",
+      "vrpNap7cMow-0104",
+      "vrpNap7cMow-0105",
+      "vrpNap7cMow-0106",
+      "vrpNap7cMow-0107",
+      "vrpNap7cMow-0108"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 648)"
+  },
+  {
+    "batch": 19,
+    "block_ids": [
+      "vrpNap7cMow-0109",
+      "vrpNap7cMow-0110",
+      "vrpNap7cMow-0111",
+      "vrpNap7cMow-0112",
+      "vrpNap7cMow-0113",
+      "vrpNap7cMow-0114"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 969)"
+  }
+]
+

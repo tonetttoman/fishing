@@ -1,0 +1,332 @@
+VIDEÓ: Parti-Arcok Live - Walter Tamással - 5. rész - Úszós szerelékek
+URL: https://www.youtube.com/watch?v=ODbxIkx9dHU
+VIDEÓ_ID: ODbxIkx9dHU
+
+FELDOLGOZÁSI HIBÁK
+[
+  {
+    "batch": 1,
+    "block_ids": [
+      "ODbxIkx9dHU-0001",
+      "ODbxIkx9dHU-0002",
+      "ODbxIkx9dHU-0003",
+      "ODbxIkx9dHU-0004",
+      "ODbxIkx9dHU-0005",
+      "ODbxIkx9dHU-0006"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 532)"
+  },
+  {
+    "batch": 2,
+    "block_ids": [
+      "ODbxIkx9dHU-0007",
+      "ODbxIkx9dHU-0008",
+      "ODbxIkx9dHU-0009",
+      "ODbxIkx9dHU-0010",
+      "ODbxIkx9dHU-0011",
+      "ODbxIkx9dHU-0012"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 806)"
+  },
+  {
+    "batch": 3,
+    "block_ids": [
+      "ODbxIkx9dHU-0013",
+      "ODbxIkx9dHU-0014",
+      "ODbxIkx9dHU-0015",
+      "ODbxIkx9dHU-0016",
+      "ODbxIkx9dHU-0017",
+      "ODbxIkx9dHU-0018"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 677)"
+  },
+  {
+    "batch": 4,
+    "block_ids": [
+      "ODbxIkx9dHU-0019",
+      "ODbxIkx9dHU-0020",
+      "ODbxIkx9dHU-0021",
+      "ODbxIkx9dHU-0022",
+      "ODbxIkx9dHU-0023",
+      "ODbxIkx9dHU-0024"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1184)"
+  },
+  {
+    "batch": 5,
+    "block_ids": [
+      "ODbxIkx9dHU-0025",
+      "ODbxIkx9dHU-0026",
+      "ODbxIkx9dHU-0027",
+      "ODbxIkx9dHU-0028",
+      "ODbxIkx9dHU-0029",
+      "ODbxIkx9dHU-0030"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 6,
+    "block_ids": [
+      "ODbxIkx9dHU-0031",
+      "ODbxIkx9dHU-0032",
+      "ODbxIkx9dHU-0033",
+      "ODbxIkx9dHU-0034",
+      "ODbxIkx9dHU-0035",
+      "ODbxIkx9dHU-0036"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 439)"
+  },
+  {
+    "batch": 7,
+    "block_ids": [
+      "ODbxIkx9dHU-0037",
+      "ODbxIkx9dHU-0038",
+      "ODbxIkx9dHU-0039",
+      "ODbxIkx9dHU-0040",
+      "ODbxIkx9dHU-0041",
+      "ODbxIkx9dHU-0042"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 911)"
+  },
+  {
+    "batch": 8,
+    "block_ids": [
+      "ODbxIkx9dHU-0043",
+      "ODbxIkx9dHU-0044",
+      "ODbxIkx9dHU-0045",
+      "ODbxIkx9dHU-0046",
+      "ODbxIkx9dHU-0047",
+      "ODbxIkx9dHU-0048"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 9,
+    "block_ids": [
+      "ODbxIkx9dHU-0049",
+      "ODbxIkx9dHU-0050",
+      "ODbxIkx9dHU-0051",
+      "ODbxIkx9dHU-0052",
+      "ODbxIkx9dHU-0053",
+      "ODbxIkx9dHU-0054"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1838)"
+  },
+  {
+    "batch": 11,
+    "block_ids": [
+      "ODbxIkx9dHU-0061",
+      "ODbxIkx9dHU-0062",
+      "ODbxIkx9dHU-0063",
+      "ODbxIkx9dHU-0064",
+      "ODbxIkx9dHU-0065",
+      "ODbxIkx9dHU-0066"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 12,
+    "block_ids": [
+      "ODbxIkx9dHU-0067",
+      "ODbxIkx9dHU-0068",
+      "ODbxIkx9dHU-0069",
+      "ODbxIkx9dHU-0070",
+      "ODbxIkx9dHU-0071",
+      "ODbxIkx9dHU-0072"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1439)"
+  },
+  {
+    "batch": 13,
+    "block_ids": [
+      "ODbxIkx9dHU-0073",
+      "ODbxIkx9dHU-0074",
+      "ODbxIkx9dHU-0075",
+      "ODbxIkx9dHU-0076",
+      "ODbxIkx9dHU-0077",
+      "ODbxIkx9dHU-0078"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 399)"
+  },
+  {
+    "batch": 15,
+    "block_ids": [
+      "ODbxIkx9dHU-0085",
+      "ODbxIkx9dHU-0086",
+      "ODbxIkx9dHU-0087",
+      "ODbxIkx9dHU-0088",
+      "ODbxIkx9dHU-0089",
+      "ODbxIkx9dHU-0090"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 2158)"
+  },
+  {
+    "batch": 16,
+    "block_ids": [
+      "ODbxIkx9dHU-0091",
+      "ODbxIkx9dHU-0092",
+      "ODbxIkx9dHU-0093",
+      "ODbxIkx9dHU-0094",
+      "ODbxIkx9dHU-0095",
+      "ODbxIkx9dHU-0096"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 17,
+    "block_ids": [
+      "ODbxIkx9dHU-0097",
+      "ODbxIkx9dHU-0098",
+      "ODbxIkx9dHU-0099",
+      "ODbxIkx9dHU-0100",
+      "ODbxIkx9dHU-0101",
+      "ODbxIkx9dHU-0102"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1502)"
+  },
+  {
+    "batch": 18,
+    "block_ids": [
+      "ODbxIkx9dHU-0103",
+      "ODbxIkx9dHU-0104",
+      "ODbxIkx9dHU-0105",
+      "ODbxIkx9dHU-0106",
+      "ODbxIkx9dHU-0107",
+      "ODbxIkx9dHU-0108"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1023)"
+  },
+  {
+    "batch": 19,
+    "block_ids": [
+      "ODbxIkx9dHU-0109",
+      "ODbxIkx9dHU-0110",
+      "ODbxIkx9dHU-0111",
+      "ODbxIkx9dHU-0112",
+      "ODbxIkx9dHU-0113",
+      "ODbxIkx9dHU-0114"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1881)"
+  },
+  {
+    "batch": 20,
+    "block_ids": [
+      "ODbxIkx9dHU-0115",
+      "ODbxIkx9dHU-0116",
+      "ODbxIkx9dHU-0117",
+      "ODbxIkx9dHU-0118",
+      "ODbxIkx9dHU-0119",
+      "ODbxIkx9dHU-0120"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 620)"
+  },
+  {
+    "batch": 21,
+    "block_ids": [
+      "ODbxIkx9dHU-0121",
+      "ODbxIkx9dHU-0122",
+      "ODbxIkx9dHU-0123",
+      "ODbxIkx9dHU-0124",
+      "ODbxIkx9dHU-0125",
+      "ODbxIkx9dHU-0126"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 868)"
+  },
+  {
+    "batch": 22,
+    "block_ids": [
+      "ODbxIkx9dHU-0127",
+      "ODbxIkx9dHU-0128",
+      "ODbxIkx9dHU-0129",
+      "ODbxIkx9dHU-0130",
+      "ODbxIkx9dHU-0131",
+      "ODbxIkx9dHU-0132"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 690)"
+  },
+  {
+    "batch": 23,
+    "block_ids": [
+      "ODbxIkx9dHU-0133",
+      "ODbxIkx9dHU-0134",
+      "ODbxIkx9dHU-0135",
+      "ODbxIkx9dHU-0136",
+      "ODbxIkx9dHU-0137",
+      "ODbxIkx9dHU-0138"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1128)"
+  },
+  {
+    "batch": 24,
+    "block_ids": [
+      "ODbxIkx9dHU-0139",
+      "ODbxIkx9dHU-0140",
+      "ODbxIkx9dHU-0141",
+      "ODbxIkx9dHU-0142",
+      "ODbxIkx9dHU-0143",
+      "ODbxIkx9dHU-0144"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1388)"
+  },
+  {
+    "batch": 25,
+    "block_ids": [
+      "ODbxIkx9dHU-0145",
+      "ODbxIkx9dHU-0146",
+      "ODbxIkx9dHU-0147",
+      "ODbxIkx9dHU-0148",
+      "ODbxIkx9dHU-0149",
+      "ODbxIkx9dHU-0150"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 26,
+    "block_ids": [
+      "ODbxIkx9dHU-0151",
+      "ODbxIkx9dHU-0152",
+      "ODbxIkx9dHU-0153",
+      "ODbxIkx9dHU-0154",
+      "ODbxIkx9dHU-0155",
+      "ODbxIkx9dHU-0156"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 814)"
+  },
+  {
+    "batch": 27,
+    "block_ids": [
+      "ODbxIkx9dHU-0157",
+      "ODbxIkx9dHU-0158",
+      "ODbxIkx9dHU-0159",
+      "ODbxIkx9dHU-0160",
+      "ODbxIkx9dHU-0161",
+      "ODbxIkx9dHU-0162"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1045)"
+  },
+  {
+    "batch": 28,
+    "block_ids": [
+      "ODbxIkx9dHU-0163",
+      "ODbxIkx9dHU-0164",
+      "ODbxIkx9dHU-0165",
+      "ODbxIkx9dHU-0166",
+      "ODbxIkx9dHU-0167",
+      "ODbxIkx9dHU-0168"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 440)"
+  },
+  {
+    "batch": 30,
+    "block_ids": [
+      "ODbxIkx9dHU-0175",
+      "ODbxIkx9dHU-0176",
+      "ODbxIkx9dHU-0177",
+      "ODbxIkx9dHU-0178",
+      "ODbxIkx9dHU-0179",
+      "ODbxIkx9dHU-0180"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 717)"
+  }
+]
+

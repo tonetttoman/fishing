@@ -1,0 +1,7 @@
+Videos with results: 36
+Candidate blocks reviewed: 4635
+Source-faithful knowledge records: 10
+Failed model batches: 688
+High confidence: 9
+Medium confidence: 0
+Low confidence: 1

@@ -1,0 +1,121 @@
+{
+  "video_id": "gjyFGofMxtA",
+  "candidate_blocks": 67,
+  "claims": [
+    {
+      "claim_id": "gjyFGofMxtA-C0001",
+      "block_id": "gjyFGofMxtA-0067",
+      "video_id": "gjyFGofMxtA",
+      "title": "76. Út a 10 világbajnoki címig - Bakó Péter | Parti-Arcok Podcast",
+      "url": "https://www.youtube.com/watch?v=gjyFGofMxtA",
+      "start": "01:35:33",
+      "end": "01:36:03",
+      "category": "feeding",
+      "statement": "Most szeretném amit csinálok és nem kellettő több jelenleg hát köszönjük szépen hogy eljöttél hozzánk ez egy nagyon speckó és különleges adás volt számunkra mert már régóta bazíroztunk arra hogy beszélgethessün ez egy mérföldkő az adás adás is lett igen köszönöm széen íg gondátok nagyon megtisztelő a de ez ez",
+      "conditions": "Most szeretném amit csinálok és nem kellettő több jelenleg hát köszönjük szépen hogy eljöttél hozzánk ez egy nagyon speckó és különleges adás volt számunkra mert már régóta bazíroztunk arra hogy beszélgethessün ez egy mérföldkő az adás adás is lett igen köszönöm széen íg gondátok nagyon megtisztelő a de ez ez",
+      "recommended_action": "Nem tudnék ennyi napot a a vízparton tölteni foglalkoznom",
+      "reason_effect": "Nem tudnék ennyi napot a a vízparton tölteni foglalkoznom",
+      "exception": "",
+      "confidence": "low",
+      "source_block": "hogy terészleg lesz egy saját márkám vagy egy saját cégem nem mondom hogy nincsenek ilyen céljaim majd kicsit később vagy vagy sokkal később de most egyelőre aktív versenyző vagyok élek ahogy élek szeretem szeretem amit csinálok szeretem a mindennapjaimat nekem nem kell jelenleg ettől több én most szeretnék a versenyzésre fókuszálni akárki akármit mond most én belevágnék egy ilyenbe az áldoznék a versenyeredményeimből szóval nem tudnék ennyi napot a a vízparton tölteni foglalkoznom kéne a saját cégeim ügyeivel vagy a saját márkám ügyeivel amit ami nem gondolom egy 23 éves embernek való főleg úgy hogy most nagyon eredmény szomjas vagyok eredményéhes vagyok szeretném az most hajszolom még az eredményeket ez majd kicsit megváltozik majd talán akkor de de most t szeretem amit csinálok és és és tök jól megvagyok és nem kellettő több jelenleg hát köszönjük szépen hogy eljöttél hozzánk ez egy nagyon speckó és különleges adás volt számunkra mert már régóta bazíroztunk arra hogy beszélgethessün ez egy mérföldkő az adás adás is lett igen köszönöm széen íg gondátok nagyon megtisztelő a de ez ez"
+    }
+  ],
+  "failed_batches": [
+    {
+      "batch": 2,
+      "block_ids": [
+        "gjyFGofMxtA-0007",
+        "gjyFGofMxtA-0008",
+        "gjyFGofMxtA-0009",
+        "gjyFGofMxtA-0010",
+        "gjyFGofMxtA-0011",
+        "gjyFGofMxtA-0012"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 502)"
+    },
+    {
+      "batch": 4,
+      "block_ids": [
+        "gjyFGofMxtA-0019",
+        "gjyFGofMxtA-0020",
+        "gjyFGofMxtA-0021",
+        "gjyFGofMxtA-0022",
+        "gjyFGofMxtA-0023",
+        "gjyFGofMxtA-0024"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 676)"
+    },
+    {
+      "batch": 5,
+      "block_ids": [
+        "gjyFGofMxtA-0025",
+        "gjyFGofMxtA-0026",
+        "gjyFGofMxtA-0027",
+        "gjyFGofMxtA-0028",
+        "gjyFGofMxtA-0029",
+        "gjyFGofMxtA-0030"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 415)"
+    },
+    {
+      "batch": 6,
+      "block_ids": [
+        "gjyFGofMxtA-0031",
+        "gjyFGofMxtA-0032",
+        "gjyFGofMxtA-0033",
+        "gjyFGofMxtA-0034",
+        "gjyFGofMxtA-0035",
+        "gjyFGofMxtA-0036"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 768)"
+    },
+    {
+      "batch": 7,
+      "block_ids": [
+        "gjyFGofMxtA-0037",
+        "gjyFGofMxtA-0038",
+        "gjyFGofMxtA-0039",
+        "gjyFGofMxtA-0040",
+        "gjyFGofMxtA-0041",
+        "gjyFGofMxtA-0042"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 666)"
+    },
+    {
+      "batch": 8,
+      "block_ids": [
+        "gjyFGofMxtA-0043",
+        "gjyFGofMxtA-0044",
+        "gjyFGofMxtA-0045",
+        "gjyFGofMxtA-0046",
+        "gjyFGofMxtA-0047",
+        "gjyFGofMxtA-0048"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 415)"
+    },
+    {
+      "batch": 9,
+      "block_ids": [
+        "gjyFGofMxtA-0049",
+        "gjyFGofMxtA-0050",
+        "gjyFGofMxtA-0051",
+        "gjyFGofMxtA-0052",
+        "gjyFGofMxtA-0053",
+        "gjyFGofMxtA-0054"
+      ],
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "batch": 10,
+      "block_ids": [
+        "gjyFGofMxtA-0055",
+        "gjyFGofMxtA-0056",
+        "gjyFGofMxtA-0057",
+        "gjyFGofMxtA-0058",
+        "gjyFGofMxtA-0059",
+        "gjyFGofMxtA-0060"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 383)"
+    }
+  ]
+}

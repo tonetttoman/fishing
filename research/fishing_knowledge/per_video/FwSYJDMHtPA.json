@@ -1,0 +1,109 @@
+{
+  "video_id": "FwSYJDMHtPA",
+  "candidate_blocks": 67,
+  "claims": [
+    {
+      "claim_id": "FwSYJDMHtPA-C0001",
+      "block_id": "FwSYJDMHtPA-0067",
+      "video_id": "FwSYJDMHtPA",
+      "title": "72. A folyóvízi horgászat alapvető trükkje - vendég: Gyulai Ferenc | Parti-Arcok Podcast",
+      "url": "https://www.youtube.com/watch?v=FwSYJDMHtPA",
+      "start": "01:31:55",
+      "end": "01:32:27",
+      "category": "feeding",
+      "statement": "A gombóc érkezett a kapásban és ez egy nagyon-nagyon fontos dolog volt.",
+      "conditions": "A gombóc érkezett a kapásban és ez egy nagyon-nagyon fontos dolog volt.",
+      "recommended_action": "Nem ment nem áramlott el és értelemszerűen mögötte is fogtunk különböző fajta halakat.",
+      "reason_effect": "Nem ment nem áramlott el és értelemszerűen mögötte is fogtunk különböző fajta halakat.",
+      "exception": "Nem beszéltünk róla nem tudom esetleg a tb további",
+      "confidence": "high",
+      "source_block": "észrevette hogy ott van a kapás ahova a gombóc érkezett aha és ez egy nagyon-nagyon fontos dolog volt hogy hogy nem ment nem nem áramlott el és értelemszerűen mögötte is fogtunk különböző fajta halakat de az azért volt mert ebbe a eteti etető anyyaggombosba ahogy olvadt le ugye mállott szét beleúszott egy halraj vagy egy darab nagyobb hal fölcsapott szemcéket és amí fölcsapódott azt már szedegette vízközt össze a többi hal is ah de de a halak nagy részét azt az etetésén fogták hát igen ezek ezek a nagy dolgok azt gondolom mi pedig elérkeztünk azért most már az adásunk végéhez iván marad benned valami nagyon fontos kérdés velem rengeteg fontos kérdés marad de akkor reggelig itt maradunk akkor majd valamikor folytatjuk feri esetleg még valami amit nagyon szerettél volna elmondani de nem beszéltünk róla nem tudom esetleg a tb további"
+    }
+  ],
+  "failed_batches": [
+    {
+      "batch": 1,
+      "block_ids": [
+        "FwSYJDMHtPA-0001",
+        "FwSYJDMHtPA-0002",
+        "FwSYJDMHtPA-0003",
+        "FwSYJDMHtPA-0004",
+        "FwSYJDMHtPA-0005",
+        "FwSYJDMHtPA-0006"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 874)"
+    },
+    {
+      "batch": 3,
+      "block_ids": [
+        "FwSYJDMHtPA-0013",
+        "FwSYJDMHtPA-0014",
+        "FwSYJDMHtPA-0015",
+        "FwSYJDMHtPA-0016",
+        "FwSYJDMHtPA-0017",
+        "FwSYJDMHtPA-0018"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 383)"
+    },
+    {
+      "batch": 6,
+      "block_ids": [
+        "FwSYJDMHtPA-0031",
+        "FwSYJDMHtPA-0032",
+        "FwSYJDMHtPA-0033",
+        "FwSYJDMHtPA-0034",
+        "FwSYJDMHtPA-0035",
+        "FwSYJDMHtPA-0036"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 431)"
+    },
+    {
+      "batch": 7,
+      "block_ids": [
+        "FwSYJDMHtPA-0037",
+        "FwSYJDMHtPA-0038",
+        "FwSYJDMHtPA-0039",
+        "FwSYJDMHtPA-0040",
+        "FwSYJDMHtPA-0041",
+        "FwSYJDMHtPA-0042"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 429)"
+    },
+    {
+      "batch": 9,
+      "block_ids": [
+        "FwSYJDMHtPA-0049",
+        "FwSYJDMHtPA-0050",
+        "FwSYJDMHtPA-0051",
+        "FwSYJDMHtPA-0052",
+        "FwSYJDMHtPA-0053",
+        "FwSYJDMHtPA-0054"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 628)"
+    },
+    {
+      "batch": 10,
+      "block_ids": [
+        "FwSYJDMHtPA-0055",
+        "FwSYJDMHtPA-0056",
+        "FwSYJDMHtPA-0057",
+        "FwSYJDMHtPA-0058",
+        "FwSYJDMHtPA-0059",
+        "FwSYJDMHtPA-0060"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 674)"
+    },
+    {
+      "batch": 11,
+      "block_ids": [
+        "FwSYJDMHtPA-0061",
+        "FwSYJDMHtPA-0062",
+        "FwSYJDMHtPA-0063",
+        "FwSYJDMHtPA-0064",
+        "FwSYJDMHtPA-0065",
+        "FwSYJDMHtPA-0066"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 502)"
+    }
+  ]
+}

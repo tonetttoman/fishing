@@ -1,0 +1,259 @@
+VIDEÓ: 105. Minden világversenyen vért kell hugyozni  - Szabó Bence | Parti-Arcok Podcast
+URL: https://www.youtube.com/watch?v=ix2ChQ-oJP4
+VIDEÓ_ID: ix2ChQ-oJP4
+
+FELDOLGOZÁSI HIBÁK
+[
+  {
+    "batch": 1,
+    "block_ids": [
+      "ix2ChQ-oJP4-0001",
+      "ix2ChQ-oJP4-0002",
+      "ix2ChQ-oJP4-0003",
+      "ix2ChQ-oJP4-0004",
+      "ix2ChQ-oJP4-0005",
+      "ix2ChQ-oJP4-0006"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1617)"
+  },
+  {
+    "batch": 2,
+    "block_ids": [
+      "ix2ChQ-oJP4-0007",
+      "ix2ChQ-oJP4-0008",
+      "ix2ChQ-oJP4-0009",
+      "ix2ChQ-oJP4-0010",
+      "ix2ChQ-oJP4-0011",
+      "ix2ChQ-oJP4-0012"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1812)"
+  },
+  {
+    "batch": 3,
+    "block_ids": [
+      "ix2ChQ-oJP4-0013",
+      "ix2ChQ-oJP4-0014",
+      "ix2ChQ-oJP4-0015",
+      "ix2ChQ-oJP4-0016",
+      "ix2ChQ-oJP4-0017",
+      "ix2ChQ-oJP4-0018"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 554)"
+  },
+  {
+    "batch": 4,
+    "block_ids": [
+      "ix2ChQ-oJP4-0019",
+      "ix2ChQ-oJP4-0020",
+      "ix2ChQ-oJP4-0021",
+      "ix2ChQ-oJP4-0022",
+      "ix2ChQ-oJP4-0023",
+      "ix2ChQ-oJP4-0024"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 5,
+    "block_ids": [
+      "ix2ChQ-oJP4-0025",
+      "ix2ChQ-oJP4-0026",
+      "ix2ChQ-oJP4-0027",
+      "ix2ChQ-oJP4-0028",
+      "ix2ChQ-oJP4-0029",
+      "ix2ChQ-oJP4-0030"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 668)"
+  },
+  {
+    "batch": 6,
+    "block_ids": [
+      "ix2ChQ-oJP4-0031",
+      "ix2ChQ-oJP4-0032",
+      "ix2ChQ-oJP4-0033",
+      "ix2ChQ-oJP4-0034",
+      "ix2ChQ-oJP4-0035",
+      "ix2ChQ-oJP4-0036"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 727)"
+  },
+  {
+    "batch": 7,
+    "block_ids": [
+      "ix2ChQ-oJP4-0037",
+      "ix2ChQ-oJP4-0038",
+      "ix2ChQ-oJP4-0039",
+      "ix2ChQ-oJP4-0040",
+      "ix2ChQ-oJP4-0041",
+      "ix2ChQ-oJP4-0042"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1076)"
+  },
+  {
+    "batch": 9,
+    "block_ids": [
+      "ix2ChQ-oJP4-0049",
+      "ix2ChQ-oJP4-0050",
+      "ix2ChQ-oJP4-0051",
+      "ix2ChQ-oJP4-0052",
+      "ix2ChQ-oJP4-0053",
+      "ix2ChQ-oJP4-0054"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 617)"
+  },
+  {
+    "batch": 10,
+    "block_ids": [
+      "ix2ChQ-oJP4-0055",
+      "ix2ChQ-oJP4-0056",
+      "ix2ChQ-oJP4-0057",
+      "ix2ChQ-oJP4-0058",
+      "ix2ChQ-oJP4-0059",
+      "ix2ChQ-oJP4-0060"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 663)"
+  },
+  {
+    "batch": 11,
+    "block_ids": [
+      "ix2ChQ-oJP4-0061",
+      "ix2ChQ-oJP4-0062",
+      "ix2ChQ-oJP4-0063",
+      "ix2ChQ-oJP4-0064",
+      "ix2ChQ-oJP4-0065",
+      "ix2ChQ-oJP4-0066"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1219)"
+  },
+  {
+    "batch": 12,
+    "block_ids": [
+      "ix2ChQ-oJP4-0067",
+      "ix2ChQ-oJP4-0068",
+      "ix2ChQ-oJP4-0069",
+      "ix2ChQ-oJP4-0070",
+      "ix2ChQ-oJP4-0071",
+      "ix2ChQ-oJP4-0072"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1041)"
+  },
+  {
+    "batch": 14,
+    "block_ids": [
+      "ix2ChQ-oJP4-0079",
+      "ix2ChQ-oJP4-0080",
+      "ix2ChQ-oJP4-0081",
+      "ix2ChQ-oJP4-0082",
+      "ix2ChQ-oJP4-0083",
+      "ix2ChQ-oJP4-0084"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 496)"
+  },
+  {
+    "batch": 15,
+    "block_ids": [
+      "ix2ChQ-oJP4-0085",
+      "ix2ChQ-oJP4-0086",
+      "ix2ChQ-oJP4-0087",
+      "ix2ChQ-oJP4-0088",
+      "ix2ChQ-oJP4-0089",
+      "ix2ChQ-oJP4-0090"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 16,
+    "block_ids": [
+      "ix2ChQ-oJP4-0091",
+      "ix2ChQ-oJP4-0092",
+      "ix2ChQ-oJP4-0093",
+      "ix2ChQ-oJP4-0094",
+      "ix2ChQ-oJP4-0095",
+      "ix2ChQ-oJP4-0096"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 861)"
+  },
+  {
+    "batch": 17,
+    "block_ids": [
+      "ix2ChQ-oJP4-0097",
+      "ix2ChQ-oJP4-0098",
+      "ix2ChQ-oJP4-0099",
+      "ix2ChQ-oJP4-0100",
+      "ix2ChQ-oJP4-0101",
+      "ix2ChQ-oJP4-0102"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 595)"
+  },
+  {
+    "batch": 18,
+    "block_ids": [
+      "ix2ChQ-oJP4-0103",
+      "ix2ChQ-oJP4-0104",
+      "ix2ChQ-oJP4-0105",
+      "ix2ChQ-oJP4-0106",
+      "ix2ChQ-oJP4-0107",
+      "ix2ChQ-oJP4-0108"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 506)"
+  },
+  {
+    "batch": 19,
+    "block_ids": [
+      "ix2ChQ-oJP4-0109",
+      "ix2ChQ-oJP4-0110",
+      "ix2ChQ-oJP4-0111",
+      "ix2ChQ-oJP4-0112",
+      "ix2ChQ-oJP4-0113",
+      "ix2ChQ-oJP4-0114"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 739)"
+  },
+  {
+    "batch": 20,
+    "block_ids": [
+      "ix2ChQ-oJP4-0115",
+      "ix2ChQ-oJP4-0116",
+      "ix2ChQ-oJP4-0117",
+      "ix2ChQ-oJP4-0118",
+      "ix2ChQ-oJP4-0119",
+      "ix2ChQ-oJP4-0120"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 403)"
+  },
+  {
+    "batch": 21,
+    "block_ids": [
+      "ix2ChQ-oJP4-0121",
+      "ix2ChQ-oJP4-0122",
+      "ix2ChQ-oJP4-0123",
+      "ix2ChQ-oJP4-0124",
+      "ix2ChQ-oJP4-0125",
+      "ix2ChQ-oJP4-0126"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 510)"
+  },
+  {
+    "batch": 22,
+    "block_ids": [
+      "ix2ChQ-oJP4-0127",
+      "ix2ChQ-oJP4-0128",
+      "ix2ChQ-oJP4-0129",
+      "ix2ChQ-oJP4-0130",
+      "ix2ChQ-oJP4-0131",
+      "ix2ChQ-oJP4-0132"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 962)"
+  },
+  {
+    "batch": 23,
+    "block_ids": [
+      "ix2ChQ-oJP4-0133",
+      "ix2ChQ-oJP4-0134",
+      "ix2ChQ-oJP4-0135",
+      "ix2ChQ-oJP4-0136",
+      "ix2ChQ-oJP4-0137"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 938)"
+  }
+]
+

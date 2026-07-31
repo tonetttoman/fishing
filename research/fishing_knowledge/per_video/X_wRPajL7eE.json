@@ -1,0 +1,85 @@
+{
+  "video_id": "X_wRPajL7eE",
+  "candidate_blocks": 67,
+  "claims": [
+    {
+      "claim_id": "X_wRPajL7eE-C0001",
+      "block_id": "X_wRPajL7eE-0067",
+      "video_id": "X_wRPajL7eE",
+      "title": "91. Mi volt 2024 nagy innovációja a versenyhorgászatban? - Szabó Bence | Parti-Arcok Podcast",
+      "url": "https://www.youtube.com/watch?v=X_wRPajL7eE",
+      "start": "01:23:32",
+      "end": "01:24:03",
+      "category": "feeding",
+      "statement": "Mázebbre dobnunk mint korábban, de azért mert utána viszont ott voltak a segítőink a hátterek.",
+      "conditions": "A gábor merr toporog befele hy bence benned van-e még valami amit közölnél a nagy nyilvánossággal.",
+      "recommended_action": "Nem is volt semmilyen etetés, mert mi is mindig ezzel szívtuk a vérét.",
+      "reason_effect": "Mikor ők elmagyarázták hogy mit kéne csinálni, hogy csináljuk szarul és a végén megdobtam a tá az az igazság hogy az iván volt őt.",
+      "exception": "",
+      "confidence": "high",
+      "source_block": "mázebbre dobnunk mint korábban de azért mert utána viszont ott voltak a segítőink a hátterek így van és mikor ők elmagyarázták hogy mit kéne csinálni hogy csináljuk szarul és a végén megdobtam a tá az az igazság hogy az iván volt őt ő neek azt mond vagyis ő kicsit később ért oda mondta hogy csináljunk egy etetést röviden mert ő nem tud messzire dobni és mi is mindig ezzel szívtuk a vérét ő úgy ment el korábban el kellett menni a túránkról hogy ő tud a legmesszebb dobni most már úgyhogy amúgy tök jó a helyzet ja ja nem is kellett a rövid etetés nem nem na nem is volt semmilyen etetés ennyi ennyire lehet bennük megbízni kiszámolja igen mert mi a az addig ott jutott eszembe hogy mondtad hogy a sörözésre nincs idő mi ezért járunk horgászni mert ott van idő igen én bennem nem maradt már más iván érzem hogy te márn én azt érzem hogy másfél óráná tartunk és a gábor merr toporog befele hy bence benned van-e még valami amit közölnél a nagy nyilvánossággal bár lehet hogy a forgászoldaladat többen követik a"
+    }
+  ],
+  "failed_batches": [
+    {
+      "batch": 1,
+      "block_ids": [
+        "X_wRPajL7eE-0001",
+        "X_wRPajL7eE-0002",
+        "X_wRPajL7eE-0003",
+        "X_wRPajL7eE-0004",
+        "X_wRPajL7eE-0005",
+        "X_wRPajL7eE-0006"
+      ],
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "batch": 2,
+      "block_ids": [
+        "X_wRPajL7eE-0007",
+        "X_wRPajL7eE-0008",
+        "X_wRPajL7eE-0009",
+        "X_wRPajL7eE-0010",
+        "X_wRPajL7eE-0011",
+        "X_wRPajL7eE-0012"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1124)"
+    },
+    {
+      "batch": 7,
+      "block_ids": [
+        "X_wRPajL7eE-0037",
+        "X_wRPajL7eE-0038",
+        "X_wRPajL7eE-0039",
+        "X_wRPajL7eE-0040",
+        "X_wRPajL7eE-0041",
+        "X_wRPajL7eE-0042"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 533)"
+    },
+    {
+      "batch": 10,
+      "block_ids": [
+        "X_wRPajL7eE-0055",
+        "X_wRPajL7eE-0056",
+        "X_wRPajL7eE-0057",
+        "X_wRPajL7eE-0058",
+        "X_wRPajL7eE-0059",
+        "X_wRPajL7eE-0060"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 513)"
+    },
+    {
+      "batch": 11,
+      "block_ids": [
+        "X_wRPajL7eE-0061",
+        "X_wRPajL7eE-0062",
+        "X_wRPajL7eE-0063",
+        "X_wRPajL7eE-0064",
+        "X_wRPajL7eE-0065",
+        "X_wRPajL7eE-0066"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 451)"
+    }
+  ]
+}

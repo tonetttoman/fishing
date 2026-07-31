@@ -1,0 +1,400 @@
+VIDEÓ: Parti-Arcok Live - Walter Tamással - 10. rész - Etetőanyagok
+URL: https://www.youtube.com/watch?v=mIb5MxmHwAs
+VIDEÓ_ID: mIb5MxmHwAs
+
+mIb5MxmHwAs-C0001
+IDŐ: 03:16:03–03:17:03
+KATEGÓRIA: feeding
+ÁLLÍTÁS: Ezt a kettőt hoztam csak magammal. Ezzel ezzel a a a mondjuk egy matytyéri szituubban. De amúgy meg nem az van, hogy mit szagolgatjuk. Nem nek vagy nem a halnak szól. szól. szól. Azért azért a kukorica egy kukorica aktivátor az kukoricából van. Tehát ott az olaj. Aha is van. Ebben van egy kis vanília neked? De rajta neked ott egy pillanatra rá megfirkálták vele, ahogy szoktad mondani. viszont, hogy tényleg egy nagyon frankót mondjak a végére, amire őrülten büszkék lehetünk mi magyaretőanyaggyártók, és mi ott Szeged környékén ugye a mi gyárunk 30 kmre van onnan, tehát ha van tesztpálya a világon nekünk, akkor a Matyér az nagyon büszke vagyok arra, hogy bármilyen világversenyt rendeznek Magyarországon, tonnákat kell kivigyünk a partra.
+FELTÉTEL: Nem tudom, hogy mit szagolgatjuk.
+JAVASOLT MŰVELET: Nem tudom, hogy mit szagolgatjuk.
+INDOK / VÁRT HATÁS: Nem tudom, hogy mit szagolgatjuk.
+KIVÉTEL / KORLÁT: Nem tudom, hogy mit szagolgatjuk.
+BIZONYOSSÁG: high
+
+mIb5MxmHwAs-C0002
+IDŐ: 03:18:34–03:19:07
+KATEGÓRIA: feeding
+ÁLLÍTÁS: De jöjjenek majd a receptkérdések. Látjátok, mit hoztam magammal? Most nem fogom elhozni többet, viszont elmondani el tudjuk. Itt hagyom, itt hagyom. Ennek ennek ugye a mai adásnak lesz utánlövése a következőben, mert nekem ennyi kérdésem. Na csak ide. Jó, figyeljetek a gyorsan leder egy részére. Ami fontos, ami fontos, aki itt van még, hogy lesz élőkn következő Walter Tamás élőig, egy másik élő. élő. élő. Igen, ami január 26-án, hétfőn 7 óra este 7:00 órakor fog kezdődni Partiyarcok Live Extra néven. Ühüm. Volt egy nagyon kedves ismerősöm, aki ezt a jó nevet bedobta már.
+FELTÉTEL: Nem tudom, hogy mit hoztam magammal.
+JAVASOLT MŰVELET: Nem tudom, hogy mit hoztam magammal.
+INDOK / VÁRT HATÁS: Nem tudom, hogy mit hoztam magammal.
+KIVÉTEL / KORLÁT: Nem tudom, hogy mit hoztam magammal.
+BIZONYOSSÁG: high
+
+FELDOLGOZÁSI HIBÁK
+[
+  {
+    "batch": 1,
+    "block_ids": [
+      "mIb5MxmHwAs-0001",
+      "mIb5MxmHwAs-0002",
+      "mIb5MxmHwAs-0003",
+      "mIb5MxmHwAs-0004",
+      "mIb5MxmHwAs-0005",
+      "mIb5MxmHwAs-0006"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 889)"
+  },
+  {
+    "batch": 2,
+    "block_ids": [
+      "mIb5MxmHwAs-0007",
+      "mIb5MxmHwAs-0008",
+      "mIb5MxmHwAs-0009",
+      "mIb5MxmHwAs-0010",
+      "mIb5MxmHwAs-0011",
+      "mIb5MxmHwAs-0012"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1319)"
+  },
+  {
+    "batch": 3,
+    "block_ids": [
+      "mIb5MxmHwAs-0013",
+      "mIb5MxmHwAs-0014",
+      "mIb5MxmHwAs-0015",
+      "mIb5MxmHwAs-0016",
+      "mIb5MxmHwAs-0017",
+      "mIb5MxmHwAs-0018"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 2341)"
+  },
+  {
+    "batch": 4,
+    "block_ids": [
+      "mIb5MxmHwAs-0019",
+      "mIb5MxmHwAs-0020",
+      "mIb5MxmHwAs-0021",
+      "mIb5MxmHwAs-0022",
+      "mIb5MxmHwAs-0023",
+      "mIb5MxmHwAs-0024"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 825)"
+  },
+  {
+    "batch": 5,
+    "block_ids": [
+      "mIb5MxmHwAs-0025",
+      "mIb5MxmHwAs-0026",
+      "mIb5MxmHwAs-0027",
+      "mIb5MxmHwAs-0028",
+      "mIb5MxmHwAs-0029",
+      "mIb5MxmHwAs-0030"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 843)"
+  },
+  {
+    "batch": 6,
+    "block_ids": [
+      "mIb5MxmHwAs-0031",
+      "mIb5MxmHwAs-0032",
+      "mIb5MxmHwAs-0033",
+      "mIb5MxmHwAs-0034",
+      "mIb5MxmHwAs-0035",
+      "mIb5MxmHwAs-0036"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 591)"
+  },
+  {
+    "batch": 7,
+    "block_ids": [
+      "mIb5MxmHwAs-0037",
+      "mIb5MxmHwAs-0038",
+      "mIb5MxmHwAs-0039",
+      "mIb5MxmHwAs-0040",
+      "mIb5MxmHwAs-0041",
+      "mIb5MxmHwAs-0042"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1046)"
+  },
+  {
+    "batch": 8,
+    "block_ids": [
+      "mIb5MxmHwAs-0043",
+      "mIb5MxmHwAs-0044",
+      "mIb5MxmHwAs-0045",
+      "mIb5MxmHwAs-0046",
+      "mIb5MxmHwAs-0047",
+      "mIb5MxmHwAs-0048"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 790)"
+  },
+  {
+    "batch": 9,
+    "block_ids": [
+      "mIb5MxmHwAs-0049",
+      "mIb5MxmHwAs-0050",
+      "mIb5MxmHwAs-0051",
+      "mIb5MxmHwAs-0052",
+      "mIb5MxmHwAs-0053",
+      "mIb5MxmHwAs-0054"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 664)"
+  },
+  {
+    "batch": 10,
+    "block_ids": [
+      "mIb5MxmHwAs-0055",
+      "mIb5MxmHwAs-0056",
+      "mIb5MxmHwAs-0057",
+      "mIb5MxmHwAs-0058",
+      "mIb5MxmHwAs-0059",
+      "mIb5MxmHwAs-0060"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1149)"
+  },
+  {
+    "batch": 11,
+    "block_ids": [
+      "mIb5MxmHwAs-0061",
+      "mIb5MxmHwAs-0062",
+      "mIb5MxmHwAs-0063",
+      "mIb5MxmHwAs-0064",
+      "mIb5MxmHwAs-0065",
+      "mIb5MxmHwAs-0066"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 616)"
+  },
+  {
+    "batch": 12,
+    "block_ids": [
+      "mIb5MxmHwAs-0067",
+      "mIb5MxmHwAs-0068",
+      "mIb5MxmHwAs-0069",
+      "mIb5MxmHwAs-0070",
+      "mIb5MxmHwAs-0071",
+      "mIb5MxmHwAs-0072"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1930)"
+  },
+  {
+    "batch": 13,
+    "block_ids": [
+      "mIb5MxmHwAs-0073",
+      "mIb5MxmHwAs-0074",
+      "mIb5MxmHwAs-0075",
+      "mIb5MxmHwAs-0076",
+      "mIb5MxmHwAs-0077",
+      "mIb5MxmHwAs-0078"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 686)"
+  },
+  {
+    "batch": 14,
+    "block_ids": [
+      "mIb5MxmHwAs-0079",
+      "mIb5MxmHwAs-0080",
+      "mIb5MxmHwAs-0081",
+      "mIb5MxmHwAs-0082",
+      "mIb5MxmHwAs-0083",
+      "mIb5MxmHwAs-0084"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 15,
+    "block_ids": [
+      "mIb5MxmHwAs-0085",
+      "mIb5MxmHwAs-0086",
+      "mIb5MxmHwAs-0087",
+      "mIb5MxmHwAs-0088",
+      "mIb5MxmHwAs-0089",
+      "mIb5MxmHwAs-0090"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 2437)"
+  },
+  {
+    "batch": 16,
+    "block_ids": [
+      "mIb5MxmHwAs-0091",
+      "mIb5MxmHwAs-0092",
+      "mIb5MxmHwAs-0093",
+      "mIb5MxmHwAs-0094",
+      "mIb5MxmHwAs-0095",
+      "mIb5MxmHwAs-0096"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 17,
+    "block_ids": [
+      "mIb5MxmHwAs-0097",
+      "mIb5MxmHwAs-0098",
+      "mIb5MxmHwAs-0099",
+      "mIb5MxmHwAs-0100",
+      "mIb5MxmHwAs-0101",
+      "mIb5MxmHwAs-0102"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 356)"
+  },
+  {
+    "batch": 18,
+    "block_ids": [
+      "mIb5MxmHwAs-0103",
+      "mIb5MxmHwAs-0104",
+      "mIb5MxmHwAs-0105",
+      "mIb5MxmHwAs-0106",
+      "mIb5MxmHwAs-0107",
+      "mIb5MxmHwAs-0108"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 826)"
+  },
+  {
+    "batch": 19,
+    "block_ids": [
+      "mIb5MxmHwAs-0109",
+      "mIb5MxmHwAs-0110",
+      "mIb5MxmHwAs-0111",
+      "mIb5MxmHwAs-0112",
+      "mIb5MxmHwAs-0113",
+      "mIb5MxmHwAs-0114"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 739)"
+  },
+  {
+    "batch": 20,
+    "block_ids": [
+      "mIb5MxmHwAs-0115",
+      "mIb5MxmHwAs-0116",
+      "mIb5MxmHwAs-0117",
+      "mIb5MxmHwAs-0118",
+      "mIb5MxmHwAs-0119",
+      "mIb5MxmHwAs-0120"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 343)"
+  },
+  {
+    "batch": 21,
+    "block_ids": [
+      "mIb5MxmHwAs-0121",
+      "mIb5MxmHwAs-0122",
+      "mIb5MxmHwAs-0123",
+      "mIb5MxmHwAs-0124",
+      "mIb5MxmHwAs-0125",
+      "mIb5MxmHwAs-0126"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1886)"
+  },
+  {
+    "batch": 23,
+    "block_ids": [
+      "mIb5MxmHwAs-0133",
+      "mIb5MxmHwAs-0134",
+      "mIb5MxmHwAs-0135",
+      "mIb5MxmHwAs-0136",
+      "mIb5MxmHwAs-0137",
+      "mIb5MxmHwAs-0138"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 875)"
+  },
+  {
+    "batch": 24,
+    "block_ids": [
+      "mIb5MxmHwAs-0139",
+      "mIb5MxmHwAs-0140",
+      "mIb5MxmHwAs-0141",
+      "mIb5MxmHwAs-0142",
+      "mIb5MxmHwAs-0143",
+      "mIb5MxmHwAs-0144"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 386)"
+  },
+  {
+    "batch": 25,
+    "block_ids": [
+      "mIb5MxmHwAs-0145",
+      "mIb5MxmHwAs-0146",
+      "mIb5MxmHwAs-0147",
+      "mIb5MxmHwAs-0148",
+      "mIb5MxmHwAs-0149",
+      "mIb5MxmHwAs-0150"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1075)"
+  },
+  {
+    "batch": 26,
+    "block_ids": [
+      "mIb5MxmHwAs-0151",
+      "mIb5MxmHwAs-0152",
+      "mIb5MxmHwAs-0153",
+      "mIb5MxmHwAs-0154",
+      "mIb5MxmHwAs-0155",
+      "mIb5MxmHwAs-0156"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 472)"
+  },
+  {
+    "batch": 27,
+    "block_ids": [
+      "mIb5MxmHwAs-0157",
+      "mIb5MxmHwAs-0158",
+      "mIb5MxmHwAs-0159",
+      "mIb5MxmHwAs-0160",
+      "mIb5MxmHwAs-0161",
+      "mIb5MxmHwAs-0162"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 565)"
+  },
+  {
+    "batch": 28,
+    "block_ids": [
+      "mIb5MxmHwAs-0163",
+      "mIb5MxmHwAs-0164",
+      "mIb5MxmHwAs-0165",
+      "mIb5MxmHwAs-0166",
+      "mIb5MxmHwAs-0167",
+      "mIb5MxmHwAs-0168"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 2402)"
+  },
+  {
+    "batch": 29,
+    "block_ids": [
+      "mIb5MxmHwAs-0169",
+      "mIb5MxmHwAs-0170",
+      "mIb5MxmHwAs-0171",
+      "mIb5MxmHwAs-0172",
+      "mIb5MxmHwAs-0173",
+      "mIb5MxmHwAs-0174"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 735)"
+  },
+  {
+    "batch": 30,
+    "block_ids": [
+      "mIb5MxmHwAs-0175",
+      "mIb5MxmHwAs-0176",
+      "mIb5MxmHwAs-0177",
+      "mIb5MxmHwAs-0178",
+      "mIb5MxmHwAs-0179",
+      "mIb5MxmHwAs-0180"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1083)"
+  },
+  {
+    "batch": 31,
+    "block_ids": [
+      "mIb5MxmHwAs-0181",
+      "mIb5MxmHwAs-0182",
+      "mIb5MxmHwAs-0183",
+      "mIb5MxmHwAs-0184",
+      "mIb5MxmHwAs-0185",
+      "mIb5MxmHwAs-0186"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 489)"
+  },
+  {
+    "batch": 32,
+    "block_ids": [
+      "mIb5MxmHwAs-0187",
+      "mIb5MxmHwAs-0188",
+      "mIb5MxmHwAs-0189",
+      "mIb5MxmHwAs-0190",
+      "mIb5MxmHwAs-0191",
+      "mIb5MxmHwAs-0192"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 514)"
+  }
+]
+

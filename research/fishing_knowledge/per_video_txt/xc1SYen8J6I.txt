@@ -1,0 +1,272 @@
+VIDEÓ: Parti-Arcok Live - Walter Tamással - 9. rész - Orsók
+URL: https://www.youtube.com/watch?v=xc1SYen8J6I
+VIDEÓ_ID: xc1SYen8J6I
+
+FELDOLGOZÁSI HIBÁK
+[
+  {
+    "batch": 1,
+    "block_ids": [
+      "xc1SYen8J6I-0001",
+      "xc1SYen8J6I-0002",
+      "xc1SYen8J6I-0003",
+      "xc1SYen8J6I-0004",
+      "xc1SYen8J6I-0005",
+      "xc1SYen8J6I-0006"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 821)"
+  },
+  {
+    "batch": 2,
+    "block_ids": [
+      "xc1SYen8J6I-0007",
+      "xc1SYen8J6I-0008",
+      "xc1SYen8J6I-0009",
+      "xc1SYen8J6I-0010",
+      "xc1SYen8J6I-0011",
+      "xc1SYen8J6I-0012"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 604)"
+  },
+  {
+    "batch": 3,
+    "block_ids": [
+      "xc1SYen8J6I-0013",
+      "xc1SYen8J6I-0014",
+      "xc1SYen8J6I-0015",
+      "xc1SYen8J6I-0016",
+      "xc1SYen8J6I-0017",
+      "xc1SYen8J6I-0018"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 2302)"
+  },
+  {
+    "batch": 4,
+    "block_ids": [
+      "xc1SYen8J6I-0019",
+      "xc1SYen8J6I-0020",
+      "xc1SYen8J6I-0021",
+      "xc1SYen8J6I-0022",
+      "xc1SYen8J6I-0023",
+      "xc1SYen8J6I-0024"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 664)"
+  },
+  {
+    "batch": 5,
+    "block_ids": [
+      "xc1SYen8J6I-0025",
+      "xc1SYen8J6I-0026",
+      "xc1SYen8J6I-0027",
+      "xc1SYen8J6I-0028",
+      "xc1SYen8J6I-0029",
+      "xc1SYen8J6I-0030"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 374)"
+  },
+  {
+    "batch": 6,
+    "block_ids": [
+      "xc1SYen8J6I-0031",
+      "xc1SYen8J6I-0032",
+      "xc1SYen8J6I-0033",
+      "xc1SYen8J6I-0034",
+      "xc1SYen8J6I-0035",
+      "xc1SYen8J6I-0036"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 555)"
+  },
+  {
+    "batch": 7,
+    "block_ids": [
+      "xc1SYen8J6I-0037",
+      "xc1SYen8J6I-0038",
+      "xc1SYen8J6I-0039",
+      "xc1SYen8J6I-0040",
+      "xc1SYen8J6I-0041",
+      "xc1SYen8J6I-0042"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 952)"
+  },
+  {
+    "batch": 8,
+    "block_ids": [
+      "xc1SYen8J6I-0043",
+      "xc1SYen8J6I-0044",
+      "xc1SYen8J6I-0045",
+      "xc1SYen8J6I-0046",
+      "xc1SYen8J6I-0047",
+      "xc1SYen8J6I-0048"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 9,
+    "block_ids": [
+      "xc1SYen8J6I-0049",
+      "xc1SYen8J6I-0050",
+      "xc1SYen8J6I-0051",
+      "xc1SYen8J6I-0052",
+      "xc1SYen8J6I-0053",
+      "xc1SYen8J6I-0054"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1969)"
+  },
+  {
+    "batch": 10,
+    "block_ids": [
+      "xc1SYen8J6I-0055",
+      "xc1SYen8J6I-0056",
+      "xc1SYen8J6I-0057",
+      "xc1SYen8J6I-0058",
+      "xc1SYen8J6I-0059",
+      "xc1SYen8J6I-0060"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 582)"
+  },
+  {
+    "batch": 11,
+    "block_ids": [
+      "xc1SYen8J6I-0061",
+      "xc1SYen8J6I-0062",
+      "xc1SYen8J6I-0063",
+      "xc1SYen8J6I-0064",
+      "xc1SYen8J6I-0065",
+      "xc1SYen8J6I-0066"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 666)"
+  },
+  {
+    "batch": 12,
+    "block_ids": [
+      "xc1SYen8J6I-0067",
+      "xc1SYen8J6I-0068",
+      "xc1SYen8J6I-0069",
+      "xc1SYen8J6I-0070",
+      "xc1SYen8J6I-0071",
+      "xc1SYen8J6I-0072"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1216)"
+  },
+  {
+    "batch": 13,
+    "block_ids": [
+      "xc1SYen8J6I-0073",
+      "xc1SYen8J6I-0074",
+      "xc1SYen8J6I-0075",
+      "xc1SYen8J6I-0076",
+      "xc1SYen8J6I-0077",
+      "xc1SYen8J6I-0078"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 874)"
+  },
+  {
+    "batch": 15,
+    "block_ids": [
+      "xc1SYen8J6I-0085",
+      "xc1SYen8J6I-0086",
+      "xc1SYen8J6I-0087",
+      "xc1SYen8J6I-0088",
+      "xc1SYen8J6I-0089",
+      "xc1SYen8J6I-0090"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 669)"
+  },
+  {
+    "batch": 16,
+    "block_ids": [
+      "xc1SYen8J6I-0091",
+      "xc1SYen8J6I-0092",
+      "xc1SYen8J6I-0093",
+      "xc1SYen8J6I-0094",
+      "xc1SYen8J6I-0095",
+      "xc1SYen8J6I-0096"
+    ],
+    "error": "JSONDecodeError: Extra data: line 11 column 6 (char 945)"
+  },
+  {
+    "batch": 17,
+    "block_ids": [
+      "xc1SYen8J6I-0097",
+      "xc1SYen8J6I-0098",
+      "xc1SYen8J6I-0099",
+      "xc1SYen8J6I-0100",
+      "xc1SYen8J6I-0101",
+      "xc1SYen8J6I-0102"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1549)"
+  },
+  {
+    "batch": 18,
+    "block_ids": [
+      "xc1SYen8J6I-0103",
+      "xc1SYen8J6I-0104",
+      "xc1SYen8J6I-0105",
+      "xc1SYen8J6I-0106",
+      "xc1SYen8J6I-0107",
+      "xc1SYen8J6I-0108"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 844)"
+  },
+  {
+    "batch": 19,
+    "block_ids": [
+      "xc1SYen8J6I-0109",
+      "xc1SYen8J6I-0110",
+      "xc1SYen8J6I-0111",
+      "xc1SYen8J6I-0112",
+      "xc1SYen8J6I-0113",
+      "xc1SYen8J6I-0114"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 619)"
+  },
+  {
+    "batch": 20,
+    "block_ids": [
+      "xc1SYen8J6I-0115",
+      "xc1SYen8J6I-0116",
+      "xc1SYen8J6I-0117",
+      "xc1SYen8J6I-0118",
+      "xc1SYen8J6I-0119",
+      "xc1SYen8J6I-0120"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 375)"
+  },
+  {
+    "batch": 21,
+    "block_ids": [
+      "xc1SYen8J6I-0121",
+      "xc1SYen8J6I-0122",
+      "xc1SYen8J6I-0123",
+      "xc1SYen8J6I-0124",
+      "xc1SYen8J6I-0125",
+      "xc1SYen8J6I-0126"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 2167)"
+  },
+  {
+    "batch": 22,
+    "block_ids": [
+      "xc1SYen8J6I-0127",
+      "xc1SYen8J6I-0128",
+      "xc1SYen8J6I-0129",
+      "xc1SYen8J6I-0130",
+      "xc1SYen8J6I-0131",
+      "xc1SYen8J6I-0132"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1098)"
+  },
+  {
+    "batch": 23,
+    "block_ids": [
+      "xc1SYen8J6I-0133",
+      "xc1SYen8J6I-0134",
+      "xc1SYen8J6I-0135",
+      "xc1SYen8J6I-0136",
+      "xc1SYen8J6I-0137",
+      "xc1SYen8J6I-0138"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1606)"
+  }
+]
+

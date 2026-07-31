@@ -1,0 +1,52 @@
+{
+  "video_id": "niCiVZxXJ5A",
+  "candidate_blocks": 51,
+  "claims": [],
+  "failed_batches": [
+    {
+      "batch": 3,
+      "block_ids": [
+        "niCiVZxXJ5A-0013",
+        "niCiVZxXJ5A-0014",
+        "niCiVZxXJ5A-0015",
+        "niCiVZxXJ5A-0016",
+        "niCiVZxXJ5A-0017",
+        "niCiVZxXJ5A-0018"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 682)"
+    },
+    {
+      "batch": 6,
+      "block_ids": [
+        "niCiVZxXJ5A-0031",
+        "niCiVZxXJ5A-0032",
+        "niCiVZxXJ5A-0033",
+        "niCiVZxXJ5A-0034",
+        "niCiVZxXJ5A-0035",
+        "niCiVZxXJ5A-0036"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1545)"
+    },
+    {
+      "batch": 8,
+      "block_ids": [
+        "niCiVZxXJ5A-0043",
+        "niCiVZxXJ5A-0044",
+        "niCiVZxXJ5A-0045",
+        "niCiVZxXJ5A-0046",
+        "niCiVZxXJ5A-0047",
+        "niCiVZxXJ5A-0048"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 2122)"
+    },
+    {
+      "batch": 9,
+      "block_ids": [
+        "niCiVZxXJ5A-0049",
+        "niCiVZxXJ5A-0050",
+        "niCiVZxXJ5A-0051"
+      ],
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    }
+  ]
+}

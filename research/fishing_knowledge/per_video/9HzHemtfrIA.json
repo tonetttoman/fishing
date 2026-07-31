@@ -1,0 +1,385 @@
+{
+  "video_id": "9HzHemtfrIA",
+  "candidate_blocks": 187,
+  "claims": [
+    {
+      "claim_id": "9HzHemtfrIA-C0001",
+      "block_id": "9HzHemtfrIA-0187",
+      "video_id": "9HzHemtfrIA",
+      "title": "Parti-Arcok Live - with Tamás Walter - Hooks",
+      "url": "https://www.youtube.com/watch?v=9HzHemtfrIA",
+      "start": "02:58:36",
+      "end": "02:59:38",
+      "category": "feeding",
+      "statement": "A peca volt tipikus, és rákényszerültem, de jó érzéssel csináltam, mert tök más volt így metodozni, hogy 70 mre klipszelve nem volt mindegy.",
+      "conditions": "A peca volt tipikus, és rákényszerültem, de jó érzéssel csináltam, mert tök más volt így metodozni, hogy 70 mre klipszelve nem volt mindegy.",
+      "recommended_action": "A peca volt tipikus, és rákényszerültem, de jó érzéssel csináltam, mert tök más volt így metodozni, hogy 70 mre klipszelve nem volt mindegy.",
+      "reason_effect": "A peca volt tipikus, és rákényszerültem, de jó érzéssel csináltam, mert tök más volt így metodozni, hogy 70 mre klipszelve nem volt mindegy.",
+      "exception": "",
+      "confidence": "high",
+      "source_block": "Tipikus metod peca volt, és rákényszerültem, de jó érzéssel csináltam, mert tök más volt így metodozni, hogy 70 mre klipszelve nem volt mindegy. Az, hogy előre nyúlok, vagy megfogom, vagy vagy mit csinálok vele, mert mert mert ha túlnyúltam, akkor kitettem a fűre. Tehát, hogy olyan ott nagyon szép onan finoman visszahúzni, mint amikor a jiget kidobod a kőre, vagy a homokra is húzod le, és akkor hozod az áton, és bum, elveri a balin. A az egy sokkal jobb pec. Na de de visszatérve erre, ez is nagyon jó volt, csak szépen kellett letenni, és akkor ha mégsem sikerült jól, akkor mindig kellett egy előke, úgyhogy Petitől htam, és akkor az ő általa használt Tubertini és hát ezek is kiszenek."
+    }
+  ],
+  "failed_batches": [
+    {
+      "batch": 1,
+      "block_ids": [
+        "9HzHemtfrIA-0001",
+        "9HzHemtfrIA-0002",
+        "9HzHemtfrIA-0003",
+        "9HzHemtfrIA-0004",
+        "9HzHemtfrIA-0005",
+        "9HzHemtfrIA-0006"
+      ],
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "batch": 2,
+      "block_ids": [
+        "9HzHemtfrIA-0007",
+        "9HzHemtfrIA-0008",
+        "9HzHemtfrIA-0009",
+        "9HzHemtfrIA-0010",
+        "9HzHemtfrIA-0011",
+        "9HzHemtfrIA-0012"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 502)"
+    },
+    {
+      "batch": 3,
+      "block_ids": [
+        "9HzHemtfrIA-0013",
+        "9HzHemtfrIA-0014",
+        "9HzHemtfrIA-0015",
+        "9HzHemtfrIA-0016",
+        "9HzHemtfrIA-0017",
+        "9HzHemtfrIA-0018"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 524)"
+    },
+    {
+      "batch": 4,
+      "block_ids": [
+        "9HzHemtfrIA-0019",
+        "9HzHemtfrIA-0020",
+        "9HzHemtfrIA-0021",
+        "9HzHemtfrIA-0022",
+        "9HzHemtfrIA-0023",
+        "9HzHemtfrIA-0024"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 560)"
+    },
+    {
+      "batch": 5,
+      "block_ids": [
+        "9HzHemtfrIA-0025",
+        "9HzHemtfrIA-0026",
+        "9HzHemtfrIA-0027",
+        "9HzHemtfrIA-0028",
+        "9HzHemtfrIA-0029",
+        "9HzHemtfrIA-0030"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1943)"
+    },
+    {
+      "batch": 6,
+      "block_ids": [
+        "9HzHemtfrIA-0031",
+        "9HzHemtfrIA-0032",
+        "9HzHemtfrIA-0033",
+        "9HzHemtfrIA-0034",
+        "9HzHemtfrIA-0035",
+        "9HzHemtfrIA-0036"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1048)"
+    },
+    {
+      "batch": 7,
+      "block_ids": [
+        "9HzHemtfrIA-0037",
+        "9HzHemtfrIA-0038",
+        "9HzHemtfrIA-0039",
+        "9HzHemtfrIA-0040",
+        "9HzHemtfrIA-0041",
+        "9HzHemtfrIA-0042"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1124)"
+    },
+    {
+      "batch": 8,
+      "block_ids": [
+        "9HzHemtfrIA-0043",
+        "9HzHemtfrIA-0044",
+        "9HzHemtfrIA-0045",
+        "9HzHemtfrIA-0046",
+        "9HzHemtfrIA-0047",
+        "9HzHemtfrIA-0048"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1234)"
+    },
+    {
+      "batch": 10,
+      "block_ids": [
+        "9HzHemtfrIA-0055",
+        "9HzHemtfrIA-0056",
+        "9HzHemtfrIA-0057",
+        "9HzHemtfrIA-0058",
+        "9HzHemtfrIA-0059",
+        "9HzHemtfrIA-0060"
+      ],
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "batch": 11,
+      "block_ids": [
+        "9HzHemtfrIA-0061",
+        "9HzHemtfrIA-0062",
+        "9HzHemtfrIA-0063",
+        "9HzHemtfrIA-0064",
+        "9HzHemtfrIA-0065",
+        "9HzHemtfrIA-0066"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 926)"
+    },
+    {
+      "batch": 12,
+      "block_ids": [
+        "9HzHemtfrIA-0067",
+        "9HzHemtfrIA-0068",
+        "9HzHemtfrIA-0069",
+        "9HzHemtfrIA-0070",
+        "9HzHemtfrIA-0071",
+        "9HzHemtfrIA-0072"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 612)"
+    },
+    {
+      "batch": 13,
+      "block_ids": [
+        "9HzHemtfrIA-0073",
+        "9HzHemtfrIA-0074",
+        "9HzHemtfrIA-0075",
+        "9HzHemtfrIA-0076",
+        "9HzHemtfrIA-0077",
+        "9HzHemtfrIA-0078"
+      ],
+      "error": "JSONDecodeError: Extra data: line 11 column 6 (char 1210)"
+    },
+    {
+      "batch": 14,
+      "block_ids": [
+        "9HzHemtfrIA-0079",
+        "9HzHemtfrIA-0080",
+        "9HzHemtfrIA-0081",
+        "9HzHemtfrIA-0082",
+        "9HzHemtfrIA-0083",
+        "9HzHemtfrIA-0084"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1945)"
+    },
+    {
+      "batch": 15,
+      "block_ids": [
+        "9HzHemtfrIA-0085",
+        "9HzHemtfrIA-0086",
+        "9HzHemtfrIA-0087",
+        "9HzHemtfrIA-0088",
+        "9HzHemtfrIA-0089",
+        "9HzHemtfrIA-0090"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1383)"
+    },
+    {
+      "batch": 16,
+      "block_ids": [
+        "9HzHemtfrIA-0091",
+        "9HzHemtfrIA-0092",
+        "9HzHemtfrIA-0093",
+        "9HzHemtfrIA-0094",
+        "9HzHemtfrIA-0095",
+        "9HzHemtfrIA-0096"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 979)"
+    },
+    {
+      "batch": 17,
+      "block_ids": [
+        "9HzHemtfrIA-0097",
+        "9HzHemtfrIA-0098",
+        "9HzHemtfrIA-0099",
+        "9HzHemtfrIA-0100",
+        "9HzHemtfrIA-0101",
+        "9HzHemtfrIA-0102"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 894)"
+    },
+    {
+      "batch": 18,
+      "block_ids": [
+        "9HzHemtfrIA-0103",
+        "9HzHemtfrIA-0104",
+        "9HzHemtfrIA-0105",
+        "9HzHemtfrIA-0106",
+        "9HzHemtfrIA-0107",
+        "9HzHemtfrIA-0108"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 2263)"
+    },
+    {
+      "batch": 19,
+      "block_ids": [
+        "9HzHemtfrIA-0109",
+        "9HzHemtfrIA-0110",
+        "9HzHemtfrIA-0111",
+        "9HzHemtfrIA-0112",
+        "9HzHemtfrIA-0113",
+        "9HzHemtfrIA-0114"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 592)"
+    },
+    {
+      "batch": 20,
+      "block_ids": [
+        "9HzHemtfrIA-0115",
+        "9HzHemtfrIA-0116",
+        "9HzHemtfrIA-0117",
+        "9HzHemtfrIA-0118",
+        "9HzHemtfrIA-0119",
+        "9HzHemtfrIA-0120"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 547)"
+    },
+    {
+      "batch": 21,
+      "block_ids": [
+        "9HzHemtfrIA-0121",
+        "9HzHemtfrIA-0122",
+        "9HzHemtfrIA-0123",
+        "9HzHemtfrIA-0124",
+        "9HzHemtfrIA-0125",
+        "9HzHemtfrIA-0126"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 631)"
+    },
+    {
+      "batch": 22,
+      "block_ids": [
+        "9HzHemtfrIA-0127",
+        "9HzHemtfrIA-0128",
+        "9HzHemtfrIA-0129",
+        "9HzHemtfrIA-0130",
+        "9HzHemtfrIA-0131",
+        "9HzHemtfrIA-0132"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 977)"
+    },
+    {
+      "batch": 23,
+      "block_ids": [
+        "9HzHemtfrIA-0133",
+        "9HzHemtfrIA-0134",
+        "9HzHemtfrIA-0135",
+        "9HzHemtfrIA-0136",
+        "9HzHemtfrIA-0137",
+        "9HzHemtfrIA-0138"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 624)"
+    },
+    {
+      "batch": 24,
+      "block_ids": [
+        "9HzHemtfrIA-0139",
+        "9HzHemtfrIA-0140",
+        "9HzHemtfrIA-0141",
+        "9HzHemtfrIA-0142",
+        "9HzHemtfrIA-0143",
+        "9HzHemtfrIA-0144"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1024)"
+    },
+    {
+      "batch": 25,
+      "block_ids": [
+        "9HzHemtfrIA-0145",
+        "9HzHemtfrIA-0146",
+        "9HzHemtfrIA-0147",
+        "9HzHemtfrIA-0148",
+        "9HzHemtfrIA-0149",
+        "9HzHemtfrIA-0150"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 512)"
+    },
+    {
+      "batch": 26,
+      "block_ids": [
+        "9HzHemtfrIA-0151",
+        "9HzHemtfrIA-0152",
+        "9HzHemtfrIA-0153",
+        "9HzHemtfrIA-0154",
+        "9HzHemtfrIA-0155",
+        "9HzHemtfrIA-0156"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 832)"
+    },
+    {
+      "batch": 27,
+      "block_ids": [
+        "9HzHemtfrIA-0157",
+        "9HzHemtfrIA-0158",
+        "9HzHemtfrIA-0159",
+        "9HzHemtfrIA-0160",
+        "9HzHemtfrIA-0161",
+        "9HzHemtfrIA-0162"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 556)"
+    },
+    {
+      "batch": 28,
+      "block_ids": [
+        "9HzHemtfrIA-0163",
+        "9HzHemtfrIA-0164",
+        "9HzHemtfrIA-0165",
+        "9HzHemtfrIA-0166",
+        "9HzHemtfrIA-0167",
+        "9HzHemtfrIA-0168"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 2621)"
+    },
+    {
+      "batch": 29,
+      "block_ids": [
+        "9HzHemtfrIA-0169",
+        "9HzHemtfrIA-0170",
+        "9HzHemtfrIA-0171",
+        "9HzHemtfrIA-0172",
+        "9HzHemtfrIA-0173",
+        "9HzHemtfrIA-0174"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 444)"
+    },
+    {
+      "batch": 30,
+      "block_ids": [
+        "9HzHemtfrIA-0175",
+        "9HzHemtfrIA-0176",
+        "9HzHemtfrIA-0177",
+        "9HzHemtfrIA-0178",
+        "9HzHemtfrIA-0179",
+        "9HzHemtfrIA-0180"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 573)"
+    },
+    {
+      "batch": 31,
+      "block_ids": [
+        "9HzHemtfrIA-0181",
+        "9HzHemtfrIA-0182",
+        "9HzHemtfrIA-0183",
+        "9HzHemtfrIA-0184",
+        "9HzHemtfrIA-0185",
+        "9HzHemtfrIA-0186"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 846)"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+VIDEÓ: Parti-Arcok Live - Walter Tamással - 12. rész - Horgászláda
+URL: https://www.youtube.com/watch?v=muTDKjIOJW0
+VIDEÓ_ID: muTDKjIOJW0
+
+FELDOLGOZÁSI HIBÁK
+[
+  {
+    "batch": 1,
+    "block_ids": [
+      "muTDKjIOJW0-0001",
+      "muTDKjIOJW0-0002",
+      "muTDKjIOJW0-0003",
+      "muTDKjIOJW0-0004",
+      "muTDKjIOJW0-0005",
+      "muTDKjIOJW0-0006"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1497)"
+  },
+  {
+    "batch": 2,
+    "block_ids": [
+      "muTDKjIOJW0-0007",
+      "muTDKjIOJW0-0008",
+      "muTDKjIOJW0-0009",
+      "muTDKjIOJW0-0010",
+      "muTDKjIOJW0-0011",
+      "muTDKjIOJW0-0012"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 3,
+    "block_ids": [
+      "muTDKjIOJW0-0013",
+      "muTDKjIOJW0-0014",
+      "muTDKjIOJW0-0015",
+      "muTDKjIOJW0-0016",
+      "muTDKjIOJW0-0017",
+      "muTDKjIOJW0-0018"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1588)"
+  },
+  {
+    "batch": 4,
+    "block_ids": [
+      "muTDKjIOJW0-0019",
+      "muTDKjIOJW0-0020",
+      "muTDKjIOJW0-0021",
+      "muTDKjIOJW0-0022",
+      "muTDKjIOJW0-0023",
+      "muTDKjIOJW0-0024"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 503)"
+  },
+  {
+    "batch": 5,
+    "block_ids": [
+      "muTDKjIOJW0-0025",
+      "muTDKjIOJW0-0026",
+      "muTDKjIOJW0-0027",
+      "muTDKjIOJW0-0028",
+      "muTDKjIOJW0-0029",
+      "muTDKjIOJW0-0030"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 401)"
+  },
+  {
+    "batch": 6,
+    "block_ids": [
+      "muTDKjIOJW0-0031",
+      "muTDKjIOJW0-0032",
+      "muTDKjIOJW0-0033",
+      "muTDKjIOJW0-0034",
+      "muTDKjIOJW0-0035",
+      "muTDKjIOJW0-0036"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 637)"
+  },
+  {
+    "batch": 8,
+    "block_ids": [
+      "muTDKjIOJW0-0043",
+      "muTDKjIOJW0-0044",
+      "muTDKjIOJW0-0045",
+      "muTDKjIOJW0-0046",
+      "muTDKjIOJW0-0047",
+      "muTDKjIOJW0-0048"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 746)"
+  },
+  {
+    "batch": 9,
+    "block_ids": [
+      "muTDKjIOJW0-0049",
+      "muTDKjIOJW0-0050",
+      "muTDKjIOJW0-0051",
+      "muTDKjIOJW0-0052",
+      "muTDKjIOJW0-0053",
+      "muTDKjIOJW0-0054"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 542)"
+  },
+  {
+    "batch": 11,
+    "block_ids": [
+      "muTDKjIOJW0-0061",
+      "muTDKjIOJW0-0062",
+      "muTDKjIOJW0-0063",
+      "muTDKjIOJW0-0064",
+      "muTDKjIOJW0-0065",
+      "muTDKjIOJW0-0066"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1051)"
+  },
+  {
+    "batch": 12,
+    "block_ids": [
+      "muTDKjIOJW0-0067",
+      "muTDKjIOJW0-0068",
+      "muTDKjIOJW0-0069",
+      "muTDKjIOJW0-0070",
+      "muTDKjIOJW0-0071",
+      "muTDKjIOJW0-0072"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 476)"
+  },
+  {
+    "batch": 13,
+    "block_ids": [
+      "muTDKjIOJW0-0073",
+      "muTDKjIOJW0-0074",
+      "muTDKjIOJW0-0075",
+      "muTDKjIOJW0-0076",
+      "muTDKjIOJW0-0077",
+      "muTDKjIOJW0-0078"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1058)"
+  },
+  {
+    "batch": 14,
+    "block_ids": [
+      "muTDKjIOJW0-0079",
+      "muTDKjIOJW0-0080",
+      "muTDKjIOJW0-0081",
+      "muTDKjIOJW0-0082",
+      "muTDKjIOJW0-0083",
+      "muTDKjIOJW0-0084"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 548)"
+  },
+  {
+    "batch": 15,
+    "block_ids": [
+      "muTDKjIOJW0-0085",
+      "muTDKjIOJW0-0086",
+      "muTDKjIOJW0-0087",
+      "muTDKjIOJW0-0088",
+      "muTDKjIOJW0-0089",
+      "muTDKjIOJW0-0090"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 716)"
+  },
+  {
+    "batch": 16,
+    "block_ids": [
+      "muTDKjIOJW0-0091",
+      "muTDKjIOJW0-0092",
+      "muTDKjIOJW0-0093",
+      "muTDKjIOJW0-0094",
+      "muTDKjIOJW0-0095",
+      "muTDKjIOJW0-0096"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 430)"
+  },
+  {
+    "batch": 18,
+    "block_ids": [
+      "muTDKjIOJW0-0103",
+      "muTDKjIOJW0-0104",
+      "muTDKjIOJW0-0105",
+      "muTDKjIOJW0-0106",
+      "muTDKjIOJW0-0107",
+      "muTDKjIOJW0-0108"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 2015)"
+  },
+  {
+    "batch": 20,
+    "block_ids": [
+      "muTDKjIOJW0-0115",
+      "muTDKjIOJW0-0116",
+      "muTDKjIOJW0-0117",
+      "muTDKjIOJW0-0118"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 602)"
+  }
+]
+

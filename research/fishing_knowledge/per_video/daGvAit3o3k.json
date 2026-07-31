@@ -1,0 +1,139 @@
+{
+  "video_id": "daGvAit3o3k",
+  "candidate_blocks": 72,
+  "claims": [],
+  "failed_batches": [
+    {
+      "batch": 1,
+      "block_ids": [
+        "daGvAit3o3k-0001",
+        "daGvAit3o3k-0002",
+        "daGvAit3o3k-0003",
+        "daGvAit3o3k-0004",
+        "daGvAit3o3k-0005",
+        "daGvAit3o3k-0006"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 501)"
+    },
+    {
+      "batch": 2,
+      "block_ids": [
+        "daGvAit3o3k-0007",
+        "daGvAit3o3k-0008",
+        "daGvAit3o3k-0009",
+        "daGvAit3o3k-0010",
+        "daGvAit3o3k-0011",
+        "daGvAit3o3k-0012"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 482)"
+    },
+    {
+      "batch": 3,
+      "block_ids": [
+        "daGvAit3o3k-0013",
+        "daGvAit3o3k-0014",
+        "daGvAit3o3k-0015",
+        "daGvAit3o3k-0016",
+        "daGvAit3o3k-0017",
+        "daGvAit3o3k-0018"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 577)"
+    },
+    {
+      "batch": 4,
+      "block_ids": [
+        "daGvAit3o3k-0019",
+        "daGvAit3o3k-0020",
+        "daGvAit3o3k-0021",
+        "daGvAit3o3k-0022",
+        "daGvAit3o3k-0023",
+        "daGvAit3o3k-0024"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 772)"
+    },
+    {
+      "batch": 5,
+      "block_ids": [
+        "daGvAit3o3k-0025",
+        "daGvAit3o3k-0026",
+        "daGvAit3o3k-0027",
+        "daGvAit3o3k-0028",
+        "daGvAit3o3k-0029",
+        "daGvAit3o3k-0030"
+      ],
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "batch": 6,
+      "block_ids": [
+        "daGvAit3o3k-0031",
+        "daGvAit3o3k-0032",
+        "daGvAit3o3k-0033",
+        "daGvAit3o3k-0034",
+        "daGvAit3o3k-0035",
+        "daGvAit3o3k-0036"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 2129)"
+    },
+    {
+      "batch": 7,
+      "block_ids": [
+        "daGvAit3o3k-0037",
+        "daGvAit3o3k-0038",
+        "daGvAit3o3k-0039",
+        "daGvAit3o3k-0040",
+        "daGvAit3o3k-0041",
+        "daGvAit3o3k-0042"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1365)"
+    },
+    {
+      "batch": 8,
+      "block_ids": [
+        "daGvAit3o3k-0043",
+        "daGvAit3o3k-0044",
+        "daGvAit3o3k-0045",
+        "daGvAit3o3k-0046",
+        "daGvAit3o3k-0047",
+        "daGvAit3o3k-0048"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1204)"
+    },
+    {
+      "batch": 9,
+      "block_ids": [
+        "daGvAit3o3k-0049",
+        "daGvAit3o3k-0050",
+        "daGvAit3o3k-0051",
+        "daGvAit3o3k-0052",
+        "daGvAit3o3k-0053",
+        "daGvAit3o3k-0054"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 729)"
+    },
+    {
+      "batch": 10,
+      "block_ids": [
+        "daGvAit3o3k-0055",
+        "daGvAit3o3k-0056",
+        "daGvAit3o3k-0057",
+        "daGvAit3o3k-0058",
+        "daGvAit3o3k-0059",
+        "daGvAit3o3k-0060"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 357)"
+    },
+    {
+      "batch": 12,
+      "block_ids": [
+        "daGvAit3o3k-0067",
+        "daGvAit3o3k-0068",
+        "daGvAit3o3k-0069",
+        "daGvAit3o3k-0070",
+        "daGvAit3o3k-0071",
+        "daGvAit3o3k-0072"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 653)"
+    }
+  ]
+}

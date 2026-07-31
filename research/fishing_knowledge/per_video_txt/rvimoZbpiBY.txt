@@ -1,0 +1,152 @@
+VIDEÓ: 78. Pontyok extrém mélységből és a csalik kémiája - Kovács Zoltán | Parti-Arcok Podcast
+URL: https://www.youtube.com/watch?v=rvimoZbpiBY
+VIDEÓ_ID: rvimoZbpiBY
+
+FELDOLGOZÁSI HIBÁK
+[
+  {
+    "batch": 1,
+    "block_ids": [
+      "rvimoZbpiBY-0001",
+      "rvimoZbpiBY-0002",
+      "rvimoZbpiBY-0003",
+      "rvimoZbpiBY-0004",
+      "rvimoZbpiBY-0005",
+      "rvimoZbpiBY-0006"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 3491)"
+  },
+  {
+    "batch": 2,
+    "block_ids": [
+      "rvimoZbpiBY-0007",
+      "rvimoZbpiBY-0008",
+      "rvimoZbpiBY-0009",
+      "rvimoZbpiBY-0010",
+      "rvimoZbpiBY-0011",
+      "rvimoZbpiBY-0012"
+    ],
+    "error": "JSONDecodeError: Extra data: line 6 column 6 (char 256)"
+  },
+  {
+    "batch": 3,
+    "block_ids": [
+      "rvimoZbpiBY-0013",
+      "rvimoZbpiBY-0014",
+      "rvimoZbpiBY-0015",
+      "rvimoZbpiBY-0016",
+      "rvimoZbpiBY-0017",
+      "rvimoZbpiBY-0018"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 4,
+    "block_ids": [
+      "rvimoZbpiBY-0019",
+      "rvimoZbpiBY-0020",
+      "rvimoZbpiBY-0021",
+      "rvimoZbpiBY-0022",
+      "rvimoZbpiBY-0023",
+      "rvimoZbpiBY-0024"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 394)"
+  },
+  {
+    "batch": 5,
+    "block_ids": [
+      "rvimoZbpiBY-0025",
+      "rvimoZbpiBY-0026",
+      "rvimoZbpiBY-0027",
+      "rvimoZbpiBY-0028",
+      "rvimoZbpiBY-0029",
+      "rvimoZbpiBY-0030"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 480)"
+  },
+  {
+    "batch": 6,
+    "block_ids": [
+      "rvimoZbpiBY-0031",
+      "rvimoZbpiBY-0032",
+      "rvimoZbpiBY-0033",
+      "rvimoZbpiBY-0034",
+      "rvimoZbpiBY-0035",
+      "rvimoZbpiBY-0036"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 434)"
+  },
+  {
+    "batch": 7,
+    "block_ids": [
+      "rvimoZbpiBY-0037",
+      "rvimoZbpiBY-0038",
+      "rvimoZbpiBY-0039",
+      "rvimoZbpiBY-0040",
+      "rvimoZbpiBY-0041",
+      "rvimoZbpiBY-0042"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 346)"
+  },
+  {
+    "batch": 9,
+    "block_ids": [
+      "rvimoZbpiBY-0049",
+      "rvimoZbpiBY-0050",
+      "rvimoZbpiBY-0051",
+      "rvimoZbpiBY-0052",
+      "rvimoZbpiBY-0053",
+      "rvimoZbpiBY-0054"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 662)"
+  },
+  {
+    "batch": 11,
+    "block_ids": [
+      "rvimoZbpiBY-0061",
+      "rvimoZbpiBY-0062",
+      "rvimoZbpiBY-0063",
+      "rvimoZbpiBY-0064",
+      "rvimoZbpiBY-0065",
+      "rvimoZbpiBY-0066"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 569)"
+  },
+  {
+    "batch": 12,
+    "block_ids": [
+      "rvimoZbpiBY-0067",
+      "rvimoZbpiBY-0068",
+      "rvimoZbpiBY-0069",
+      "rvimoZbpiBY-0070",
+      "rvimoZbpiBY-0071",
+      "rvimoZbpiBY-0072"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 13,
+    "block_ids": [
+      "rvimoZbpiBY-0073",
+      "rvimoZbpiBY-0074",
+      "rvimoZbpiBY-0075",
+      "rvimoZbpiBY-0076",
+      "rvimoZbpiBY-0077",
+      "rvimoZbpiBY-0078"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 14,
+    "block_ids": [
+      "rvimoZbpiBY-0079",
+      "rvimoZbpiBY-0080",
+      "rvimoZbpiBY-0081",
+      "rvimoZbpiBY-0082",
+      "rvimoZbpiBY-0083",
+      "rvimoZbpiBY-0084"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 960)"
+  }
+]
+

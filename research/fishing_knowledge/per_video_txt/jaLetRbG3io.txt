@@ -1,0 +1,174 @@
+VIDEÓ: 116. „Van a halfogás és van a horgászat” - Orbán István | Parti-Arcok Podcast
+URL: https://www.youtube.com/watch?v=jaLetRbG3io
+VIDEÓ_ID: jaLetRbG3io
+
+FELDOLGOZÁSI HIBÁK
+[
+  {
+    "batch": 1,
+    "block_ids": [
+      "jaLetRbG3io-0001",
+      "jaLetRbG3io-0002",
+      "jaLetRbG3io-0003",
+      "jaLetRbG3io-0004",
+      "jaLetRbG3io-0005",
+      "jaLetRbG3io-0006"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1608)"
+  },
+  {
+    "batch": 2,
+    "block_ids": [
+      "jaLetRbG3io-0007",
+      "jaLetRbG3io-0008",
+      "jaLetRbG3io-0009",
+      "jaLetRbG3io-0010",
+      "jaLetRbG3io-0011",
+      "jaLetRbG3io-0012"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 569)"
+  },
+  {
+    "batch": 3,
+    "block_ids": [
+      "jaLetRbG3io-0013",
+      "jaLetRbG3io-0014",
+      "jaLetRbG3io-0015",
+      "jaLetRbG3io-0016",
+      "jaLetRbG3io-0017",
+      "jaLetRbG3io-0018"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 621)"
+  },
+  {
+    "batch": 4,
+    "block_ids": [
+      "jaLetRbG3io-0019",
+      "jaLetRbG3io-0020",
+      "jaLetRbG3io-0021",
+      "jaLetRbG3io-0022",
+      "jaLetRbG3io-0023",
+      "jaLetRbG3io-0024"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 550)"
+  },
+  {
+    "batch": 5,
+    "block_ids": [
+      "jaLetRbG3io-0025",
+      "jaLetRbG3io-0026",
+      "jaLetRbG3io-0027",
+      "jaLetRbG3io-0028",
+      "jaLetRbG3io-0029",
+      "jaLetRbG3io-0030"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 617)"
+  },
+  {
+    "batch": 6,
+    "block_ids": [
+      "jaLetRbG3io-0031",
+      "jaLetRbG3io-0032",
+      "jaLetRbG3io-0033",
+      "jaLetRbG3io-0034",
+      "jaLetRbG3io-0035",
+      "jaLetRbG3io-0036"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "batch": 7,
+    "block_ids": [
+      "jaLetRbG3io-0037",
+      "jaLetRbG3io-0038",
+      "jaLetRbG3io-0039",
+      "jaLetRbG3io-0040",
+      "jaLetRbG3io-0041",
+      "jaLetRbG3io-0042"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 635)"
+  },
+  {
+    "batch": 8,
+    "block_ids": [
+      "jaLetRbG3io-0043",
+      "jaLetRbG3io-0044",
+      "jaLetRbG3io-0045",
+      "jaLetRbG3io-0046",
+      "jaLetRbG3io-0047",
+      "jaLetRbG3io-0048"
+    ],
+    "error": "JSONDecodeError: Extra data: line 10 column 6 (char 655)"
+  },
+  {
+    "batch": 9,
+    "block_ids": [
+      "jaLetRbG3io-0049",
+      "jaLetRbG3io-0050",
+      "jaLetRbG3io-0051",
+      "jaLetRbG3io-0052",
+      "jaLetRbG3io-0053",
+      "jaLetRbG3io-0054"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 734)"
+  },
+  {
+    "batch": 10,
+    "block_ids": [
+      "jaLetRbG3io-0055",
+      "jaLetRbG3io-0056",
+      "jaLetRbG3io-0057",
+      "jaLetRbG3io-0058",
+      "jaLetRbG3io-0059",
+      "jaLetRbG3io-0060"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 447)"
+  },
+  {
+    "batch": 11,
+    "block_ids": [
+      "jaLetRbG3io-0061",
+      "jaLetRbG3io-0062",
+      "jaLetRbG3io-0063",
+      "jaLetRbG3io-0064",
+      "jaLetRbG3io-0065",
+      "jaLetRbG3io-0066"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 964)"
+  },
+  {
+    "batch": 12,
+    "block_ids": [
+      "jaLetRbG3io-0067",
+      "jaLetRbG3io-0068",
+      "jaLetRbG3io-0069",
+      "jaLetRbG3io-0070",
+      "jaLetRbG3io-0071",
+      "jaLetRbG3io-0072"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1989)"
+  },
+  {
+    "batch": 13,
+    "block_ids": [
+      "jaLetRbG3io-0073",
+      "jaLetRbG3io-0074",
+      "jaLetRbG3io-0075",
+      "jaLetRbG3io-0076",
+      "jaLetRbG3io-0077",
+      "jaLetRbG3io-0078"
+    ],
+    "error": "JSONDecodeError: Extra data: line 9 column 6 (char 752)"
+  },
+  {
+    "batch": 14,
+    "block_ids": [
+      "jaLetRbG3io-0079",
+      "jaLetRbG3io-0080",
+      "jaLetRbG3io-0081",
+      "jaLetRbG3io-0082"
+    ],
+    "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  }
+]
+

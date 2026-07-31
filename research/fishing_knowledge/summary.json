@@ -1,0 +1,24 @@
+{
+  "videos_with_results": 36,
+  "candidate_blocks": 4635,
+  "knowledge_records": 10,
+  "failed_model_batches": 688,
+  "categories": {
+    "feeding": 10
+  },
+  "confidence": {
+    "high": 9,
+    "low": 1
+  },
+  "claims_per_video": {
+    "9HzHemtfrIA": 1,
+    "FwSYJDMHtPA": 1,
+    "Nbi-mklca70": 1,
+    "X_wRPajL7eE": 1,
+    "g900ah_JcMI": 1,
+    "gjyFGofMxtA": 1,
+    "mIb5MxmHwAs": 2,
+    "oI4iyT62tuk": 1,
+    "vrpNap7cMow": 1
+  }
+}

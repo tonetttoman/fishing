@@ -1,0 +1,301 @@
+{
+  "video_id": "Nbi-mklca70",
+  "candidate_blocks": 152,
+  "claims": [
+    {
+      "claim_id": "Nbi-mklca70-C0001",
+      "block_id": "Nbi-mklca70-0151",
+      "video_id": "Nbi-mklca70",
+      "title": "Parti-Arcok Live - Walter Tamással - 11. rész - Etetőanyagok akváriumban",
+      "url": "https://www.youtube.com/watch?v=Nbi-mklca70",
+      "start": "02:58:32",
+      "end": "02:59:34",
+      "category": "feeding",
+      "statement": "Felhígula a mangoló aroma, abból még baj nem lesz.",
+      "conditions": "Aha. Annak aztán DOS mindegyő megy a harlisztes cuccra oda megfelelő arányú egyéb egyéb egyéb cuccok mellett, olajos magvak meg egyebek mellett. És És És és az nekünk szól, hogy neked éppen melyik tetszik a a boltban.",
+      "recommended_action": "Hát nem, szerintem ez szép része, hiszen az ember ennyire ennyire, hogy mondjam, így beleéli magát a halelyébe, vagy nem tudom.",
+      "reason_effect": "Igen. Hát nem, szerintem ez szép része, hiszen az ember ennyire ennyire, hogy mondjam, így beleéli magát a halelyébe, vagy nem tudom.",
+      "exception": "Ez annyira lehangoló. Igen. Hát nem, szerintem ez szép része, hiszen az ember ennyire ennyire, hogy mondjam, így beleéli magát a halelyébe, vagy nem tudom.",
+      "confidence": "high",
+      "source_block": "Felhígula a mangoló aroma, abból még baj nem lesz. Tehát, hogy most a beish f50y50ift-t használom, vagy az Orange Blacket, az igazándiból a benne rejlő szemcsék az igazándiból a benne rejlő szemcsék színe és illata azető a adott hozzáadott aroma illata szempontjából érdekes. Aha. Annak aztán DOS mindegyő megy a harlisztes cuccra oda megfelelő arányú egyéb egyéb egyéb cuccok mellett, olajos magvak meg egyebek mellett. És És És és az nekünk szól, hogy neked éppen melyik tetszik a a boltban. Ez annyira lehangoló. Igen. Hát nem, szerintem ez szép r, mármint, hogy ez is szép része, hiszen az ember ennyire ennyire, hogy mondjam, így beleéli magát a halelyébe, vagy nem tudom."
+    }
+  ],
+  "failed_batches": [
+    {
+      "batch": 1,
+      "block_ids": [
+        "Nbi-mklca70-0001",
+        "Nbi-mklca70-0002",
+        "Nbi-mklca70-0003",
+        "Nbi-mklca70-0004",
+        "Nbi-mklca70-0005",
+        "Nbi-mklca70-0006"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1941)"
+    },
+    {
+      "batch": 2,
+      "block_ids": [
+        "Nbi-mklca70-0007",
+        "Nbi-mklca70-0008",
+        "Nbi-mklca70-0009",
+        "Nbi-mklca70-0010",
+        "Nbi-mklca70-0011",
+        "Nbi-mklca70-0012"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1860)"
+    },
+    {
+      "batch": 3,
+      "block_ids": [
+        "Nbi-mklca70-0013",
+        "Nbi-mklca70-0014",
+        "Nbi-mklca70-0015",
+        "Nbi-mklca70-0016",
+        "Nbi-mklca70-0017",
+        "Nbi-mklca70-0018"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 686)"
+    },
+    {
+      "batch": 5,
+      "block_ids": [
+        "Nbi-mklca70-0025",
+        "Nbi-mklca70-0026",
+        "Nbi-mklca70-0027",
+        "Nbi-mklca70-0028",
+        "Nbi-mklca70-0029",
+        "Nbi-mklca70-0030"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 768)"
+    },
+    {
+      "batch": 6,
+      "block_ids": [
+        "Nbi-mklca70-0031",
+        "Nbi-mklca70-0032",
+        "Nbi-mklca70-0033",
+        "Nbi-mklca70-0034",
+        "Nbi-mklca70-0035",
+        "Nbi-mklca70-0036"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 693)"
+    },
+    {
+      "batch": 7,
+      "block_ids": [
+        "Nbi-mklca70-0037",
+        "Nbi-mklca70-0038",
+        "Nbi-mklca70-0039",
+        "Nbi-mklca70-0040",
+        "Nbi-mklca70-0041",
+        "Nbi-mklca70-0042"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 573)"
+    },
+    {
+      "batch": 8,
+      "block_ids": [
+        "Nbi-mklca70-0043",
+        "Nbi-mklca70-0044",
+        "Nbi-mklca70-0045",
+        "Nbi-mklca70-0046",
+        "Nbi-mklca70-0047",
+        "Nbi-mklca70-0048"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 395)"
+    },
+    {
+      "batch": 9,
+      "block_ids": [
+        "Nbi-mklca70-0049",
+        "Nbi-mklca70-0050",
+        "Nbi-mklca70-0051",
+        "Nbi-mklca70-0052",
+        "Nbi-mklca70-0053",
+        "Nbi-mklca70-0054"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 634)"
+    },
+    {
+      "batch": 10,
+      "block_ids": [
+        "Nbi-mklca70-0055",
+        "Nbi-mklca70-0056",
+        "Nbi-mklca70-0057",
+        "Nbi-mklca70-0058",
+        "Nbi-mklca70-0059",
+        "Nbi-mklca70-0060"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 2313)"
+    },
+    {
+      "batch": 11,
+      "block_ids": [
+        "Nbi-mklca70-0061",
+        "Nbi-mklca70-0062",
+        "Nbi-mklca70-0063",
+        "Nbi-mklca70-0064",
+        "Nbi-mklca70-0065",
+        "Nbi-mklca70-0066"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 1176)"
+    },
+    {
+      "batch": 12,
+      "block_ids": [
+        "Nbi-mklca70-0067",
+        "Nbi-mklca70-0068",
+        "Nbi-mklca70-0069",
+        "Nbi-mklca70-0070",
+        "Nbi-mklca70-0071",
+        "Nbi-mklca70-0072"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 612)"
+    },
+    {
+      "batch": 13,
+      "block_ids": [
+        "Nbi-mklca70-0073",
+        "Nbi-mklca70-0074",
+        "Nbi-mklca70-0075",
+        "Nbi-mklca70-0076",
+        "Nbi-mklca70-0077",
+        "Nbi-mklca70-0078"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 886)"
+    },
+    {
+      "batch": 14,
+      "block_ids": [
+        "Nbi-mklca70-0079",
+        "Nbi-mklca70-0080",
+        "Nbi-mklca70-0081",
+        "Nbi-mklca70-0082",
+        "Nbi-mklca70-0083",
+        "Nbi-mklca70-0084"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1368)"
+    },
+    {
+      "batch": 15,
+      "block_ids": [
+        "Nbi-mklca70-0085",
+        "Nbi-mklca70-0086",
+        "Nbi-mklca70-0087",
+        "Nbi-mklca70-0088",
+        "Nbi-mklca70-0089",
+        "Nbi-mklca70-0090"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 486)"
+    },
+    {
+      "batch": 16,
+      "block_ids": [
+        "Nbi-mklca70-0091",
+        "Nbi-mklca70-0092",
+        "Nbi-mklca70-0093",
+        "Nbi-mklca70-0094",
+        "Nbi-mklca70-0095",
+        "Nbi-mklca70-0096"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 522)"
+    },
+    {
+      "batch": 17,
+      "block_ids": [
+        "Nbi-mklca70-0097",
+        "Nbi-mklca70-0098",
+        "Nbi-mklca70-0099",
+        "Nbi-mklca70-0100",
+        "Nbi-mklca70-0101",
+        "Nbi-mklca70-0102"
+      ],
+      "error": "JSONDecodeError: Extra data: line 10 column 6 (char 749)"
+    },
+    {
+      "batch": 19,
+      "block_ids": [
+        "Nbi-mklca70-0109",
+        "Nbi-mklca70-0110",
+        "Nbi-mklca70-0111",
+        "Nbi-mklca70-0112",
+        "Nbi-mklca70-0113",
+        "Nbi-mklca70-0114"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1768)"
+    },
+    {
+      "batch": 20,
+      "block_ids": [
+        "Nbi-mklca70-0115",
+        "Nbi-mklca70-0116",
+        "Nbi-mklca70-0117",
+        "Nbi-mklca70-0118",
+        "Nbi-mklca70-0119",
+        "Nbi-mklca70-0120"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1411)"
+    },
+    {
+      "batch": 21,
+      "block_ids": [
+        "Nbi-mklca70-0121",
+        "Nbi-mklca70-0122",
+        "Nbi-mklca70-0123",
+        "Nbi-mklca70-0124",
+        "Nbi-mklca70-0125",
+        "Nbi-mklca70-0126"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 439)"
+    },
+    {
+      "batch": 22,
+      "block_ids": [
+        "Nbi-mklca70-0127",
+        "Nbi-mklca70-0128",
+        "Nbi-mklca70-0129",
+        "Nbi-mklca70-0130",
+        "Nbi-mklca70-0131",
+        "Nbi-mklca70-0132"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 530)"
+    },
+    {
+      "batch": 23,
+      "block_ids": [
+        "Nbi-mklca70-0133",
+        "Nbi-mklca70-0134",
+        "Nbi-mklca70-0135",
+        "Nbi-mklca70-0136",
+        "Nbi-mklca70-0137",
+        "Nbi-mklca70-0138"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 1391)"
+    },
+    {
+      "batch": 24,
+      "block_ids": [
+        "Nbi-mklca70-0139",
+        "Nbi-mklca70-0140",
+        "Nbi-mklca70-0141",
+        "Nbi-mklca70-0142",
+        "Nbi-mklca70-0143",
+        "Nbi-mklca70-0144"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 873)"
+    },
+    {
+      "batch": 25,
+      "block_ids": [
+        "Nbi-mklca70-0145",
+        "Nbi-mklca70-0146",
+        "Nbi-mklca70-0147",
+        "Nbi-mklca70-0148",
+        "Nbi-mklca70-0149",
+        "Nbi-mklca70-0150"
+      ],
+      "error": "JSONDecodeError: Extra data: line 9 column 6 (char 421)"
+    }
+  ]
+}
