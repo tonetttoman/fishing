@@ -44,8 +44,9 @@ jobs:
                 gh run cancel "$DUPLICATE_ID" --repo "$GITHUB_REPOSITORY" || true
               done
 
-          if [ -n "$KEEP_ID" ]; then
-            gh run view "$KEEP_ID" \
+          PODCAST_ID=$(jq -r '.[0].databaseId // empty' research/transcription_run_status/latest_runs.json)
+          if [ -n "$PODCAST_ID" ]; then
+            gh run view "$PODCAST_ID" \
               --repo "$GITHUB_REPOSITORY" \
               --json databaseId,status,conclusion,createdAt,updatedAt,url,jobs \
               > research/transcription_run_status/latest_run.json
@@ -66,6 +67,21 @@ jobs:
               > research/transcription_run_status/external_run.json
           fi
 
+          gh run list \
+            --repo "$GITHUB_REPOSITORY" \
+            --workflow extract-fishing-knowledge.yml \
+            --limit 5 \
+            --json databaseId,status,conclusion,createdAt,updatedAt,url,headSha,displayTitle \
+            > research/transcription_run_status/knowledge_runs.json || true
+
+          KNOWLEDGE_ID=$(jq -r '.[0].databaseId // empty' research/transcription_run_status/knowledge_runs.json 2>/dev/null || true)
+          if [ -n "$KNOWLEDGE_ID" ]; then
+            gh run view "$KNOWLEDGE_ID" \
+              --repo "$GITHUB_REPOSITORY" \
+              --json databaseId,status,conclusion,createdAt,updatedAt,url,jobs \
+              > research/transcription_run_status/knowledge_run.json
+          fi
+
       - name: Commit status snapshot
         run: |
           git config user.name 'github-actions[bot]'
@@ -82,4 +98,4 @@ jobs:
             exit 1
           fi
 
-# Refresh marker: 2026-07-30T22:48Z
+# Refresh marker: 2026-08-01T17:20+02:00
